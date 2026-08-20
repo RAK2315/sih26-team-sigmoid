@@ -99,7 +99,7 @@ Page text:
 {PAGE_TEXT}
 ---`;
 
-const root = path.resolve(__dirname, "..");
+const root = process.cwd();
 const cacheDir = path.join(root, "content", "cache");
 
 function cachePath(pageNo: number): string {
