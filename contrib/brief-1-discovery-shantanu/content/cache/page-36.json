@@ -1,0 +1,38 @@
+{
+  "mentions": [
+    {
+      "name": "Mumtaz Mahal (now the Delhi Museum of Archaeology)",
+      "type": "palace",
+      "period": "1048-1058 A.H. (1639-1648 A.D.)",
+      "passage": "No.^1^ (a) Mumtaz Mahal (now the Delhi Museum of Archaeology).\n(6\\ South of Piang Mahal.\n(c) Archaeological Department.\n(d) la.\n(e) 1048-1058 A.H. (1639-1648 A.D.).\n( /) None.\n{g) Good.\n(A) “ Protected Monument.”\n{j) The building measures 88 feet north and south by 81 feet 10 inches east\nand west and was formerly an important apartment of the Seraglio.\nAfter the Mutiny used as a prison and till a few years ago as a Sergeants’\nMess. The gilded chhatris, formerly existing on the corners of its roof\nhave disappeared,^ and the buildings as it now stands, is the result of\nconsiderable repair in 1911. The chhajja was also reconstructed. Tlie\nlower portion of the walls and piers are of marble, and traces of some of\nthe old painted and glass decoration, with which the building was formerly\nadorned, have been exposed. It is now used as the Delhi Museum of\nArchaeology.\n(A) Annual (1905-1906), 30; (1908-9), 1.\nFanshawe, 41.\nHearn, 160.\nKeene, 125, 136 (Imtiaz Mahal).\nVon Orlich, II, 24 (palaces of King’s wives).\nAsar (1904), chap. II, 34-5.\n(Z) 1729, 2218, 2223, 2260, 2261, 2396, 2397, 2548, 2549, 2550, 2651,\n2554, 2555, 2556.",
+      "spatialClue": {
+        "anchorName": "Piang Mahal",
+        "bearing": "S",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_36_1",
+      "passageOffset": [
+        416,
+        1549
+      ]
+    },
+    {
+      "name": "Bang Mahal",
+      "type": "palace",
+      "period": "1048-1058 A.H. (1639-1648 A.D.)",
+      "passage": "No (a) Bang Mahal.\n(6) South of Khuwahgah and Baithak.\n(c) Archaeological Department.\n(d) la.\n(e) 1048-1058 A.H. (1639-1648 A.D.).\n(/) None.\n(g) Good, but the building has suffered much during the last hundred\nyears.",
+      "spatialClue": {
+        "anchorName": "Khuwahgah and Baithak",
+        "bearing": "S",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_36_2",
+      "passageOffset": [
+        1550,
+        1766
+      ]
+    }
+  ]
+}

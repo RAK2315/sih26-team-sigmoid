@@ -1,0 +1,1 @@
+export const toLeaflet = (c: [number, number]): [number, number] => [c[1], c[0]];

@@ -1,0 +1,38 @@
+{
+  "mentions": [
+    {
+      "name": "Ajmer Gate",
+      "type": "gateway",
+      "period": "1644—1649 A. D.",
+      "passage": "Ajmer Gate.\n(5) In south-west wall of the city.\n(c) Municipality, ,\n\\d) Ilfl.\n(^) 1644—1649 A. D.\nif) None.\n(^f) Fair.\n^ {h) Should be declared a Protected Monument.\n(A) Archer I, 125.\nA. S. L, I (1862-63), 224-225.\nAs. EeS; IV, 418, 419.\nBaxter, 32.\nC. S. Mange, 248,\nTour, 162.\nCarr Stephen, 244,\nKeene, 34.\nFanshawe, 6, 65, 248.\nBearn, 44, 257.",
+      "spatialClue": {
+        "anchorName": "the city",
+        "bearing": "SW",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_101_1",
+      "passageOffset": [
+        876,
+        1223
+      ]
+    },
+    {
+      "name": "Unchi Mosque III",
+      "type": "mosque",
+      "period": "Late Mughal",
+      "passage": "{a) Unchi Mosque III.\n(6) Kuncha-i-Shah Tara.\n(c) Waqf, Mutawalli, Eafiuddin Beg.\n{d) III.\n(e) Late Mughal.\n(f) None.\n(g) Good.\n(A) Unnecessary.\n( ?■) The mosque, which is reached by means of 9 steps from the road, is a smai\nbuilding of no particular interest.\nNo. 161.",
+      "spatialClue": {
+        "anchorName": "Kuncha-i-Shah Tara",
+        "bearing": "within",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_101_2",
+      "passageOffset": [
+        1224,
+        1493
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "mentions": [
+    {
+      "name": "Vaulted Arcade",
+      "type": "gateway",
+      "period": "1048-1058 A. H. (1639-1648 A. D.)",
+      "passage": "(b) On the east side of the Lahore Gate.\n(&lt;?) Military (repaired with advice of Archjeological Department).\nid) II6.\n(e) 1048-1058 A. H. (1639-1648 A. D.).\n(/) None.\n(g) See No. I, para. g.\n(h) Should be declared a “ Protected Monument ” when no longer required hi&apos;\nthe Military.\n( ;) The vaulted arcade is some 230 feet in length and ^7 feet in width. On\neither side of it there are 32 ai*ched rooms for use as shops. In the centre\nof the arcade there is an octagonal court about 30 feet in diameter with an\nopen roof for the admission of light and air. Fergusson is of the opinion\nthat it is the “ noblest entrance known to belong to any existing palace.”\nTraces of the old painted plaster decoration may be seen on the walls of\nthe central open portion.\n[k) Ai&apos;cher, I, 110.\nCarr Stephen, 219.\nFanshaice, 22, 26.\nFergusson, II, 309.\nSeam, 145.\nSeher, II, 297.\nSoffmeister, 283.\nKeene, 123.\nMamicci, I, 184 {bazars).\nFoberts, II, 223.\nVon Orlich, II. 23.\nAsar (1904), chap. II, 30-1.\nSalih, Fol. 584.\n{1) 2502, 2512, 2523.",
+      "spatialClue": {
+        "anchorName": "Lahore Gate",
+        "bearing": "E",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_32_1",
+      "passageOffset": [
+        22,
+        1059
+      ]
+    },
+    {
+      "name": "Naubat or Naqqar Khana (Drum-house)",
+      "type": "gateway",
+      "period": "1048-1058 A. H. (1639-1648 A. D.)",
+      "passage": "(а) Naubat or Naqqar Khana (Drum-house).\n(б) Opposite the east end of the “ Vaulted Arcade ” leading from the Lahore\nGate.\n(c) Archaeological Department.\n(rf) la.\n(e) 1048-1058 A. H. (1639-1648 A. D.).\n(f) None.\n(g) Excellent.\n(h) “ Protected Monument.”\n(J) The Naubat Khana served as the main entrance to the court of the Diwan-\ni-Am. Between it and&apos; the east end of the vaulted arcade previously men-\ntioned, and leading from the Lahore Gate, there was, in former days, a\ncourt some 200 feet in length by 140 feet in breadth, surrounded by arcaded\napartments, which served as quarters for the TJmaras when on duty on\nthe Emperor’s guard. At the south-west corner of this square stood certain\npublic buildings wherein the Emperor’s Nazir transacted business, while\nits central feature was a tank fed by the canal which ran north and\nsouth down tlie centre of the arcaded streets, the quarters of the lesser",
+      "spatialClue": {
+        "anchorName": "east end of the “ Vaulted Arcade ” leading from the Lahore\nGate",
+        "bearing": "opposite",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_32_2",
+      "passageOffset": [
+        1060,
+        1972
+      ]
+    }
+  ]
+}

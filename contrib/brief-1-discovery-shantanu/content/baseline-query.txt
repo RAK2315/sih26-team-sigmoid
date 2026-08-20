@@ -1,0 +1,6 @@
+[out:json][timeout:60];
+(node["historic"](28.40,76.84,28.88,77.35);
+ way["historic"](28.40,76.84,28.88,77.35);
+ node["heritage"](28.40,76.84,28.88,77.35);
+ way["heritage"](28.40,76.84,28.88,77.35););
+out center;
