@@ -13,11 +13,13 @@ const INTERESTS: { tag: InterestTag; label: string }[] = [
   { tag: "religion", label: "Religion" },
 ];
 
+// the whole of Red Fort fits in about 20 minutes, so anything above 30 chose the same eleven
+// Heritage Points and the control looked broken. these are the budgets that actually decide.
 const BUDGETS = [
+  { minutes: 10, label: "10 minutes" },
+  { minutes: 15, label: "15 minutes" },
   { minutes: 30, label: "30 minutes" },
-  { minutes: 45, label: "45 minutes" },
-  { minutes: 90, label: "90 minutes" },
-  { minutes: 240, label: "Half a day" },
+  { minutes: 90, label: "As long as it takes" },
 ];
 
 const PERSONAS: { persona: Persona; label: string; note: string }[] = [
@@ -29,7 +31,7 @@ const PERSONAS: { persona: Persona; label: string; note: string }[] = [
 export default function PlanForm({ site }: { site: HeritageSite }) {
   const router = useRouter();
   const [interests, setInterests] = useState<InterestTag[]>([]);
-  const [budgetMinutes, setBudgetMinutes] = useState(45);
+  const [budgetMinutes, setBudgetMinutes] = useState(30);
   const [persona, setPersona] = useState<Persona>("history");
 
   function toggle(tag: InterestTag) {
