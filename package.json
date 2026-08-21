@@ -9,7 +9,10 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "lint": "eslint",
-    "check:content": "tsx scripts/check-content.ts"
+    "check:content": "tsx scripts/check-content.ts",
+    "seed": "tsx --env-file=.env.local scripts/seed-db.ts",
+    "cache": "tsx --env-file=.env.local scripts/build-discovery-cache.ts",
+    "cache:redo": "tsx scripts/build-discovery-cache.ts recompute"
   },
   "dependencies": {
     "@google/genai": "2.17.1",
