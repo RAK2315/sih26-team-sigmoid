@@ -87,16 +87,22 @@ export async function moveCandidate(
   const client = storeClient();
   if (client === null) return false;
 
-  const { error } = await client
+  const { data, error } = await client
     .from("candidates")
     .update({ status: to, updated_at: new Date().toISOString() })
     .eq("id", id)
-    .eq("status", from);
+    .eq("status", from)
+    .select("id");
 
   if (error) {
     console.error("candidate update failed:", error.message);
     return false;
   }
+
+  // matching no rows is not an error to Postgres, but it means the Candidate was not in the
+  // state the Reviewer thought it was, and writing an event for a move that did not happen
+  // would put a lie in the one table that exists to be trusted
+  if (data === null || data.length === 0) return false;
 
   // append-only, and it is the Evidence trail for the review decision itself
   const event = await client
