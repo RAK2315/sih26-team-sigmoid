@@ -50,7 +50,7 @@ const page: AnalyseResult = {
         28.591357
       ],
       "uncertaintyRadiusM": 240,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w1123372345",
         "name": "unnamed city_gate (w1123372345)",
@@ -125,7 +125,7 @@ const page: AnalyseResult = {
         28.591357
       ],
       "uncertaintyRadiusM": 240,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w1123372345",
         "name": "unnamed city_gate (w1123372345)",

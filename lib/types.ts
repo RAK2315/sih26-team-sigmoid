@@ -221,6 +221,30 @@ export interface Candidate {
   evidence: CandidateEvidence;
 }
 
+// a Candidate as the database holds it, flattened. the Evidence a Reviewer needs travels with
+// it so /authority can show the same panel /discover does without re-running the pipeline.
+export interface StoredCandidate {
+  id: string;
+  volumeId: string;
+  pageNo: number;
+  name: string;
+  structureType: string;
+  period: string | null;
+  passage: string;
+  anchorId: string | null;
+  anchorName: string | null;
+  bearing: string | null;
+  distanceValue: number | null;
+  distanceUnit: string | null;
+  centroid: Coord;
+  uncertaintyRadiusM: number;
+  status: CandidateStatus;
+  confidence: number;
+  confidenceParts: ConfidenceParts;
+  baselineVerdict: "matched_existing" | "representation_gap" | "inconclusive";
+  matchedFeature: BaselineMatch | null;
+}
+
 export interface CandidateEvent {
   id: number;
   candidateId: string;

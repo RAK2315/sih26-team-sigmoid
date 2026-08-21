@@ -67,7 +67,7 @@ const page: AnalyseResult = {
         28.646562169270293
       ],
       "uncertaintyRadiusM": 145.7958440716979,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "n2714555470",
         "name": "Kunwari Begum ka Burj",
@@ -142,7 +142,7 @@ const page: AnalyseResult = {
         28.647960144789298
       ],
       "uncertaintyRadiusM": 253.6185139154708,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "n2714555470",
         "name": "Kunwari Begum ka Burj",

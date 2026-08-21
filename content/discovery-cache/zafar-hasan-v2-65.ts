@@ -67,7 +67,7 @@ const page: AnalyseResult = {
         28.58726721812001
       ],
       "uncertaintyRadiusM": 327.3875322150937,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "n10270699257",
         "name": "unnamed wayside_shrine (n10270699257)",

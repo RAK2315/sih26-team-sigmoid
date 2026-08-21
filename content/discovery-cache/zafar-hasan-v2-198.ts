@@ -67,7 +67,7 @@ const page: AnalyseResult = {
         28.588655740177245
       ],
       "uncertaintyRadiusM": 425.7958440716979,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w103505910",
         "name": "Chausath Khamba",

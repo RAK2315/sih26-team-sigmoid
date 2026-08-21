@@ -48,7 +48,9 @@ export function buildCandidates(input: CandidateInput): Candidate[] {
       mentionId: mention.id,
       centroid: resolved.centroid,
       uncertaintyRadiusM: resolved.uncertaintyRadiusM,
-      status: baseline.verdict === "matched_existing" ? "matched_existing" : "candidate",
+      // ADR-0003: candidate is the ceiling for automation. What the Baseline found is evidence,
+      // carried in evidence.baselineVerdict, and only a Reviewer may turn it into a status.
+      status: "candidate",
       matchedBaselineFeature: baseline.match,
       confidence,
       evidence: {

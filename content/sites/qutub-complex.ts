@@ -4,7 +4,8 @@ export const qutubComplex: HeritageSite = {
   id: "qutub-complex",
   name: "Qutub Complex",
   nameLocal: "क़ुतुब परिसर",
-  depth: "deep",
+  // no Heritage Points written yet, and a filled pin promises points a Visitor can walk between
+  depth: "shallow",
   period: "Slave dynasty onward, 1199 onward",
   centroid: [77.185885, 28.52478],
   bbox: [77.1825, 28.5225, 77.1895, 28.5275],

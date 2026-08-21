@@ -79,7 +79,7 @@ const page: AnalyseResult = {
         28.593532701562175
       ],
       "uncertaintyRadiusM": 135.47750644301874,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w432131635",
         "name": "unnamed tomb (w432131635)",
@@ -154,7 +154,7 @@ const page: AnalyseResult = {
         28.593285998842024
       ],
       "uncertaintyRadiusM": 150.95501288603748,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w432131635",
         "name": "unnamed tomb (w432131635)",
@@ -229,7 +229,7 @@ const page: AnalyseResult = {
         28.593286
       ],
       "uncertaintyRadiusM": 270,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w432131635",
         "name": "unnamed tomb (w432131635)",

@@ -1,0 +1,1010 @@
+[
+ {
+  "id": "c_295_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 295,
+  "name": "The Flagstaff Tower, locally known as ‘ Baota.’",
+  "structureType": "tower",
+  "period": "Erected by the British.",
+  "passage": "Some 400 yards to the north of Chauburji Mosque.",
+  "anchorId": "chauburji-mosque",
+  "anchorName": "Chauburji Mosque",
+  "bearing": "N",
+  "distanceValue": 400,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.215236,
+   28.68485035416236
+  ],
+  "uncertaintyRadiusM": 251,
+  "status": "candidate",
+  "confidence": 0.7345,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.6896551724137931,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.7175541639271015,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w1487074888",
+   "name": "unnamed building (w1487074888)",
+   "distanceM": 142
+  }
+ },
+ {
+  "id": "c_264_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 264,
+  "name": "Kunwari Begam ka Burj",
+  "structureType": "tomb",
+  "period": "Mughal",
+  "passage": "Some 50 yards to the north of Qadam Sharif shrine, within the enclosure No. 348.",
+  "anchorId": "qadam-sharif",
+  "anchorName": "Qadam Sharif",
+  "bearing": "N",
+  "distanceValue": 50,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.21538500000001,
+   28.646562169270293
+  ],
+  "uncertaintyRadiusM": 146,
+  "status": "candidate",
+  "confidence": 0.6985,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.45454545454545453,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.9478835218193786,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "n2714555470",
+   "name": "Kunwari Begum ka Burj",
+   "distanceM": 15
+  }
+ },
+ {
+  "id": "c_61_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 61,
+  "name": "Unknown",
+  "structureType": "tomb",
+  "period": "Mughal",
+  "passage": "Some 400 yards to the S. W. of Khairul Manazil (No. 83).",
+  "anchorId": "khair-ul-manazil",
+  "anchorName": "Khair-ul-Manazil",
+  "bearing": "SW",
+  "distanceValue": 400,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.23690570146383,
+   28.60516704961927
+  ],
+  "uncertaintyRadiusM": 246,
+  "status": "candidate",
+  "confidence": 0.6868,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.7142857142857143,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "representation_gap",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_198_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 198,
+  "name": "Dome Sanjarwala (Sanjar’s dome)",
+  "structureType": "tomb",
+  "period": "Mughal",
+  "passage": "Some 500 yards to the west of Khan Khanan’s tomb (No. 169) and 400 yards to the south of Kotla Nizamuddin.",
+  "anchorId": "khan-khanan-tomb",
+  "anchorName": "Khan Khanan's Tomb",
+  "bearing": "W",
+  "distanceValue": 500,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24333941977898,
+   28.588060919602366
+  ],
+  "uncertaintyRadiusM": 328,
+  "status": "candidate",
+  "confidence": 0.649,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.5882352941176471,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "representation_gap",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_75_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 75,
+  "name": "Unknown",
+  "structureType": "gateway",
+  "period": "Mughal",
+  "passage": "On the road from Humayun’s tomb to Safdar Jang, towards south, ajid some 60 yards to the west of No. 91.",
+  "anchorId": "humayuns-tomb",
+  "anchorName": "Humayun's Tomb",
+  "bearing": "W",
+  "distanceValue": 60,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.25008406244501,
+   28.593285998842024
+  ],
+  "uncertaintyRadiusM": 151,
+  "status": "candidate",
+  "confidence": 0.6471,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.45454545454545453,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.6045893276045096,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w432131635",
+   "name": "unnamed tomb (w432131635)",
+   "distanceM": 119
+  }
+ },
+ {
+  "id": "c_122_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 122,
+  "name": "Unknown",
+  "structureType": "tomb",
+  "period": "Mughal",
+  "passage": "Some 80 yards from the S. E. corner of the Purana Qila, towards south.",
+  "anchorId": "purana-qila",
+  "anchorName": "Purana Qila",
+  "bearing": "S",
+  "distanceValue": 80,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.244111,
+   28.608538129167535
+  ],
+  "uncertaintyRadiusM": 261,
+  "status": "candidate",
+  "confidence": 0.6412,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.3125,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.849661706462313,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w545405140",
+   "name": "Purana Qila Baoli",
+   "distanceM": 79
+  }
+ },
+ {
+  "id": "c_59_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 59,
+  "name": "Ruins of palaces",
+  "structureType": "palace",
+  "period": "Afghan",
+  "passage": " Some 550 yards to the north of No. 56 and some 100 yards to the west of Purana Qila No. 123.",
+  "anchorId": "purana-qila",
+  "anchorName": "Purana Qila",
+  "bearing": "W",
+  "distanceValue": 100,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24317429559748,
+   28.609195996781274
+  ],
+  "uncertaintyRadiusM": 272,
+  "status": "candidate",
+  "confidence": 0.6382,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.3125,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.8298616655214361,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w370944284",
+   "name": "Bada Darwaza",
+   "distanceM": 92
+  }
+ },
+ {
+  "id": "c_75_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 75,
+  "name": "Mosque (nameless)",
+  "structureType": "mosque",
+  "period": "Mughal",
+  "passage": "On the road from Humayun’s tomb to Safdar Jang, towards south, and some 30 yards to the north of No. 90.",
+  "anchorId": "humayuns-tomb",
+  "anchorName": "Humayun's Tomb",
+  "bearing": "N",
+  "distanceValue": 30,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.250646,
+   28.593532701562175
+  ],
+  "uncertaintyRadiusM": 135,
+  "status": "candidate",
+  "confidence": 0.6319,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.45454545454545453,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.5033067081610434,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w432131635",
+   "name": "unnamed tomb (w432131635)",
+   "distanceM": 135
+  }
+ },
+ {
+  "id": "c_65_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 65,
+  "name": "Barah Khamba",
+  "structureType": "gateway",
+  "period": "Afghan",
+  "passage": "Some 150 yards to the N. W. of the Railway Station Nizamuddin.",
+  "anchorId": "nizamuddin-railway-station",
+  "anchorName": "Railway Station Nizamuddin",
+  "bearing": "NW",
+  "distanceValue": 150,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.25216668223041,
+   28.58726721812001
+  ],
+  "uncertaintyRadiusM": 327,
+  "status": "candidate",
+  "confidence": 0.6164,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.2857142857142857,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.7378283090139002,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "n10270699257",
+   "name": "unnamed wayside_shrine (n10270699257)",
+   "distanceM": 172
+  }
+ },
+ {
+  "id": "c_198_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 198,
+  "name": "Bridge",
+  "structureType": "bridge",
+  "period": "Afghan",
+  "passage": "Some 50 yards from the wall of the village of Nizamuddin and against the tomb of Khan Jahan Tilangani (No. 242)), towards north-west.",
+  "anchorId": "nizamuddin-village",
+  "anchorName": "Village of Nizamuddin",
+  "bearing": "NW",
+  "distanceValue": 50,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24462388970407,
+   28.588655740177245
+  ],
+  "uncertaintyRadiusM": 426,
+  "status": "candidate",
+  "confidence": 0.5733,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.2,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.6218949050516445,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w103505910",
+   "name": "Chausath Khamba",
+   "distanceM": 322
+  }
+ },
+ {
+  "id": "c_79_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 79,
+  "name": "Mosque known as Chaunsath Khamba",
+  "structureType": "mosque",
+  "period": null,
+  "passage": "About half a mile to the S. E. of the Turkman gate of Shahjahanabad, and some 300^ards to the east of the slaughter house.",
+  "anchorId": "turkman-gate",
+  "anchorName": "Turkman Gate",
+  "bearing": "SE",
+  "distanceValue": 0.5,
+  "distanceUnit": "miles",
+  "centroid": [
+   77.23850723301179,
+   28.637159841017827
+  ],
+  "uncertaintyRadiusM": 569,
+  "status": "candidate",
+  "confidence": 0.5597,
+  "confidenceParts": {
+   "clueSpecificity": 0.5,
+   "anchorPrecision": 0.7407407407407407,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_292_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 292,
+  "name": "MALAKPUR CHHAWNI",
+  "structureType": "mosque",
+  "period": "Late Mughal",
+  "passage": "(b) About 300 yards N. W. of Government House.",
+  "anchorId": "government-house",
+  "anchorName": "Government House",
+  "bearing": "NW",
+  "distanceValue": 300,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.21206440489733,
+   28.690704428942652
+  ],
+  "uncertaintyRadiusM": 405,
+  "status": "candidate",
+  "confidence": 0.5582,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.2857142857142857,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "representation_gap",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_32_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 32,
+  "name": "Delhi Observ.atory or Jantar Mantar",
+  "structureType": "other",
+  "period": null,
+  "passage": "The observatory is 3 miles 3| furlongs almost due south from the Pir Gliaib, the Trigonometrical Survey point on the Ridge, near to Hindu Rao’s House.",
+  "anchorId": "pir-ghaib",
+  "anchorName": "Pir Ghaib",
+  "bearing": "S",
+  "distanceValue": 3.375,
+  "distanceUnit": "miles",
+  "centroid": [
+   77.213211,
+   28.627448090688972
+  ],
+  "uncertaintyRadiusM": 3648,
+  "status": "candidate",
+  "confidence": 0.5518,
+  "confidenceParts": {
+   "clueSpecificity": 0.5,
+   "anchorPrecision": 0.7142857142857143,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_264_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 264,
+  "name": "Kali Masjid",
+  "structureType": "mosque",
+  "period": null,
+  "passage": "About a furlough to the north of Qadam Sharif enclosure (No. 348).",
+  "anchorId": "qadam-sharif",
+  "anchorName": "Qadam Sharif",
+  "bearing": "N",
+  "distanceValue": 1,
+  "distanceUnit": "furlongs",
+  "centroid": [
+   77.21538500000001,
+   28.647960144789298
+  ],
+  "uncertaintyRadiusM": 254,
+  "status": "candidate",
+  "confidence": 0.551,
+  "confidenceParts": {
+   "clueSpecificity": 0.6,
+   "anchorPrecision": 0.45454545454545453,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.6641591213862748,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "n2714555470",
+   "name": "Kunwari Begum ka Burj",
+   "distanceM": 170
+  }
+ },
+ {
+  "id": "c_252_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 252,
+  "name": "Grave of Khuda Numa",
+  "structureType": "tomb",
+  "period": "1106 A.H. (1694-5 A.D.)",
+  "passage": "Some 200 yards from Boli Bhatyari ka Mahall (No. 337), towards the north.",
+  "anchorId": "bhuli-bhatiyari",
+  "anchorName": "Bhuli Bhatiyari ka Mahal",
+  "bearing": "N",
+  "distanceValue": 200,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.20385,
+   28.643394677081176
+  ],
+  "uncertaintyRadiusM": 403,
+  "status": "candidate",
+  "confidence": 0.5475,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.25,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "representation_gap",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_28_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 28,
+  "name": "Gur Duwara, called Bangla Sahib",
+  "structureType": "gateway",
+  "period": "Late Mughal",
+  "passage": "About half a mile west of Jantar Mantar (No. 24).",
+  "anchorId": "jantar-mantar",
+  "anchorName": "Jantar Mantar",
+  "bearing": "W",
+  "distanceValue": 0.5,
+  "distanceUnit": "miles",
+  "centroid": [
+   77.2083515957974,
+   28.627098750556307
+  ],
+  "uncertaintyRadiusM": 624,
+  "status": "candidate",
+  "confidence": 0.4954,
+  "confidenceParts": {
+   "clueSpecificity": 0.5,
+   "anchorPrecision": 0.5263157894736842,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_45_4",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 45,
+  "name": "Tomb of Mir Muhammad Ali known as Sayyid ki Dargah",
+  "structureType": "tomb",
+  "period": null,
+  "passage": "About half a mile to the south of Jantar Mantar No. 24.",
+  "anchorId": "jantar-mantar",
+  "anchorName": "Jantar Mantar",
+  "bearing": "S",
+  "distanceValue": 0.5,
+  "distanceUnit": "miles",
+  "centroid": [
+   77.216596,
+   28.619862420842814
+  ],
+  "uncertaintyRadiusM": 624,
+  "status": "candidate",
+  "confidence": 0.4954,
+  "confidenceParts": {
+   "clueSpecificity": 0.5,
+   "anchorPrecision": 0.5263157894736842,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_295_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 295,
+  "name": "Chauburji.",
+  "structureType": "mosque",
+  "period": "Firoz Shah’s reign.",
+  "passage": "At a little distance to the north of Pirghaib (No. 401).",
+  "anchorId": "pir-ghaib",
+  "anchorName": "Pir Ghaib",
+  "bearing": "N",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.213211,
+   28.676295
+  ],
+  "uncertaintyRadiusM": 190,
+  "status": "candidate",
+  "confidence": 0.4918,
+  "confidenceParts": {
+   "clueSpecificity": 0.3,
+   "anchorPrecision": 0.7142857142857143,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "representation_gap",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_246_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 246,
+  "name": "Tal Katora garden",
+  "structureType": "garden",
+  "period": "Late Mughal",
+  "passage": "Some 3 miles out of Shahjahanabad, due south-west of the Jami Masjid.",
+  "anchorId": "jami-masjid",
+  "anchorName": "Jami Masjid",
+  "bearing": "SW",
+  "distanceValue": 3,
+  "distanceUnit": "miles",
+  "centroid": [
+   77.19849132840544,
+   28.61997930323339
+  ],
+  "uncertaintyRadiusM": 3307,
+  "status": "candidate",
+  "confidence": 0.4875,
+  "confidenceParts": {
+   "clueSpecificity": 0.5,
+   "anchorPrecision": 0.5,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_73_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 73,
+  "name": "Unknown",
+  "structureType": "tomb",
+  "period": "Sher Shah’s period",
+  "passage": " Some 70 yards to the west of Delhi-Muttra Road opposite the Talaqi gate of the old fort.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "W",
+  "distanceValue": 70,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24522142657221,
+   28.590016998424076
+  ],
+  "uncertaintyRadiusM": 2536,
+  "status": "candidate",
+  "confidence": 0.484,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_73_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 73,
+  "name": "Unknown",
+  "structureType": "tomb",
+  "period": "Mughal",
+  "passage": " Some 200 yards to the west of Delhi-Muttra Road at the 5th furlong past the 1st mile-stone from Delhi.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "W",
+  "distanceValue": 200,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.2440039330636,
+   28.590016987135332
+  ],
+  "uncertaintyRadiusM": 2603,
+  "status": "candidate",
+  "confidence": 0.484,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_73_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 73,
+  "name": "Nili Chattri or the tomb of Naubat Khan (distinguished from the Nila Gumbad near Humayun’s tomb. See No. 164; and the Nili Chattri near Salimgarh, see No. 411)",
+  "structureType": "tomb",
+  "period": null,
+  "passage": " At the third mile-stone, and some 25 yards east of the Delhi-Muttra Road,",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "E",
+  "distanceValue": 25,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24611113336707,
+   28.59001699979899
+  ],
+  "uncertaintyRadiusM": 2513,
+  "status": "candidate",
+  "confidence": 0.484,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_129_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 129,
+  "name": "Tomb (unknown)",
+  "structureType": "tomb",
+  "period": "Afghan",
+  "passage": "Some 60 yards east of the Delhi-Muttra road, between the 2nd and 3rd furlongs past the 3rd milestone.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "E",
+  "distanceValue": 60,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24643892008096,
+   28.59001699884218
+  ],
+  "uncertaintyRadiusM": 2531,
+  "status": "candidate",
+  "confidence": 0.484,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_145_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 145,
+  "name": "Gateway of a garden",
+  "structureType": "gateway",
+  "period": "Mughal",
+  "passage": "167 yards south of No. 166, 345 yards east of No. 169, and about 30 yards north of the Delhi-Muttra Road.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "N",
+  "distanceValue": 30,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.245877,
+   28.590263701562176
+  ],
+  "uncertaintyRadiusM": 2515,
+  "status": "candidate",
+  "confidence": 0.484,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_149_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 149,
+  "name": "Tomb of Sayyid Yasin",
+  "structureType": "tomb",
+  "period": "Afghan",
+  "passage": "Arab Sarai, at its western gateway.",
+  "anchorId": "arab-sarai",
+  "anchorName": "Arab Sarai",
+  "bearing": "adjacent",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.248252,
+   28.591357
+  ],
+  "uncertaintyRadiusM": 240,
+  "status": "candidate",
+  "confidence": 0.4773,
+  "confidenceParts": {
+   "clueSpecificity": 0.18,
+   "anchorPrecision": 0.5263157894736842,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.8690727153497668,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w1123372345",
+   "name": "unnamed city_gate (w1123372345)",
+   "distanceM": 63
+  }
+ },
+ {
+  "id": "c_149_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 149,
+  "name": "Tomb of Ahmad Shah",
+  "structureType": "tomb",
+  "period": "Afghan",
+  "passage": "Arab Sarai, at its western gateway,",
+  "anchorId": "arab-sarai",
+  "anchorName": "Arab Sarai",
+  "bearing": "adjacent",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.248252,
+   28.591357
+  ],
+  "uncertaintyRadiusM": 240,
+  "status": "candidate",
+  "confidence": 0.4773,
+  "confidenceParts": {
+   "clueSpecificity": 0.18,
+   "anchorPrecision": 0.5263157894736842,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.8690727153497668,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w1123372345",
+   "name": "unnamed city_gate (w1123372345)",
+   "distanceM": 63
+  }
+ },
+ {
+  "id": "c_75_4",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 75,
+  "name": "Gol Gumbad",
+  "structureType": "tomb",
+  "period": "Afghan",
+  "passage": "On the road from Humayun’s tomb to Safdar Jang, at the railway cross-\ning.",
+  "anchorId": "humayuns-tomb",
+  "anchorName": "Humayun's Tomb",
+  "bearing": "adjacent",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.250646,
+   28.593286
+  ],
+  "uncertaintyRadiusM": 270,
+  "status": "candidate",
+  "confidence": 0.4331,
+  "confidenceParts": {
+   "clueSpecificity": 0.18,
+   "anchorPrecision": 0.45454545454545453,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.7179465836725363,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w432131635",
+   "name": "unnamed tomb (w432131635)",
+   "distanceM": 152
+  }
+ },
+ {
+  "id": "c_292_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 292,
+  "name": "Kos Minar",
+  "structureType": "tower",
+  "period": "Jahangir’s time",
+  "passage": "(b) About 3 furlongs to the north of No. 393, on the Delhi-Karnal road (3 miles 4 furlongs from Delhi).",
+  "anchorId": "delhi-karnal-road",
+  "anchorName": "Delhi-Karnal Road",
+  "bearing": "N",
+  "distanceValue": 3,
+  "distanceUnit": "furlongs",
+  "centroid": [
+   77.197412,
+   28.688234434367892
+  ],
+  "uncertaintyRadiusM": 2901,
+  "status": "candidate",
+  "confidence": 0.379,
+  "confidenceParts": {
+   "clueSpecificity": 0.6,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_122_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 122,
+  "name": "Unknown",
+  "structureType": "other",
+  "period": "Late Pathan or early Mughal",
+  "passage": "To the east of the Delhi-Muttra Road, between 1st and 2nd furlong past the second mile stone.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "E",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.245877,
+   28.590017
+  ],
+  "uncertaintyRadiusM": 2650,
+  "status": "candidate",
+  "confidence": 0.289,
+  "confidenceParts": {
+   "clueSpecificity": 0.3,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_77_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 77,
+  "name": "Unknown",
+  "structureType": "mosque",
+  "period": "Late Mughal",
+  "passage": "At the first mile-stone on Delhi-Muttra Road.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "adjacent",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.245877,
+   28.590017
+  ],
+  "uncertaintyRadiusM": 2650,
+  "status": "candidate",
+  "confidence": 0.253,
+  "confidenceParts": {
+   "clueSpecificity": 0.18,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_130_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 130,
+  "name": "Mosque (nameless)",
+  "structureType": "mosque",
+  "period": "Late Mughal",
+  "passage": "On Delhi-Muttra road, at the junction of the road leading towards the tomb of Safdar Jang.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "adjacent",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.245877,
+   28.590017
+  ],
+  "uncertaintyRadiusM": 2650,
+  "status": "candidate",
+  "confidence": 0.253,
+  "confidenceParts": {
+   "clueSpecificity": 0.18,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_145_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 145,
+  "name": "Barah Pula",
+  "structureType": "bridge",
+  "period": "1030 A.H. (1611-2 A.D.)",
+  "passage": "On the Delhi-Muttra road, between miles 4 and 5.",
+  "anchorId": "delhi-muttra-road",
+  "anchorName": "Delhi-Muttra Road",
+  "bearing": "adjacent",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.245877,
+   28.590017
+  ],
+  "uncertaintyRadiusM": 2650,
+  "status": "candidate",
+  "confidence": 0.253,
+  "confidenceParts": {
+   "clueSpecificity": 0.18,
+   "anchorPrecision": 0.038461538461538464,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ }
+]

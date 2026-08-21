@@ -50,7 +50,7 @@ const page: AnalyseResult = {
         28.68485035416236
       ],
       "uncertaintyRadiusM": 251.36675257358323,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w1487074888",
         "name": "unnamed building (w1487074888)",

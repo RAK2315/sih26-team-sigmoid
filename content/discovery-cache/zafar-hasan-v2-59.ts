@@ -62,7 +62,7 @@ const page: AnalyseResult = {
         28.609195996781274
       ],
       "uncertaintyRadiusM": 271.5916881433958,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w370944284",
         "name": "Bada Darwaza",

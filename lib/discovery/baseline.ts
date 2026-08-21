@@ -24,6 +24,16 @@ export interface BaselineCheck {
 // enough for the Evidence panel to show its working without turning into a list
 const NEIGHBOURS_KEPT = 5;
 
+// the verdict rule, in one place, so a row read back from the database means the same thing
+// as one straight out of the pipeline
+export function verdictFrom(
+  match: BaselineMatch | null,
+  uncertaintyRadiusM: number,
+): BaselineCheck["verdict"] {
+  if (uncertaintyRadiusM > CONCLUSIVE_RADIUS_M) return "inconclusive";
+  return match ? "matched_existing" : "representation_gap";
+}
+
 // past this the circle covers so much of Delhi that finding something inside it says nothing,
 // and finding nothing says nothing either
 const CONCLUSIVE_RADIUS_M = 500;
@@ -53,15 +63,8 @@ export function checkBaseline(
     .sort((a, b) => a.distanceM - b.distanceM)
     .slice(0, NEIGHBOURS_KEPT);
 
-  if (uncertaintyRadiusM > CONCLUSIVE_RADIUS_M) {
-    return { verdict: "inconclusive", match: null, checked: neighbours };
-  }
+  const nearest = uncertaintyRadiusM > CONCLUSIVE_RADIUS_M ? null : (neighbours.find((n) => n.insideRadius) ?? null);
+  const match = nearest ? { id: nearest.id, name: nearest.name, distanceM: nearest.distanceM } : null;
 
-  const nearest = neighbours.find((n) => n.insideRadius) ?? null;
-
-  return {
-    verdict: nearest ? "matched_existing" : "representation_gap",
-    match: nearest ? { id: nearest.id, name: nearest.name, distanceM: nearest.distanceM } : null,
-    checked: neighbours,
-  };
+  return { verdict: verdictFrom(match, uncertaintyRadiusM), match, checked: neighbours };
 }

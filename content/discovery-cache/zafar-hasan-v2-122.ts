@@ -135,7 +135,7 @@ const page: AnalyseResult = {
         28.608538129167535
       ],
       "uncertaintyRadiusM": 261.27335051471664,
-      "status": "matched_existing",
+      "status": "candidate",
       "matchedBaselineFeature": {
         "id": "w545405140",
         "name": "Purana Qila Baoli",

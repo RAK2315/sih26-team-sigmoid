@@ -3,13 +3,17 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import type { HeritageSite } from "@/lib/types";
+import type { Coord, HeritageSite } from "@/lib/types";
+import HiddenHeritage from "./hidden-heritage";
 
 // leaflet reads window while it loads, so it must never render on the server
 const ExploreMapCanvas = dynamic(() => import("./explore-map-canvas"), {
   ssr: false,
   loading: () => <div className="h-full w-full bg-paper-sunk" />,
 });
+
+// the centre of Delhi, which is where a Visitor is until real GPS says otherwise
+const FROM: Coord = [77.215, 28.605];
 
 export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
   const [selected, setSelected] = useState<HeritageSite | null>(null);
@@ -18,7 +22,7 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
     <div className="relative min-h-0 flex-1">
       <ExploreMapCanvas sites={sites} selectedId={selected?.id ?? null} onSelect={setSelected} />
 
-      <aside className="pointer-events-none absolute inset-x-0 bottom-0 z-[500] p-4 lg:inset-y-0 lg:left-auto lg:right-0 lg:w-96">
+      <aside className="pointer-events-none absolute inset-x-0 bottom-0 z-[500] flex flex-col gap-3 p-4 lg:inset-y-0 lg:left-auto lg:right-0 lg:w-96 lg:overflow-y-auto">
         <div className="pointer-events-auto border border-ink-faint/40 bg-paper-raised p-4 shadow-paper">
           {selected === null ? (
             <>
@@ -63,6 +67,10 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
               )}
             </>
           )}
+        </div>
+
+        <div className="pointer-events-auto">
+          <HiddenHeritage sites={sites} from={FROM} onPick={() => undefined} />
         </div>
       </aside>
     </div>
