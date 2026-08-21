@@ -274,6 +274,11 @@ export interface AnalyseResult {
   fallbackReason?: string;
 }
 
+export interface CandidatesResult {
+  source: "live" | "stale";
+  candidates: StoredCandidate[];
+}
+
 export interface AskResult {
   answer: string;
   citedLineIds: string[];

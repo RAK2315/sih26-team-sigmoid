@@ -34,6 +34,9 @@ export function useGpsLocation(enabled: boolean): GpsLocation {
 
   const at = useRef<Coord | null>(null);
   const accuracy = useRef(0);
+  // the compass is the only source. position.coords.heading is null whenever the phone is still,
+  // which is exactly when Dwell runs, so holding on to the last moving value would aim the Facing
+  // gate at a bearing the Visitor has since turned away from.
   const heading = useRef<number | null>(null);
 
   useEffect(() => {
@@ -55,10 +58,6 @@ export function useGpsLocation(enabled: boolean): GpsLocation {
         const reading: Coord = [position.coords.longitude, position.coords.latitude];
         accuracy.current = position.coords.accuracy;
         at.current = settle(at.current, reading, position.coords.accuracy);
-        // coords.heading only exists while actually moving, so the compass is the better source
-        if (heading.current === null && typeof position.coords.heading === "number") {
-          heading.current = position.coords.heading;
-        }
         setState("live");
         setMessage(null);
       },
@@ -68,6 +67,8 @@ export function useGpsLocation(enabled: boolean): GpsLocation {
           setMessage("Location was refused, so the walk stays simulated. Nothing else changes.");
           return;
         }
+        // a stationary phone times out routinely, and the fix it already gave us is still good
+        if (at.current !== null) return;
         setState("unavailable");
         setMessage("No fix from the phone yet. Outdoors and away from walls works best.");
       },

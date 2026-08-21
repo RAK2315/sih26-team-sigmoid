@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { narrationTexts } from "@/content/narrations";
 import rendered from "@/content/narrations/rendered.json";
 import type { Narration, NarrationText } from "@/lib/types";
@@ -13,8 +14,13 @@ interface RenderedClip {
 
 const clips = rendered as Record<string, RenderedClip>;
 
-function narrationId(n: NarrationText): string {
+export function narrationId(n: NarrationText): string {
   return `${n.pointId}/${n.persona}.${n.lang}.${n.kind}`;
+}
+
+// the renderer stamps this and the checker compares it, so drifting apart would be silent
+export function narrationTextHash(sentences: string[]): string {
+  return createHash("sha256").update(sentences.join(" ")).digest("hex").slice(0, 16);
 }
 
 // a clip that has not been rendered yet still shows its transcript, it just has nothing to play
