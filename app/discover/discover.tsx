@@ -290,6 +290,12 @@ function Results({
           {result.source}
         </span>
       </div>
+      {result.source === "cached" && (
+        <p className="font-archive border-b border-ink-faint/30 px-4 py-2 text-[11px] leading-relaxed text-ink-faint">
+          Served from the copy committed with the app, read by {result.modelId}
+          {result.fallbackReason ? `, because no model answered: ${result.fallbackReason}` : ""}.
+        </p>
+      )}
       <ul>
         {result.mentions.map((m: Mention) => (
           <MentionCard

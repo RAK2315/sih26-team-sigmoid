@@ -270,6 +270,8 @@ export interface AnalyseResult {
   pageNo: number;
   mentions: Mention[];
   candidates: Candidate[];
+  // why the cache was used, so the chip explains itself instead of just labelling itself
+  fallbackReason?: string;
 }
 
 export interface AskResult {

@@ -39,9 +39,12 @@ export async function POST(request: Request) {
 
   const cached = DISCOVERY_CACHE[`${volumeId}-${pageNo}`] ?? null;
 
+  let reason = "";
   const baseline = await loadBaseline();
+  if (baseline === null) reason = "the Modern Baseline could not be read";
   if (baseline) {
     const extracted = await extractMentions(pageNo, page.text);
+    if (!extracted.ok) reason = extracted.reason;
     if (extracted.ok) {
       const { mentions, modelId } = extracted.extraction;
       const live: AnalyseResult = {
@@ -55,7 +58,13 @@ export async function POST(request: Request) {
     }
   }
 
-  if (cached) return NextResponse.json({ ...cached, source: "cached" } satisfies AnalyseResult);
+  if (cached) {
+    return NextResponse.json({
+      ...cached,
+      source: "cached",
+      fallbackReason: reason,
+    } satisfies AnalyseResult);
+  }
 
   return NextResponse.json({ error: "unavailable", pageNo }, { status: 503 });
 }
