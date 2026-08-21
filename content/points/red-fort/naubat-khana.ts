@@ -23,7 +23,7 @@ export const naubatKhana: HeritagePoint = {
       url: "/images/then-now/red-fort-naubat-khana.now.jpg",
       alt: "The same gate head on in 2019, the carving cleaned back to red sandstone, and on either side lawn and trees where the arcades used to run, with a paved path leading to the arch.",
       year: "2019",
-      author: "Jakub Halun",
+      author: "Jakub Hałun",
       licence: "CC BY-SA 4.0",
       sourceUrl:
         "https://commons.wikimedia.org/wiki/File:20191203_Naubat_Khana,_Red_Fort,_Delhi_0453_6340_DxO.jpg",

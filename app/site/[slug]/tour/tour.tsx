@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import NarrationPlayer from "./narration-player";
 import ThenNowCard from "./then-now";
 import TriggerPanel from "./trigger-panel";
+import { useGpsLocation } from "./use-gps-location";
 import { useSimLocation } from "./use-sim-location";
 import { TRIGGER_CONFIG } from "@/lib/location/config";
 import { initialState, prepare, step, type TriggerStatus } from "@/lib/location/engine";
@@ -73,7 +74,14 @@ export default function Tour({
   );
   const prepared = useMemo(() => prepare(routePoints, TRIGGER_CONFIG), [routePoints]);
 
-  const { fix, moveTo, walking, setWalking, speedMs, setSpeedMs } = useSimLocation(start, 0);
+  const sim = useSimLocation(start, 0);
+  const [wantGps, setWantGps] = useState(false);
+  const gps = useGpsLocation(wantGps);
+  // until the phone has given us something, the simulated marker is what is on screen and the
+  // panel says so, rather than the map going blank
+  const live = gps.fix !== null;
+  const fix = live ? gps.fix! : sim.fix;
+  const { moveTo, walking, setWalking, speedMs, setSpeedMs } = sim;
   const engine = useRef(initialState());
   const [statuses, setStatuses] = useState<TriggerStatus[]>([]);
   const [selected, setSelected] = useState<HeritagePoint>(points[0]);
@@ -177,6 +185,7 @@ export default function Tour({
           }}
           onMoveVisitor={moveTo}
           routeLine={[start, ...routePoints.map((p) => p.centroid)]}
+          live={live}
         />
       </div>
 
@@ -187,6 +196,19 @@ export default function Tour({
           </p>
           {started && (
             <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setWantGps(!wantGps)}
+                className={`border px-2 py-1 font-archive text-xs ${
+                  wantGps
+                    ? "border-madder bg-madder text-paper"
+                    : "border-ink-faint/50 text-ink-muted hover:border-madder hover:text-madder"
+                }`}
+              >
+                {wantGps ? "Phone" : "Simulated"}
+              </button>
+              {!wantGps && (
+                <>
               <button
                 type="button"
                 onClick={() => setWalking(!walking)}
@@ -205,6 +227,8 @@ export default function Tour({
                 aria-label="Walking speed"
               />
               <span className="font-archive text-xs text-ink-faint">{speedMs.toFixed(1)} m/s</span>
+                </>
+              )}
             </div>
           )}
         </div>
@@ -243,8 +267,21 @@ export default function Tour({
           <p className="font-deva text-lg text-ink-muted">{selected.nameLocal}</p>
         )}
 
+        {wantGps && (gps.message !== null || (live && !gps.hasCompass)) && (
+          <div className="mt-4 border border-indigo/40 bg-paper-raised p-3">
+            {gps.message !== null && (
+              <p className="text-sm leading-relaxed text-ink-muted">{gps.message}</p>
+            )}
+            {live && !gps.hasCompass && (
+              <p className="text-sm leading-relaxed text-ink-muted">
+                No compass on this device - narration will trigger on proximity and dwell alone.
+              </p>
+            )}
+          </div>
+        )}
+
         <div className="mt-4">
-          <TriggerPanel points={routePoints} statuses={statuses} />
+          <TriggerPanel points={routePoints} statuses={statuses} live={live} fix={fix} />
         </div>
 
         <div className="mt-4">

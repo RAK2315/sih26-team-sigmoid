@@ -15,6 +15,13 @@ const VISITOR_ICON = divIcon({
   html: '<div style="width:16px;height:16px;border-radius:50%;background:#F4EDE0;border:2px solid #1F1B16;cursor:grab"></div>',
 });
 
+const LIVE_ICON = divIcon({
+  className: "",
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+  html: '<div style="width:16px;height:16px;border-radius:50%;background:#9A3412;border:2px solid #F4EDE0;box-shadow:0 0 0 1px #1F1B16"></div>',
+});
+
 export default function TourMapCanvas({
   site,
   points,
@@ -25,6 +32,7 @@ export default function TourMapCanvas({
   onSelect,
   onMoveVisitor,
   routeLine,
+  live,
 }: {
   site: HeritageSite;
   points: HeritagePoint[];
@@ -35,6 +43,7 @@ export default function TourMapCanvas({
   onSelect: (point: HeritagePoint) => void;
   onMoveVisitor: (to: Coord) => void;
   routeLine: Coord[];
+  live: boolean;
 }) {
   const at: Coord = [fix.lng, fix.lat];
   const dwelling = statuses.filter((s) => s.dwellMs > 0).sort((a, b) => b.dwellMs - a.dwellMs)[0];
@@ -114,10 +123,11 @@ export default function TourMapCanvas({
         />
       )}
 
+      {/* a real body cannot be dragged, so the marker only moves by hand in the simulation */}
       <Marker
         position={toLeaflet(at)}
-        draggable
-        icon={VISITOR_ICON}
+        draggable={!live}
+        icon={live ? LIVE_ICON : VISITOR_ICON}
         eventHandlers={{
           drag: (event) => {
             const { lat, lng } = event.target.getLatLng();
@@ -126,7 +136,7 @@ export default function TourMapCanvas({
         }}
       >
         <Tooltip direction="top" offset={[0, -10]}>
-          You
+          {live ? `You, from the phone, give or take ${Math.round(fix.accuracyM)} m` : "You"}
         </Tooltip>
       </Marker>
     </MapContainer>

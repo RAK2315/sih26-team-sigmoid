@@ -2,7 +2,7 @@
 
 import { TRIGGER_CONFIG } from "@/lib/location/config";
 import type { TriggerStatus } from "@/lib/location/engine";
-import type { HeritagePoint } from "@/lib/types";
+import type { Fix, HeritagePoint } from "@/lib/types";
 
 function reason(status: TriggerStatus | undefined): string {
   if (!status || !status.inRing) return "too far away";
@@ -17,21 +17,26 @@ function reason(status: TriggerStatus | undefined): string {
 export default function TriggerPanel({
   points,
   statuses,
+  live,
+  fix,
 }: {
   points: HeritagePoint[];
   statuses: TriggerStatus[];
+  live: boolean;
+  fix: Fix;
 }) {
   const near = points.filter((p) => statuses.find((s) => s.pointId === p.id)?.inRing);
 
   return (
     <div className="border border-ink-faint/40 bg-paper-raised p-4">
       <p className="font-archive text-xs tracking-widest text-ink-faint uppercase">
-        Field simulation
+        {live ? `Live position from this device, ${Math.round(fix.accuracyM)} m accuracy` : "Field simulation"}
       </p>
       {near.length === 0 ? (
         <p className="mt-2 text-sm text-ink-muted">
-          Not inside any Approach Ring. Drag yourself onto the map, or press the arrow keys to turn
-          and step.
+          {live
+            ? "Not inside any Approach Ring. Walk towards a Heritage Point and turn to face it."
+            : "Not inside any Approach Ring. Drag yourself onto the map, or press the arrow keys to turn and step."}
         </p>
       ) : (
         <ul className="mt-2 space-y-1">

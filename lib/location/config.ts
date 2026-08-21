@@ -9,3 +9,6 @@ export const TRIGGER_CONFIG: EngineConfig = {
   rearmBufferM: Number(process.env.NEXT_PUBLIC_REARM_BUFFER_M ?? 10),
   rearmMs: Number(process.env.NEXT_PUBLIC_REARM_MS ?? 3000),
 };
+
+// how far a real fix has to jump before we believe the Visitor moved rather than the satellites
+export const GPS_SETTLE_M = Number(process.env.NEXT_PUBLIC_GPS_SETTLE_M ?? 6);
