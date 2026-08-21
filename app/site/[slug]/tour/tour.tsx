@@ -234,7 +234,7 @@ export default function Tour({
         </div>
 
         <p className="font-archive mt-2 text-xs text-ink-faint">
-          {routePoints.length} Heritage Points &middot; about{" "}
+          {routePoints.length} Heritage {routePoints.length === 1 ? "Point" : "Points"} &middot; about{" "}
           {Math.round(route.totalSec / 60)} minutes including the walking
           {route.droppedPointIds.length > 0 &&
             ` · ${route.droppedPointIds.length} left out to fit the time`}

@@ -22,7 +22,7 @@ export interface ShelfPage {
   placed: number;
 }
 
-type Phase = "idle" | "reading" | "done" | "unavailable";
+type Phase = "idle" | "reading" | "done" | "unavailable" | "offline";
 
 export default function Discover({
   volumeId,
@@ -75,8 +75,8 @@ export default function Discover({
       setResult((await res.json()) as AnalyseResult);
       setPhase("done");
     } catch {
-      // the route already falls back to the cache, so getting here means the network is gone
-      setPhase("unavailable");
+      // the route already falls back to the cache, so getting here means the request never landed
+      setPhase(navigator.onLine ? "unavailable" : "offline");
     }
   }
 
@@ -245,11 +245,29 @@ function Results({
     return <p className="p-4 text-sm text-ink-muted">Reading the page.</p>;
   }
 
+  if (phase === "offline") {
+    return (
+      <p className="p-4 text-sm leading-relaxed text-madder">
+        This device is offline, so the page could not be sent to be read. The scan and its text are
+        already here and stay readable. Reconnect and press Analyse again.
+      </p>
+    );
+  }
+
   if (phase === "unavailable" || !result) {
     return (
       <p className="p-4 text-sm leading-relaxed text-madder">
         No model answered and nothing is stored for this page. Nothing is shown rather than
         guessed. Try another page.
+      </p>
+    );
+  }
+
+  if (result.mentions.length === 0) {
+    return (
+      <p className="p-4 text-sm leading-relaxed text-ink-muted">
+        This page names no structure. Some pages of the volume are index, preface or continuation
+        text, and reading one honestly returns nothing.
       </p>
     );
   }

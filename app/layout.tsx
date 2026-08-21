@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { Cormorant_Garamond, IBM_Plex_Mono, IBM_Plex_Sans, Noto_Serif_Devanagari } from "next/font/google";
 import "./globals.css";
+import OfflineBanner from "./offline-banner";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </Link>
           </nav>
         </header>
+        <OfflineBanner />
         <div className="flex min-h-0 flex-1 flex-col">{children}</div>
       </body>
     </html>
