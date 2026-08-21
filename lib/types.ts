@@ -63,11 +63,20 @@ export interface LivingTradition {
   status: TraditionStatus;
 }
 
+export interface ArchiveImage {
+  url: string;
+  alt: string;
+  year: string;
+  author: string;
+  licence: string;
+  sourceUrl: string;
+}
+
 export interface ThenNow {
-  thenUrl: string;
-  nowUrl: string;
-  thenCredit: string;
-  nowCredit: string;
+  then: ArchiveImage;
+  now: ArchiveImage;
+  // what actually changed between the two frames, in one sentence
+  note: string;
 }
 
 export interface HeritageSite {

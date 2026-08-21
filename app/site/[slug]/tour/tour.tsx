@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import NarrationPlayer from "./narration-player";
+import ThenNowCard from "./then-now";
 import TriggerPanel from "./trigger-panel";
 import { useSimLocation } from "./use-sim-location";
 import { TRIGGER_CONFIG } from "@/lib/location/config";
@@ -255,6 +256,12 @@ export default function Tour({
             </p>
           )}
         </div>
+
+        {selected.thenNow && (
+          <div className="mt-4">
+            <ThenNowCard thenNow={selected.thenNow} name={selected.name} />
+          </div>
+        )}
 
         {selected.livingTradition && (
           <div className="mt-4 border border-ink-faint/40 bg-paper-raised p-4">
