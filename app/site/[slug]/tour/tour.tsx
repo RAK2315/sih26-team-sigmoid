@@ -48,25 +48,32 @@ export default function Tour({
     if (saved) setPlan(JSON.parse(saved) as PlanChoices);
   }, []);
 
-  const persona: Persona = plan?.persona ?? "history";
+  const [persona, setPersona] = useState<Persona>("history");
+  useEffect(() => {
+    if (plan) setPersona(plan.persona);
+  }, [plan]);
   // start south of the first Heritage Point, outside its ring, looking at it
   const start = useMemo<Coord>(() => moveBy(points[0].centroid, 70, 180), [points]);
 
+  // CONTEXT.md: a Persona changes how a Heritage Point is told, never which ones exist. so the
+  // Route is budgeted on the longest telling and switching Persona cannot rearrange the walk.
   const route = useMemo(() => {
     const narrationSecByPoint: Record<string, number> = {};
     for (const point of points) {
-      const clip = narrations.find((n) => n.pointId === point.id && n.persona === persona);
-      narrationSecByPoint[point.id] = clip?.durationSec ?? 45;
+      const longest = narrations
+        .filter((n) => n.pointId === point.id && n.kind === "approach")
+        .reduce((most, n) => Math.max(most, n.durationSec), 0);
+      narrationSecByPoint[point.id] = longest || 45;
     }
     return planRoute({
       points,
       narrationSecByPoint,
       interests: plan?.interests ?? [],
-      budgetSec: (plan?.budgetMinutes ?? 90) * 60,
+      budgetSec: (plan?.budgetMinutes ?? 30) * 60,
       start,
       walkSpeedMs: WALK_SPEED_MS,
     });
-  }, [points, narrations, persona, plan, start]);
+  }, [points, narrations, plan, start]);
 
   const routePoints = useMemo(
     () => route.stops.flatMap((stop) => points.filter((p) => p.id === stop.pointId)),
@@ -258,6 +265,26 @@ export default function Tour({
               }`}
             >
               {point.name}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <span className="font-archive text-[11px] tracking-widest text-ink-faint uppercase">
+            Told for
+          </span>
+          {(["history", "architecture", "kids"] as Persona[]).map((p) => (
+            <button
+              key={p}
+              type="button"
+              onClick={() => setPersona(p)}
+              className={`font-archive border px-2 py-1 text-[11px] ${
+                p === persona
+                  ? "border-madder text-madder"
+                  : "border-ink-faint/40 text-ink-muted hover:bg-paper-sunk"
+              }`}
+            >
+              {p}
             </button>
           ))}
         </div>
