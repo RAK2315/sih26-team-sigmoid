@@ -1,0 +1,312 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;background-image:url('https://www.transparenttextures.com/patterns/paper-fibers.png');background-color:#fff9ee;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+
+/* Animations */
+@media (prefers-reduced-motion: no-preference) {
+    .ink-bleed {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), fill-opacity 0.4s ease;
+    }
+    .ink-bleed:active, .ink-bleed.active {
+        transform: scale(1.05);
+        fill-opacity: 0.8;
+    }
+    
+    .pulse-unmet {
+        animation: pulse-ring 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    @keyframes pulse-ring {
+        0% { transform: scale(0.95); opacity: 0.8; }
+        50% { transform: scale(1.1); opacity: 0.4; }
+        100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .settled-met {
+        transition: all 0.5s ease;
+        transform: scale(1);
+    }
+    
+    .fade-transition {
+        transition: opacity 0.3s ease;
+    }
+    
+    .transcript-highlight {
+        transition: color 0.5s ease, background-color 0.5s ease;
+    }
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"surface-container-low":"#faf3e6","surface-container-high":"#eee7db","primary":"#000000","inverse-surface":"#333028","surface-container-lowest":"#ffffff","on-secondary-container":"#6b1a00","tertiary-fixed-dim":"#adc8f5","on-error":"#ffffff","secondary-fixed":"#ffdbd1","error":"#ba1a1a","on-error-container":"#93000a","secondary":"#a53c19","on-primary-container":"#8a837c","on-tertiary-fixed":"#001c3b","on-secondary":"#ffffff","tertiary-container":"#001c3b","secondary-container":"#fb7b54","surface-container":"#f4ede0","on-primary-fixed-variant":"#4b4640","tertiary-fixed":"#d5e3ff","error-container":"#ffdad6","on-surface":"#1e1b14","surface-dim":"#e0d9cd","tertiary":"#000102","outline-variant":"#cec5bc","secondary-fixed-dim":"#ffb59f","surface-bright":"#fff9ee","surface":"#fff9ee","on-secondary-fixed":"#3a0a00","on-surface-variant":"#4c463f","on-secondary-fixed-variant":"#842503","background":"#fff9ee","inverse-primary":"#cec5bd","outline":"#7d766e","primary-container":"#1f1b16","on-background":"#1e1b14","on-tertiary":"#ffffff","on-tertiary-container":"#6b85af","surface-variant":"#e9e2d5","surface-container-highest":"#e9e2d5","surface-tint":"#635d57","primary-fixed-dim":"#cec5bd","on-primary-fixed":"#1f1b16","inverse-on-surface":"#f7f0e3","on-tertiary-fixed-variant":"#2d486d","primary-fixed":"#eae1d8","on-primary":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin-desktop":"64px","margin-mobile":"16px","rule-thick":"1px","unit":"4px","rule-thin":"0.5px","gutter":"24px"},"fontFamily":{"headline-md":["EB Garamond"],"body-md":["IBM Plex Sans"],"display-lg-mobile":["EB Garamond"],"label-caps":["IBM Plex Mono"],"body-lg":["IBM Plex Sans"],"display-lg":["EB Garamond"],"hindi-body":["Noto Serif Devanagari"],"headline-sm":["EB Garamond"]},"fontSize":{"headline-md":["32px",{"lineHeight":"1.2","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"1.5","fontWeight":"400"}],"display-lg-mobile":["36px",{"lineHeight":"1.1","fontWeight":"400"}],"label-caps":["12px",{"lineHeight":"1.0","letterSpacing":"0.15em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"1.1","letterSpacing":"-0.01em","fontWeight":"400"}],"hindi-body":["18px",{"lineHeight":"1.7","fontWeight":"400"}],"headline-sm":["24px",{"lineHeight":"1.3","fontWeight":"500"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@100..900&amp;family=IBM+Plex+Mono:wght@100..900&amp;family=IBM+Plex+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col relative"><header class="fixed top-0 w-full z-50 bg-background/95 border-b border-outline-variant"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-12"><span class="font-headline-sm text-headline-sm tracking-widest text-primary">THRESHOLD</span><nav class="hidden md:flex items-center gap-8 h-16" data-active-classes="text-primary border-b border-primary"><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface flex items-center h-full transition-colors" data-path="landing" href="#">Landing</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface flex items-center h-full transition-colors" data-path="explore" href="#">Explore</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface flex items-center h-full transition-colors" data-path="plan" href="#">Plan</a><a aria-current="page" class="font-label-caps uppercase flex items-center h-full transition-colors text-primary border-b border-primary" data-path="tour" href="#">Tour</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface flex items-center h-full transition-colors" data-path="discover" href="#">Discover</a></nav></div><div class="flex items-center gap-6"><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors" data-path="authority" href="#">Authority</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-16 w-full px-margin-desktop relative z-10"><div class="flex flex-col w-full h-[calc(100vh-4rem)] lg:flex-row relative bg-surface">
+<!-- Opening Overlay -->
+<div class="absolute inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm transition-opacity duration-500" id="tour-overlay">
+<div class="bg-surface-container border border-outline w-full max-w-md p-8 relative">
+<span class="font-label-caps text-label-caps uppercase text-primary mb-4 block">SURVEY PROTOCOL // 01</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Conditions of Entry</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Access to the site archive requires spatial alignment. Ensure the following parameters are met:</p>
+<ul class="space-y-4 mb-8 font-body-md text-sm text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">radio_button_unchecked</span>
+<span>Enter the marked approach perimeter.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">explore</span>
+<span>Orient towards the primary structure.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">accessibility_new</span>
+<span>Hold position to establish connection.</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps uppercase tracking-widest hover:bg-inverse-surface transition-colors" id="dismiss-overlay">Acknowledge</button>
+</div>
+</div>
+<!-- Map Area (62%) -->
+<div class="w-full lg:w-[62%] h-[512px] lg:h-full relative border-b lg:border-b-0 lg:border-r border-outline-variant bg-surface-dim overflow-hidden">
+<div class="w-full h-full bg-cover bg-center absolute inset-0 opacity-40 grayscale mix-blend-multiply" data-location="Red Fort, Delhi, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFW1d6jGzGHYKAUNNRRY__TxWow0fjCkvCBdHVw7lPtHe9c_g1xPkXpyjgI5Ib1gqPmCArVFAtZ8UiD8vca-rMVPP0u6lWvSQR7UjJoxp1my8Q_zPQF2MWc-FPt_z7V7z717y_qVP6pCT90ffqr-o2T4P-DdCeyvCj-VmQ9NhtsFxIJnmrwaP7C0dvXkf1F28rULC2iOroTkx3wnB9oKwRlpTzG5NiS0WzdRBIvOqyBlzpQ6K_aL32')"></div>
+<!-- SVG Map Overlay -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="xMidYMid slice" viewbox="0 0 1000 1000">
+<!-- Footprints -->
+<polygon class="fill-tertiary-fixed-dim/30 stroke-tertiary stroke-[0.5] ink-bleed cursor-pointer" points="300,200 700,250 750,600 250,550"></polygon>
+<rect class="fill-tertiary-fixed-dim/40 stroke-tertiary stroke-[0.5] ink-bleed cursor-pointer" height="150" width="200" x="400" y="300"></rect>
+<!-- Approach Rings -->
+<circle class="fill-none stroke-outline stroke-[1] stroke-dasharray-[4,8]" cx="500" cy="500" r="300"></circle>
+<circle class="fill-none stroke-secondary/50 stroke-[1] stroke-dasharray-[2,4]" cx="500" cy="500" r="150"></circle>
+<!-- Route -->
+<path class="fill-none stroke-secondary stroke-[2] stroke-dasharray-[4,4]" d="M 100 800 C 300 700, 400 900, 500 700 S 600 500, 500 350"></path>
+<!-- Visitor Marker -->
+<g id="visitor-marker" transform="translate(500, 700)">
+<!-- Facing Cone -->
+<path class="fill-secondary/20" d="M 0 0 L -40 -100 A 100 100 0 0 1 40 -100 Z"></path>
+<!-- Progress Arc -->
+<circle class="fill-none stroke-outline stroke-[1]" cx="0" cy="0" r="24"></circle>
+<circle class="fill-none stroke-secondary stroke-[2] stroke-dasharray-[150] stroke-dashoffset-[150] -rotate-90 transform origin-center transition-all duration-[3000ms] ease-linear" cx="0" cy="0" id="dwell-progress" r="24"></circle>
+<!-- Dot -->
+<circle class="fill-surface stroke-primary stroke-[1.5]" cx="0" cy="0" r="6"></circle>
+</g>
+</svg>
+<!-- Map Controls -->
+<div class="absolute bottom-6 left-6 flex flex-col gap-2">
+<button class="w-10 h-10 bg-surface border border-outline flex items-center justify-center text-primary hover:bg-surface-container transition-colors ink-bleed cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button class="w-10 h-10 bg-surface border border-outline flex items-center justify-center text-primary hover:bg-surface-container transition-colors ink-bleed cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button class="w-10 h-10 bg-surface border border-outline flex items-center justify-center text-primary hover:bg-surface-container transition-colors mt-2 ink-bleed cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+</div>
+<!-- Right Rail (38%) -->
+<div class="w-full lg:w-[38%] h-[512px] lg:h-full bg-surface flex flex-col overflow-hidden">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant shrink-0">
+<button class="flex-1 py-4 font-label-caps text-label-caps uppercase border-b-2 border-primary text-primary bg-surface-container-low fade-transition" onclick="switchTab(this)">Now</button>
+<button class="flex-1 py-4 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors fade-transition" onclick="switchTab(this)">Route</button>
+<button class="flex-1 py-4 font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors fade-transition" onclick="switchTab(this)">Nearby</button>
+</div>
+<div class="flex-1 overflow-y-auto overflow-x-hidden fade-transition" id="tab-content">
+<!-- Status Strip -->
+<div class="flex items-center justify-between p-4 border-b border-outline-variant bg-surface-container-lowest text-xs font-label-caps text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>SIMULATED MODE</span>
+</div>
+<span>ACCURACY: ±3M</span>
+</div>
+<div class="p-8">
+<!-- Trigger Panel -->
+<div class="border border-outline bg-surface-container-low p-4 mb-8">
+<div class="font-label-caps text-label-caps uppercase text-primary mb-4 border-b border-outline-variant pb-2">TELEMETRY STATUS</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-xs text-on-surface-variant">APPROACH RING</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-tertiary-fixed-dim">MET</span>
+<div class="w-4 h-4 border border-tertiary-fixed-dim bg-tertiary-fixed-dim/20 settled-met rounded-sm"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-xs text-on-surface-variant">FACING TARGET</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-secondary">UNMET</span>
+<div class="w-4 h-4 border border-secondary bg-transparent pulse-unmet rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-xs text-on-surface-variant">DWELL TIME</span>
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-secondary">UNMET</span>
+<div class="w-4 h-4 border border-secondary bg-transparent pulse-unmet rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Header -->
+<div class="mb-8">
+<h1 class="font-headline-md text-[40px] leading-[1.1] text-primary mb-4">Diwan-i-Aam</h1>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="border border-outline px-2 py-1 font-label-caps text-[10px] uppercase text-on-surface-variant">ARCHITECTURAL</span>
+<span class="border border-outline px-2 py-1 font-label-caps text-[10px] uppercase text-on-surface-variant">17TH CENTURY</span>
+</div>
+</div>
+<!-- Narration Player -->
+<div class="border border-outline bg-surface mb-8">
+<div class="flex items-center justify-between p-4 border-b border-outline-variant">
+<div class="font-label-caps text-label-caps uppercase text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+                            RECORDING // 04A
+                        </div>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary hover:bg-inverse-surface transition-colors" id="play-btn">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+<div class="p-6 font-body-md text-body-md leading-relaxed text-on-surface-variant bg-surface-container-lowest">
+<span class="transcript-highlight inline" id="transcript-1">The hall of public audience stands as a testament to imperial geometry. </span>
+<span class="transcript-highlight inline" id="transcript-2">Note the scalloped arches, designed not just for structural integrity, but to frame the emperor as a living icon. </span>
+<span class="transcript-highlight inline" id="transcript-3">The red sandstone, quarried from Fatehpur Sikri, retains the warmth of the sun long into the evening.</span>
+</div>
+</div>
+<!-- Living Tradition Card -->
+<div class="border border-outline bg-surface-container-low mb-8 relative">
+<div class="absolute top-0 right-0 w-16 h-16 border-l border-b border-outline flex items-center justify-center">
+<svg class="text-secondary stroke-[1]" fill="none" height="24" stroke="currentColor" viewbox="0 0 24 24" width="24">
+<path d="M12 2L15 8L21 9L16 14L18 20L12 17L6 20L8 14L3 9L9 8L12 2Z"></path>
+</svg>
+</div>
+<div class="p-6 pr-20">
+<div class="font-label-caps text-label-caps uppercase text-secondary mb-3 flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-secondary"></span>
+                            LIVING TRADITION
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">The Jharokha</h3>
+<p class="font-body-md text-sm text-on-surface-variant">The marble canopy where the emperor appeared daily is a direct translation of the Hindu tradition of 'darshan'—auspicious sight.</p>
+</div>
+</div>
+<!-- Then and Now Slider -->
+<div class="border border-outline bg-surface mb-8">
+<div class="p-4 border-b border-outline-variant font-label-caps text-label-caps uppercase text-primary">
+                        COMPARATIVE ANALYSIS // 1857 VS 2024
+                    </div>
+<div class="relative w-full h-48 bg-surface-dim overflow-hidden select-none group" id="comparison-slider">
+<!-- 'Now' Image (Bottom) -->
+<div class="absolute inset-0 bg-cover bg-center grayscale" data-alt="Modern high-resolution photograph of the Diwan-i-Aam in the Red Fort, clear day, sharp shadows, archival framing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDum_4U0PlRcGHt1nPc2-MpSwE9PaWHQowVDnt4l28mwa-3RkrePLT6Ff_QpCNbacb5XwqP5dY7-taBWlx1kA0Kt1f00UooQ4yerBOGC7KpJ0B11exHlSC719iZChCVLQqdh1Z-nO4OopA5HP8aeM6gG_L4txfm8kpMZbB-tB-_T3srvynRPW4npTx1Wqd37PJkoyAZO-Ky14qi-TWQB0XI7lPujwye03ZE1qBWs5bSmyzY8cVm3Qfr')"></div>
+<!-- 'Then' Image (Top) -->
+<div class="absolute inset-0 bg-cover bg-center sepia border-r border-secondary" data-alt="19th century archival photograph of the Diwan-i-Aam, slightly grainy, showing historical wear, sepia tone." id="slider-overlay" style="width: 50%; background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3WrLxo7yI35l5uQZDwsD3rSdjAHzJUrr9GpVtp_wTRJBi4pSeTlHG82Y-Ycnjz_O_rCo_vMdqbNm_s7PUhN4f1_RdBQXKrklThHRBrObaA3FoWxuj4IlBlqnyjufpZqi9In91Pl5P5EP05_eWM4XdYYHc4JRNWsvpwKfbQ5fnXoMvj2HkkkJKj9X9zfM9VJtSq_71suBgYy4JLp2SHs43JHlzLd4-5SciOyOyZ3V-EQj5PH5qp2ia')"></div>
+<!-- Handle -->
+<div class="absolute top-0 bottom-0 w-px bg-secondary left-1/2 -ml-px cursor-ew-resize" id="slider-handle">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-surface border border-secondary flex items-center justify-center rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">code</span>
+</div>
+</div>
+<!-- Labels -->
+<div class="absolute bottom-2 left-2 px-2 py-1 bg-surface/90 border border-outline font-label-caps text-[10px] uppercase">1857 RECORD</div>
+<div class="absolute bottom-2 right-2 px-2 py-1 bg-surface/90 border border-outline font-label-caps text-[10px] uppercase">CURRENT STATE</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Tab Switching
+    function switchTab(clickedTab) {
+        const tabs = clickedTab.parentElement.children;
+        const content = document.getElementById('tab-content');
+        
+        // Fade out
+        content.style.opacity = '0';
+        
+        setTimeout(() => {
+            for(let tab of tabs) {
+                tab.classList.remove('border-b-2', 'border-primary', 'text-primary', 'bg-surface-container-low');
+                tab.classList.add('text-on-surface-variant');
+            }
+            clickedTab.classList.remove('text-on-surface-variant');
+            clickedTab.classList.add('border-b-2', 'border-primary', 'text-primary', 'bg-surface-container-low');
+            
+            // Fade in
+            content.style.opacity = '1';
+        }, 300);
+    }
+
+    // Overlay Dismiss & Animations
+    document.getElementById('dismiss-overlay').addEventListener('click', function() {
+        const overlay = document.getElementById('tour-overlay');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => overlay.remove(), 500);
+        
+        // Simulate Dwell Progress after dismiss
+        setTimeout(() => {
+            const progress = document.getElementById('dwell-progress');
+            if(progress) {
+                progress.style.strokeDashoffset = '0';
+            }
+            
+            // Update UI to show condition met
+            setTimeout(() => {
+                const unmetIndicators = document.querySelectorAll('.pulse-unmet');
+                if(unmetIndicators.length > 0) {
+                     const target = unmetIndicators[0];
+                     target.classList.remove('pulse-unmet', 'border-secondary', 'rounded-full');
+                     target.classList.add('settled-met', 'border-tertiary-fixed-dim', 'bg-tertiary-fixed-dim/20', 'rounded-sm');
+                     target.previousElementSibling.textContent = 'MET';
+                     target.previousElementSibling.classList.replace('text-secondary', 'text-tertiary-fixed-dim');
+                }
+            }, 3000);
+        }, 1000);
+    });
+
+    // Transcript Highlighting Simulation
+    const playBtn = document.getElementById('play-btn');
+    let playing = false;
+    playBtn.addEventListener('click', function() {
+        if(playing) return;
+        playing = true;
+        this.innerHTML = '<span class="material-symbols-outlined text-[18px]">pause</span>';
+        
+        const t1 = document.getElementById('transcript-1');
+        const t2 = document.getElementById('transcript-2');
+        const t3 = document.getElementById('transcript-3');
+        
+        t1.classList.add('text-primary', 'font-medium', 'bg-surface-variant');
+        
+        setTimeout(() => {
+            t1.classList.remove('text-primary', 'font-medium', 'bg-surface-variant');
+            t2.classList.add('text-primary', 'font-medium', 'bg-surface-variant');
+        }, 3000);
+        
+        setTimeout(() => {
+            t2.classList.remove('text-primary', 'font-medium', 'bg-surface-variant');
+            t3.classList.add('text-primary', 'font-medium', 'bg-surface-variant');
+        }, 6000);
+
+        setTimeout(() => {
+            t3.classList.remove('text-primary', 'font-medium', 'bg-surface-variant');
+            this.innerHTML = '<span class="material-symbols-outlined text-[18px]">play_arrow</span>';
+            playing = false;
+        }, 9000);
+    });
+
+    // Image Slider Logic
+    const slider = document.getElementById('comparison-slider');
+    const overlay = document.getElementById('slider-overlay');
+    const handle = document.getElementById('slider-handle');
+    let isDown = false;
+
+    slider.addEventListener('mousedown', (e) => { isDown = true; updateSlider(e); });
+    window.addEventListener('mouseup', () => { isDown = false; });
+    window.addEventListener('mousemove', (e) => { if(isDown) updateSlider(e); });
+
+    slider.addEventListener('touchstart', (e) => { isDown = true; updateSlider(e.touches[0]); });
+    window.addEventListener('touchend', () => { isDown = false; });
+    window.addEventListener('touchmove', (e) => { if(isDown) updateSlider(e.touches[0]); });
+
+    function updateSlider(e) {
+        const rect = slider.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        const percent = (x / rect.width) * 100;
+        overlay.style.width = `${percent}%`;
+        handle.style.left = `${percent}%`;
+    }
+</script></main><footer class="w-full border-t border-outline-variant bg-surface-container py-12 px-margin-desktop mt-24 relative z-10"><div class="flex flex-col md:flex-row justify-between items-start gap-8"><div class="max-w-xs"><div class="font-headline-sm text-headline-sm mb-4">THRESHOLD</div><p class="font-body-md text-on-surface-variant text-sm">A field researcher's guide to the hidden history of the landscape.</p></div><nav class="flex flex-col gap-2"><span class="font-label-caps text-label-caps uppercase text-on-secondary-fixed-variant mb-2">Registry</span><a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-colors" data-path="attributions" href="#">Attributions</a><a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Record</a></nav></div><div class="mt-12 pt-8 border-t border-outline-variant text-center font-label-caps text-label-caps uppercase text-[10px] text-outline">Record Issued 2024 © Heritage Survey Group</div></footer><nav class="md:hidden fixed bottom-0 w-full bg-background border-t border-outline-variant h-14 flex items-center justify-around z-50"><a class="flex flex-col items-center gap-1 text-on-surface-variant" data-path="landing" href="#"><span class="material-symbols-outlined">home</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant" data-path="explore" href="#"><span class="material-symbols-outlined">map</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant" data-path="tour" href="#"><span class="material-symbols-outlined">directions_walk</span></a><a class="flex flex-col items-center gap-1 text-on-surface-variant" data-path="discover" href="#"><span class="material-symbols-outlined">smb_share</span></a></nav></body></html>

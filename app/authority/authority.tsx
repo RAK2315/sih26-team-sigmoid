@@ -6,6 +6,7 @@ import type { ShelfPage } from "@/app/discover/discover";
 import { DISCOVERY_CACHE } from "@/content/discovery-cache";
 import { nextStatuses } from "@/lib/store/transitions";
 import type { CandidateStatus, StoredCandidate } from "@/lib/types";
+import AuthorityHeader from "./authority-header";
 import WalkLog from "./walk-log";
 
 const STATUS_COLOUR: Record<string, string> = {
@@ -87,14 +88,17 @@ export default function Authority({
   }
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
-      <section className="flex min-w-0 flex-1 flex-col overflow-y-auto p-4">
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+      <AuthorityHeader candidates={candidates} />
+
+      <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
+      <section className="flex min-w-0 flex-1 flex-col p-4 lg:px-12">
         <header className="flex flex-wrap items-baseline justify-between gap-2">
           <div>
             <p className="font-archive text-xs tracking-widest text-ink-faint uppercase">
-              The queue
+              Pending assessment
             </p>
-            <h1 className="font-display text-2xl text-ink">Candidates awaiting a Reviewer</h1>
+            <h1 className="font-display text-3xl text-ink">The queue</h1>
           </div>
           <span
             className={`font-archive text-[11px] ${source === "live" ? "text-verdigris" : "text-state-candidate"}`}
@@ -102,11 +106,6 @@ export default function Authority({
             {source === "loading" ? "" : source === "unreachable" ? "offline" : source}
           </span>
         </header>
-
-        <p className="mt-1 max-w-2xl text-sm leading-relaxed text-ink-muted">
-          Nothing automated goes past Candidate. Every move below is a person&apos;s judgement, and
-          each one is written to an append-only trail.
-        </p>
 
         <nav className="mt-4 flex flex-wrap gap-2">
           {(["candidate", "under_review", "verified", "rejected", "matched_existing", "all"] as Filter[]).map(
@@ -207,6 +206,7 @@ export default function Authority({
       </section>
 
       {open && <Evidence candidate={open} pages={pages} volumeTitle={volumeTitle} onClose={() => setOpenId(null)} />}
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import type { AnalyseResult, Candidate, Mention } from "@/lib/types";
+import DiscoverHeader from "./discover-header";
 import EvidencePanel from "./evidence-panel";
 import MentionCard from "./mention-card";
 import PageText from "./page-text";
@@ -83,10 +84,13 @@ export default function Discover({
   const highlight = open?.passageOffset ?? null;
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
-      <Shelf pages={pages} current={page} title={title} onChoose={choose} />
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+      <DiscoverHeader pageCount={pages.length} />
 
-      <section className="flex min-w-0 flex-1 flex-col border-ink-faint/30 lg:flex-row lg:border-x">
+      <div className="flex min-h-[38rem] flex-1 flex-col lg:flex-row">
+        <Shelf pages={pages} current={page} title={title} onChoose={choose} />
+
+        <section className="flex min-w-0 flex-1 flex-col border-ink-faint/30 lg:flex-row lg:border-x">
         <div className="flex min-w-0 flex-1 flex-col overflow-y-auto p-4">
           <header className="flex flex-wrap items-baseline justify-between gap-2">
             <h1 className="font-display text-2xl text-ink">
@@ -150,17 +154,18 @@ export default function Discover({
         </div>
       </section>
 
-      {open && (
-        <EvidencePanel
-          mention={open}
-          candidate={openCandidate}
-          page={page}
-          volumeTitle={title}
-          source={result?.source ?? "cached"}
-          modelId={result?.modelId ?? ""}
-          onClose={() => setOpenId(null)}
-        />
-      )}
+        {open && (
+          <EvidencePanel
+            mention={open}
+            candidate={openCandidate}
+            page={page}
+            volumeTitle={title}
+            source={result?.source ?? "cached"}
+            modelId={result?.modelId ?? ""}
+            onClose={() => setOpenId(null)}
+          />
+        )}
+      </div>
     </div>
   );
 }
