@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import type { Coord, HeritageSite } from "@/lib/types";
+import type { Coord, HeritageSite, StoredCandidate } from "@/lib/types";
 import HiddenHeritage from "./hidden-heritage";
 
 // leaflet reads window while it loads, so it must never render on the server
@@ -17,13 +17,43 @@ const FROM: Coord = [77.215, 28.605];
 
 export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
   const [selected, setSelected] = useState<HeritageSite | null>(null);
+  const [candidates, setCandidates] = useState<StoredCandidate[] | null>(null);
+  const [source, setSource] = useState<"live" | "stale" | "unreachable">("live");
+
+  useEffect(() => {
+    let alive = true;
+    fetch("/api/candidates", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((body: { source: "live" | "stale"; candidates: StoredCandidate[] }) => {
+        if (!alive) return;
+        setSource(body.source);
+        setCandidates(body.candidates);
+      })
+      // the sites half needs nothing from the network, so the map still has pins to draw
+      .catch(() => {
+        if (!alive) return;
+        setSource("unreachable");
+        setCandidates([]);
+      });
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  // ADR-0003: only a Reviewer can put a Candidate on the Visitor's map
+  const verified = (candidates ?? []).filter((c) => c.status === "verified");
 
   return (
     // the panels stack under the map on a phone and float beside it from lg, because absolute
     // children give a parent no height and this map used to collapse to nothing
     <div className="relative flex min-h-0 flex-1 flex-col lg:block lg:min-h-[30rem]">
       <div className="h-[52vh] min-h-[17rem] shrink-0 lg:absolute lg:inset-0 lg:h-auto lg:min-h-0">
-        <ExploreMapCanvas sites={sites} selectedId={selected?.id ?? null} onSelect={setSelected} />
+        <ExploreMapCanvas
+          sites={sites}
+          verified={verified}
+          selectedId={selected?.id ?? null}
+          onSelect={setSelected}
+        />
       </div>
 
       <aside className="stagger z-[500] flex flex-col gap-3 p-4 lg:pointer-events-none lg:absolute lg:inset-y-0 lg:right-0 lg:w-96 lg:overflow-y-auto">
@@ -37,6 +67,16 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
                 Filled pins hold several Heritage Points you can walk between. Hollow pins are a
                 single structure. Pick one on the map, or from here.
               </p>
+              {verified.length > 0 && (
+                <p className="font-archive mt-2 flex items-start gap-2 text-[11px] leading-relaxed text-state-verified">
+                  <span aria-hidden className="mt-1 h-2 w-2 shrink-0 rounded-full bg-state-verified" />
+                  <span>
+                    {verified.length === 1 ? "One green pin is" : `${verified.length} green pins are`}{" "}
+                    a Candidate read out of the 1919 survey and confirmed by a Reviewer, drawn
+                    inside the circle it was found in. Nobody had it on a map before.
+                  </span>
+                </p>
+              )}
               <ul className="mt-3 max-h-56 overflow-y-auto">
                 {sites.map((site) => (
                   <li key={site.id} className="border-t border-ink-faint/20">
@@ -92,7 +132,13 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
         </div>
 
         <div className="pointer-events-auto">
-          <HiddenHeritage sites={sites} from={FROM} onPick={() => undefined} />
+          <HiddenHeritage
+            sites={sites}
+            candidates={candidates}
+            source={source}
+            from={FROM}
+            onPick={() => undefined}
+          />
         </div>
       </aside>
     </div>

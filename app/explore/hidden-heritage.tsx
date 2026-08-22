@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { metresBetween } from "@/lib/location/geometry";
 import type { Coord, HeritageSite, StoredCandidate } from "@/lib/types";
 
@@ -78,35 +77,18 @@ export function buildHidden(
 
 export default function HiddenHeritage({
   sites,
+  candidates,
+  source,
   from,
   onPick,
 }: {
   sites: HeritageSite[];
+  candidates: StoredCandidate[] | null;
+  source: "live" | "stale" | "unreachable";
   from: Coord;
   onPick: (centroid: Coord) => void;
 }) {
-  const [entries, setEntries] = useState<HiddenEntry[] | null>(null);
-  const [source, setSource] = useState<"live" | "stale" | "unreachable">("live");
-
-  useEffect(() => {
-    let live = true;
-    fetch("/api/candidates", { cache: "no-store" })
-      .then((r) => r.json())
-      .then((body: { source: "live" | "stale"; candidates: StoredCandidate[] }) => {
-        if (!live) return;
-        setSource(body.source);
-        setEntries(buildHidden(sites, body.candidates, from));
-      })
-      // the sites half needs nothing from the network, so it still has something to show
-      .catch(() => {
-        if (!live) return;
-        setSource("unreachable");
-        setEntries(buildHidden(sites, [], from));
-      });
-    return () => {
-      live = false;
-    };
-  }, [sites, from]);
+  const entries = candidates === null ? null : buildHidden(sites, candidates, from);
 
   return (
     <div className="border border-ink-faint/40 bg-paper-raised p-4 shadow-paper">
