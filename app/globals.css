@@ -120,12 +120,36 @@ body::after {
 .stagger > *:nth-child(6) { animation-delay: .34s; }
 .stagger > *:nth-child(n+7) { animation-delay: .40s; }
 
+/* the passage lights up where it sits on the page, left to right, the way a reader's eye moves */
+.passage-sweep {
+  background-image: linear-gradient(rgba(154, 52, 18, 0.22), rgba(154, 52, 18, 0.22));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  color: var(--color-ink);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  animation: highlight-sweep .85s cubic-bezier(.2,.7,.3,1) both;
+}
+
+/* the line from the passage to the pin is the route to the evidence, so it draws itself */
+.thread-draw { animation: fade .25s ease both; }
+
+@keyframes breathe {
+  0%, 100% { opacity: .45; }
+  50%      { opacity: 1; }
+}
+
+.breathe { animation: breathe 1.4s ease-in-out infinite; }
+
 /* leaflet paints its own panes, so a fade on the container is the only safe way in */
 .leaflet-container { animation: fade .8s ease both; }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise, .fade-in, .ink-in, .rule-draw, .stagger > *, .leaflet-container {
+  .rise, .fade-in, .ink-in, .rule-draw, .stagger > *, .leaflet-container, .breathe, .thread-draw {
     animation: none !important;
   }
   .leaflet-container { opacity: 1; }
+  .breathe { opacity: 1; }
+  /* the highlight says which passage was read, so it stays, it just does not sweep */
+  .passage-sweep { animation: none !important; background-size: 100% 100%; }
 }

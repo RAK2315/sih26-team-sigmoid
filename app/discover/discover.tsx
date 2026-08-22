@@ -1,10 +1,12 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import type { AnalyseResult, Candidate, Mention } from "@/lib/types";
+import { useReducedMotion, useWideScreen } from "../use-reduced-motion";
 import DiscoverHeader from "./discover-header";
 import EvidencePanel from "./evidence-panel";
+import EvidenceThread, { type PinPoint } from "./evidence-thread";
 import MentionCard from "./mention-card";
 import PageText from "./page-text";
 
@@ -25,6 +27,28 @@ export interface ShelfPage {
 
 type Phase = "idle" | "reading" | "done" | "unavailable" | "offline";
 
+// one press of Analyse plays as one move: the passage lights, a line reaches the map,
+// the circle lands wide and closes, then the cards arrive
+const STAGES = ["none", "passage", "thread", "contract", "cards"] as const;
+type Stage = (typeof STAGES)[number];
+
+function reached(stage: Stage, mark: Stage): boolean {
+  return STAGES.indexOf(stage) >= STAGES.indexOf(mark);
+}
+
+// the sequence opens on the tightest Representation Gap, because that is the finding
+function pickLead(result: AnalyseResult): string | null {
+  const quoted = result.candidates.filter(
+    (c) => result.mentions.find((m) => m.id === c.mentionId)?.passageOffset !== null,
+  );
+  const gapFirst = (c: Candidate) => (c.evidence.baselineVerdict === "representation_gap" ? 0 : 1);
+  const best = [...quoted].sort(
+    (a, b) => gapFirst(a) - gapFirst(b) || a.uncertaintyRadiusM - b.uncertaintyRadiusM,
+  )[0];
+  if (best) return best.mentionId;
+  return result.mentions.find((m) => m.passageOffset !== null)?.id ?? null;
+}
+
 export default function Discover({
   volumeId,
   title,
@@ -42,27 +66,76 @@ export default function Discover({
   const [phase, setPhase] = useState<Phase>("idle");
   const [result, setResult] = useState<AnalyseResult | null>(null);
   const [openId, setOpenId] = useState<string | null>(null);
+  const [leadId, setLeadId] = useState<string | null>(null);
+  const [stage, setStage] = useState<Stage>("none");
+  const [pin, setPin] = useState<PinPoint | null>(null);
+
+  const reduced = useReducedMotion();
+  const wide = useWideScreen();
+  const markRef = useRef<HTMLElement>(null);
+  const textBoxRef = useRef<HTMLPreElement>(null);
+  const mapBoxRef = useRef<HTMLDivElement>(null);
+  const timers = useRef<number[]>([]);
+
+  const stopSequence = useCallback(() => {
+    for (const timer of timers.current) clearTimeout(timer);
+    timers.current = [];
+  }, []);
+
+  useEffect(() => stopSequence, [stopSequence]);
+
+  const candidates = useMemo(() => result?.candidates ?? [], [result]);
 
   const candidateByMention = useMemo(() => {
     const map = new Map<string, Candidate>();
-    for (const c of result?.candidates ?? []) map.set(c.mentionId, c);
+    for (const c of candidates) map.set(c.mentionId, c);
     return map;
-  }, [result]);
+  }, [candidates]);
 
+  const focusId = openId ?? leadId;
+  const focus = result?.mentions.find((m) => m.id === focusId) ?? null;
   const open = result?.mentions.find((m) => m.id === openId) ?? null;
   const openCandidate = openId ? (candidateByMention.get(openId) ?? null) : null;
 
   function choose(next: ShelfPage) {
+    stopSequence();
     setPage(next);
     setPhase("idle");
     setResult(null);
     setOpenId(null);
+    setLeadId(null);
+    setStage("none");
+  }
+
+  // opening a card by hand ends the sequence rather than fighting it
+  function openMention(id: string) {
+    stopSequence();
+    setStage("cards");
+    setOpenId(id);
+  }
+
+  function play(next: AnalyseResult) {
+    const lead = pickLead(next);
+    setLeadId(lead);
+    if (lead === null || reduced) {
+      setStage("cards");
+      return;
+    }
+    setStage("passage");
+    const step = (ms: number, to: Stage) =>
+      timers.current.push(window.setTimeout(() => setStage(to), ms));
+    step(750, "thread");
+    step(1500, "contract");
+    step(2400, "cards");
   }
 
   async function analyse() {
+    stopSequence();
     setPhase("reading");
     setResult(null);
     setOpenId(null);
+    setLeadId(null);
+    setStage("none");
     try {
       const res = await fetch("/api/discover/analyse", {
         method: "POST",
@@ -73,15 +146,20 @@ export default function Discover({
         setPhase("unavailable");
         return;
       }
-      setResult((await res.json()) as AnalyseResult);
+      const next = (await res.json()) as AnalyseResult;
+      setResult(next);
       setPhase("done");
+      play(next);
     } catch {
       // the route already falls back to the cache, so getting here means the request never landed
       setPhase(navigator.onLine ? "unavailable" : "offline");
     }
   }
 
-  const highlight = open?.passageOffset ?? null;
+  const highlight = reached(stage, "passage") ? (focus?.passageOffset ?? null) : null;
+  const revealed = reached(stage, "contract");
+  const showThread =
+    wide && reached(stage, "thread") && highlight !== null && focusId !== null && pin !== null;
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
@@ -105,7 +183,7 @@ export default function Discover({
               type="button"
               onClick={analyse}
               disabled={phase === "reading"}
-              className="border border-madder px-4 py-2 text-sm text-madder hover:bg-madder hover:text-paper disabled:opacity-40"
+              className="border border-madder px-4 py-2 text-sm text-madder transition-colors duration-200 hover:bg-madder hover:text-paper disabled:opacity-40"
             >
               {phase === "reading" ? "Reading the page" : "Analyse"}
             </button>
@@ -118,7 +196,7 @@ export default function Discover({
             className="mt-3 w-full border border-ink-faint/30 bg-paper-raised"
           />
 
-          <PageText text={page.text} highlight={highlight} />
+          <PageText text={page.text} highlight={highlight} markRef={markRef} boxRef={textBoxRef} />
 
           <p className="font-archive mt-4 text-[11px] leading-relaxed text-ink-faint">
             {title}
@@ -131,23 +209,25 @@ export default function Discover({
         </div>
 
         <div className="flex min-h-[22rem] w-full flex-col lg:w-[26rem] lg:border-l lg:border-ink-faint/30">
-          <div className="relative h-80 shrink-0 lg:h-96">
+          <div ref={mapBoxRef} className="relative h-80 shrink-0 lg:h-96">
             <DiscoverMapCanvas
-              candidates={result?.candidates ?? []}
-              openId={openId}
-              onOpen={(mentionId) => setOpenId(mentionId)}
+              candidates={candidates}
+              openId={focusId}
+              onOpen={openMention}
+              reveal={revealed}
+              onPinPoint={setPin}
             />
             <div className="pointer-events-none absolute top-3 left-3 z-[500] border border-ink-faint/40 bg-paper-raised/95 px-3 py-2">
               <p className="font-archive text-[10px] tracking-[0.2em] text-ink-faint uppercase">
                 Where the page puts them
               </p>
               <p className="font-archive mt-0.5 text-[11px] text-ink">
-                {result === null
+                {result === null || !revealed
                   ? "nothing read yet"
                   : `${result.candidates.length} placed, each inside its own circle`}
               </p>
             </div>
-            {phase === "done" && result?.candidates.length === 0 && (
+            {phase === "done" && revealed && result?.candidates.length === 0 && (
               <p className="pointer-events-none absolute inset-x-0 bottom-0 z-[500] bg-paper-raised/95 p-3 text-center text-xs leading-relaxed text-ink-muted">
                 Nothing on this page could be placed. The map is empty because the survey measures
                 these from landmarks the Anchor table does not hold, not because it failed.
@@ -156,10 +236,11 @@ export default function Discover({
           </div>
           <Results
             phase={phase}
+            ready={reached(stage, "cards")}
             result={result}
             candidateByMention={candidateByMention}
             openId={openId}
-            onOpen={setOpenId}
+            onOpen={openMention}
           />
         </div>
       </section>
@@ -176,6 +257,16 @@ export default function Discover({
           />
         )}
       </div>
+
+      {showThread && (
+        <EvidenceThread
+          markRef={markRef}
+          boxRef={textBoxRef}
+          mapBoxRef={mapBoxRef}
+          pin={pin}
+          drawKey={focusId}
+        />
+      )}
     </div>
   );
 }
@@ -207,7 +298,7 @@ function Shelf({
             <button
               type="button"
               onClick={() => onChoose(p)}
-              className={`flex w-full min-w-[6rem] items-baseline justify-between gap-2 px-2 py-1 text-left text-sm ${
+              className={`flex w-full min-w-[6rem] items-baseline justify-between gap-2 px-2 py-1 text-left text-sm transition-colors duration-150 ${
                 p.pageNo === current.pageNo
                   ? "bg-paper-sunk text-ink"
                   : "text-ink-muted hover:bg-paper-sunk/60"
@@ -236,12 +327,14 @@ function Shelf({
 
 function Results({
   phase,
+  ready,
   result,
   candidateByMention,
   openId,
   onOpen,
 }: {
   phase: Phase;
+  ready: boolean;
   result: AnalyseResult | null;
   candidateByMention: Map<string, Candidate>;
   openId: string | null;
@@ -257,7 +350,7 @@ function Results({
   }
 
   if (phase === "reading") {
-    return <p className="p-4 text-sm text-ink-muted">Reading the page.</p>;
+    return <p className="breathe p-4 text-sm text-ink-muted">Reading the page.</p>;
   }
 
   if (phase === "offline") {
@@ -276,6 +369,10 @@ function Results({
         guessed. Try another page.
       </p>
     );
+  }
+
+  if (!ready) {
+    return <p className="breathe p-4 text-sm text-ink-muted">Placing what the page names.</p>;
   }
 
   if (result.mentions.length === 0) {
