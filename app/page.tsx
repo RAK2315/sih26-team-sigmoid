@@ -86,11 +86,6 @@ export default function Home() {
               monuments in Delhi. About 174 are centrally protected today. The rest did not all
               disappear. They stopped being findable.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              Stepwells, caravanserais, dargahs, garden tombs, whole quarters of a city. The
-              trouble was never that India lacks heritage. It is that most of it sits in
-              gazetteers, survey volumes and district records that nobody has put on a map.
-            </p>
           </div>
           <div>
             <p className="font-archive border-t border-ink-faint/40 pt-3 text-xs tracking-[0.2em] text-ink-faint uppercase">
@@ -101,11 +96,6 @@ export default function Home() {
               today&apos;s map with a radius that says how sure we are, has a person confirm each
               one, and then lets the place tell its own story to whoever is standing in front of
               it.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              And a place is not only its stone. Every Heritage Point here carries a Living
-              Tradition too: the craft, the trade or the ritual it was built around, and whether
-              anyone still practises it.
             </p>
           </div>
         </div>
@@ -196,10 +186,11 @@ export default function Home() {
             ))}
           </ol>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-muted">
-            The three screens above are three points on one line. Discover surfaces a Candidate,
-            Authority is where a person confirms or refuses it, and Explore is where a confirmed
-            one finally reaches somebody standing in the street. A Candidate is the furthest any
-            automated step is permitted to go.
+            Three screens, one line. A Candidate is the furthest any automated step may go.{" "}
+            <Link href="/vision" className="text-indigo underline hover:text-madder">
+              Why this matters
+            </Link>
+            .
           </p>
         </div>
       </section>

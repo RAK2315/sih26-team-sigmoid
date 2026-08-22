@@ -44,10 +44,16 @@ export default function AuthorityHeader({ candidates }: { candidates: StoredCand
       <h1 className="ink-in font-display mt-2 text-4xl leading-tight text-ink lg:text-5xl">
         Nothing automated gets past <span className="text-madder italic">Candidate</span>
       </h1>
+      <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink">
+        This page is the check on the machine. When Discover reads an old survey page and thinks
+        it has found a building, it is not allowed to say so. It files a Candidate here, and a
+        human being decides.
+      </p>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">
         The pipeline can go as far as proposing a Candidate with a radius and a source. It can
         never say a monument exists. Only a person here moves one further, and every move is
-        written to a record that cannot be edited.
+        written to a record that cannot be edited. Without this page the project would just be a
+        model making claims about real monuments, which is the thing it exists not to be.
       </p>
 
       <div className="mt-6 overflow-x-auto">

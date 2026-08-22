@@ -46,6 +46,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             VIRASAT
           </Link>
           <nav className="flex gap-6 text-sm text-ink-muted">
+            <Link href="/vision" className="hover:text-madder">
+              Why
+            </Link>
             <Link href="/explore" className="hover:text-madder">
               Explore
             </Link>
