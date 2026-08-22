@@ -28,7 +28,20 @@ const PERSONAS: { persona: Persona; label: string; note: string }[] = [
   { persona: "kids", label: "Kids", note: "Shorter, and told as a story" },
 ];
 
-export default function PlanForm({ site }: { site: HeritageSite }) {
+interface TraditionCount {
+  total: number;
+  living: number;
+  dormant: number;
+  lost: number;
+}
+
+export default function PlanForm({
+  site,
+  traditions,
+}: {
+  site: HeritageSite;
+  traditions: TraditionCount;
+}) {
   const router = useRouter();
   const [interests, setInterests] = useState<InterestTag[]>([]);
   const [budgetMinutes, setBudgetMinutes] = useState(30);
@@ -48,6 +61,19 @@ export default function PlanForm({ site }: { site: HeritageSite }) {
       <p className="font-archive text-xs tracking-widest text-ink-faint uppercase">Plan your walk</p>
       <h1 className="font-display mt-1 text-5xl leading-none text-ink">{site.name}</h1>
       {site.nameLocal && <p className="font-deva text-xl text-ink-muted">{site.nameLocal}</p>}
+
+      <section className="mt-6 border-l-2 border-verdigris bg-verdigris/[0.05] p-4">
+        <p className="font-archive text-xs tracking-[0.2em] text-verdigris uppercase">
+          Living traditions here
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+          Every one of the {traditions.total} Heritage Points on this Walk holds a practice as
+          well as a building: a ritual, a craft or a trade that the place was built around.{" "}
+          <span className="text-state-verified">{traditions.living} are still done today</span>,{" "}
+          {traditions.dormant} survive as crafts but not in this use, and {traditions.lost} have
+          stopped entirely. Each one is told where you are standing.
+        </p>
+      </section>
 
       <section className="mt-8">
         <h2 className="font-display text-2xl text-ink">What interests you?</h2>

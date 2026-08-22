@@ -10,7 +10,20 @@ export function generateStaticParams() {
 export default async function PlanPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const site = siteById(slug);
-  if (!site || pointsBySite(slug).length === 0) notFound();
+  const sitePoints = pointsBySite(slug);
+  if (!site || sitePoints.length === 0) notFound();
 
-  return <PlanForm site={site} />;
+  const traditions = sitePoints.flatMap((p) => (p.livingTradition ? [p.livingTradition] : []));
+
+  return (
+    <PlanForm
+      site={site}
+      traditions={{
+        total: traditions.length,
+        living: traditions.filter((t) => t.status === "living").length,
+        dormant: traditions.filter((t) => t.status === "dormant").length,
+        lost: traditions.filter((t) => t.status === "lost").length,
+      }}
+    />
+  );
 }

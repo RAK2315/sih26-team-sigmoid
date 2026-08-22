@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import LivingTraditionCard from "./living-tradition-card";
 import NarrationPlayer from "./narration-player";
 import ThenNowCard from "./then-now";
 import TriggerPanel from "./trigger-panel";
@@ -321,21 +322,15 @@ export default function Tour({
           )}
         </div>
 
-        {selected.thenNow && (
+        {selected.livingTradition && (
           <div className="mt-4">
-            <ThenNowCard thenNow={selected.thenNow} name={selected.name} />
+            <LivingTraditionCard tradition={selected.livingTradition} />
           </div>
         )}
 
-        {selected.livingTradition && (
-          <div className="mt-4 border border-ink-faint/40 bg-paper-raised p-4">
-            <p className="font-archive text-xs tracking-widest text-ink-faint uppercase">
-              Living tradition &middot; {selected.livingTradition.status}
-            </p>
-            <h2 className="font-display mt-1 text-2xl text-ink">{selected.livingTradition.name}</h2>
-            <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-              {selected.livingTradition.text}
-            </p>
+        {selected.thenNow && (
+          <div className="mt-4">
+            <ThenNowCard thenNow={selected.thenNow} name={selected.name} />
           </div>
         )}
 
