@@ -146,6 +146,77 @@ const page: AnalyseResult = {
           }
         ]
       }
+    },
+    {
+      "id": "c_77_4",
+      "mentionId": "m_77_4",
+      "centroid": [
+        77.240564,
+        28.63394442084281
+      ],
+      "uncertaintyRadiusM": 574.4740556618831,
+      "status": "candidate",
+      "matchedBaselineFeature": null,
+      "confidence": {
+        "total": 0.5517857142857143,
+        "parts": {
+          "clueSpecificity": 0.5,
+          "anchorPrecision": 0.7142857142857143,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.35,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "delhi-gate-shahjahanabad",
+        "anchorName": "Delhi gate of Shahjahanabad",
+        "anchorSource": "osm:w973086054",
+        "anchorCentroid": [
+          77.240564,
+          28.641181
+        ],
+        "bearingDeg": 180,
+        "distanceM": 804.672,
+        "radiusParts": {
+          "anchorPrecisionM": 40,
+          "bearingSpreadM": 333.30605566188314,
+          "distanceVaguenessM": 201.168,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "inconclusive",
+        "baselineChecked": [
+          {
+            "id": "w464253914",
+            "name": "Khooni Darwaza",
+            "distanceM": 232.1493770814548,
+            "insideRadius": true
+          },
+          {
+            "id": "w1256902982",
+            "name": "unnamed ruins (w1256902982)",
+            "distanceM": 284.856303255171,
+            "insideRadius": true
+          },
+          {
+            "id": "w97230893",
+            "name": "Kotla Firoz Shah Ruins",
+            "distanceM": 396.1620839137041,
+            "insideRadius": true
+          },
+          {
+            "id": "w97230898",
+            "name": "Kotla Firoz Shah Palace",
+            "distanceM": 418.29503410117496,
+            "insideRadius": true
+          },
+          {
+            "id": "w97230899",
+            "name": "Baoli",
+            "distanceM": 461.6915195523175,
+            "insideRadius": true
+          }
+        ]
+      }
     }
   ]
 };

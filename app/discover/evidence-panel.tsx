@@ -28,6 +28,7 @@ export default function EvidencePanel({
   source,
   modelId,
   onClose,
+  variant = "column",
 }: {
   mention: Mention;
   candidate: Candidate | null;
@@ -36,17 +37,27 @@ export default function EvidencePanel({
   source: "live" | "cached";
   modelId: string;
   onClose: () => void;
+  // column sits beside the thing it explains; overlay covers a page that has no column for it
+  variant?: "column" | "overlay";
 }) {
+  const overlay = variant === "overlay";
+
   return (
     <>
-      {/* on a phone the panel covers the page, so there has to be somewhere to press to leave */}
+      {/* the panel covers the page, so there has to be somewhere to press to leave */}
       <button
         type="button"
         aria-label="Close the Evidence"
         onClick={onClose}
-        className="fixed inset-0 z-[890] bg-ink/20 lg:hidden"
+        className={`fixed inset-0 z-[890] bg-ink/25 ${overlay ? "" : "lg:hidden"}`}
       />
-      <aside className="sheet fixed inset-x-0 top-14 bottom-0 z-[900] flex flex-col overflow-y-auto border-t border-ink-faint/40 bg-paper-raised shadow-paper lg:static lg:inset-auto lg:z-auto lg:w-96 lg:shrink-0 lg:border-t-0 lg:border-l">
+      <aside
+        className={
+          overlay
+            ? "sheet fixed inset-x-0 top-14 bottom-0 z-[900] flex flex-col overflow-y-auto border-t border-ink-faint/40 bg-paper-raised shadow-paper lg:top-0 lg:right-0 lg:bottom-0 lg:left-auto lg:w-[28rem] lg:border-t-0 lg:border-l"
+            : "sheet fixed inset-x-0 top-14 bottom-0 z-[900] flex flex-col overflow-y-auto border-t border-ink-faint/40 bg-paper-raised shadow-paper lg:static lg:inset-auto lg:z-auto lg:w-96 lg:shrink-0 lg:border-t-0 lg:border-l"
+        }
+      >
       <header className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-ink-faint/30 bg-paper-raised p-4">
         <div>
           <p className="font-archive text-xs tracking-widest text-ink-faint uppercase">Evidence</p>

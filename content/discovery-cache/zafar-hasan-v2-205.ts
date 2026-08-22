@@ -58,7 +58,83 @@ const page: AnalyseResult = {
       }
     }
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "id": "c_205_2",
+      "mentionId": "m_205_2",
+      "centroid": [
+        77.22124769662479,
+        28.582263992765952
+      ],
+      "uncertaintyRadiusM": 477.3875322150937,
+      "status": "candidate",
+      "matchedBaselineFeature": {
+        "id": "n10823999060",
+        "name": "Lodhi Art District",
+        "distanceM": 200.39666778180438
+      },
+      "confidence": {
+        "total": 0.5985166681796301,
+        "parts": {
+          "clueSpecificity": 0.95,
+          "anchorPrecision": 0.2,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.7901111211975339,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "aliganj",
+        "anchorName": "Aliganj",
+        "anchorSource": "approximate",
+        "anchorCentroid": [
+          77.219843,
+          28.582264
+        ],
+        "bearingDeg": 90,
+        "distanceM": 137.16,
+        "radiusParts": {
+          "anchorPrecisionM": 400,
+          "bearingSpreadM": 56.813532215093716,
+          "distanceVaguenessM": 20.573999999999998,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "matched_existing",
+        "baselineChecked": [
+          {
+            "id": "n10823999060",
+            "name": "Lodhi Art District",
+            "distanceM": 200.39666778180438,
+            "insideRadius": true
+          },
+          {
+            "id": "w132085689",
+            "name": "Tomb of Najaf Khan",
+            "distanceM": 765.8544116825681,
+            "insideRadius": false
+          },
+          {
+            "id": "n12788053432",
+            "name": "unnamed no (n12788053432)",
+            "distanceM": 924.1139475959492,
+            "insideRadius": false
+          },
+          {
+            "id": "n2978963213",
+            "name": "unnamed archaeological_site (n2978963213)",
+            "distanceM": 942.0825995441176,
+            "insideRadius": false
+          },
+          {
+            "id": "n2978963211",
+            "name": "Mubarak Shah Sayyid's Tomb",
+            "distanceM": 980.0320403374157,
+            "insideRadius": false
+          }
+        ]
+      }
+    }
+  ]
 };
 
 export default page;

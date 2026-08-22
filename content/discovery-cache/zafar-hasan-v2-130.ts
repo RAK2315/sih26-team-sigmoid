@@ -146,6 +146,156 @@ const page: AnalyseResult = {
           }
         ]
       }
+    },
+    {
+      "id": "c_130_3",
+      "mentionId": "m_130_3",
+      "centroid": [
+        77.24732299999998,
+        28.595356314059593
+      ],
+      "uncertaintyRadiusM": 229.2975579871687,
+      "status": "candidate",
+      "matchedBaselineFeature": {
+        "id": "n14031269506",
+        "name": "unnamed monument (n14031269506)",
+        "distanceM": 109.09228499884969
+      },
+      "confidence": {
+        "total": 0.6922121877267258,
+        "parts": {
+          "clueSpecificity": 0.95,
+          "anchorPrecision": 0.5263157894736842,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.7621163392308032,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "bu-halima-garden",
+        "anchorName": "Bu Halima's Garden",
+        "anchorSource": "osm:n10252834769",
+        "anchorCentroid": [
+          77.247323,
+          28.593136
+        ],
+        "bearingDeg": 0,
+        "distanceM": 246.888,
+        "radiusParts": {
+          "anchorPrecisionM": 90,
+          "bearingSpreadM": 102.2643579871687,
+          "distanceVaguenessM": 37.0332,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "matched_existing",
+        "baselineChecked": [
+          {
+            "id": "n14031269506",
+            "name": "unnamed monument (n14031269506)",
+            "distanceM": 109.09228499884969,
+            "insideRadius": true
+          },
+          {
+            "id": "w348302998",
+            "name": "Sundarwala Mahal",
+            "distanceM": 110.11931069198896,
+            "insideRadius": true
+          },
+          {
+            "id": "w348302815",
+            "name": "Mirza Muzaffar Hussain’s Tomb",
+            "distanceM": 164.94951244446005,
+            "insideRadius": true
+          },
+          {
+            "id": "w403809792",
+            "name": "Bu Halima's Tomb",
+            "distanceM": 191.0396535281231,
+            "insideRadius": true
+          },
+          {
+            "id": "w370543749",
+            "name": "Sunder Burj",
+            "distanceM": 209.52765911991457,
+            "insideRadius": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "c_130_4",
+      "mentionId": "m_130_4",
+      "centroid": [
+        77.24732299999998,
+        28.595356314059593
+      ],
+      "uncertaintyRadiusM": 229.2975579871687,
+      "status": "candidate",
+      "matchedBaselineFeature": {
+        "id": "n14031269506",
+        "name": "unnamed monument (n14031269506)",
+        "distanceM": 109.09228499884969
+      },
+      "confidence": {
+        "total": 0.6922121877267258,
+        "parts": {
+          "clueSpecificity": 0.95,
+          "anchorPrecision": 0.5263157894736842,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.7621163392308032,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "bu-halima-garden",
+        "anchorName": "Bu Halima's Garden",
+        "anchorSource": "osm:n10252834769",
+        "anchorCentroid": [
+          77.247323,
+          28.593136
+        ],
+        "bearingDeg": 0,
+        "distanceM": 246.888,
+        "radiusParts": {
+          "anchorPrecisionM": 90,
+          "bearingSpreadM": 102.2643579871687,
+          "distanceVaguenessM": 37.0332,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "matched_existing",
+        "baselineChecked": [
+          {
+            "id": "n14031269506",
+            "name": "unnamed monument (n14031269506)",
+            "distanceM": 109.09228499884969,
+            "insideRadius": true
+          },
+          {
+            "id": "w348302998",
+            "name": "Sundarwala Mahal",
+            "distanceM": 110.11931069198896,
+            "insideRadius": true
+          },
+          {
+            "id": "w348302815",
+            "name": "Mirza Muzaffar Hussain’s Tomb",
+            "distanceM": 164.94951244446005,
+            "insideRadius": true
+          },
+          {
+            "id": "w403809792",
+            "name": "Bu Halima's Tomb",
+            "distanceM": 191.0396535281231,
+            "insideRadius": true
+          },
+          {
+            "id": "w370543749",
+            "name": "Sunder Burj",
+            "distanceM": 209.52765911991457,
+            "insideRadius": true
+          }
+        ]
+      }
     }
   ]
 };

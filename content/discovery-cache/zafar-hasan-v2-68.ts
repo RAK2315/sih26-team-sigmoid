@@ -72,7 +72,79 @@ const page: AnalyseResult = {
       }
     }
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "id": "c_68_2",
+      "mentionId": "m_68_2",
+      "centroid": [
+        77.23690570146383,
+        28.60516704961927
+      ],
+      "uncertaintyRadiusM": 246.36675257358323,
+      "status": "candidate",
+      "matchedBaselineFeature": null,
+      "confidence": {
+        "total": 0.6867857142857142,
+        "parts": {
+          "clueSpecificity": 0.95,
+          "anchorPrecision": 0.7142857142857143,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.35,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "khair-ul-manazil",
+        "anchorName": "Khair-ul-Manazil",
+        "anchorSource": "osm:n7043400785",
+        "anchorCentroid": [
+          77.239555,
+          28.607493
+        ],
+        "bearingDeg": 225,
+        "distanceM": 365.76,
+        "radiusParts": {
+          "anchorPrecisionM": 40,
+          "bearingSpreadM": 151.50275257358322,
+          "distanceVaguenessM": 54.864,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "representation_gap",
+        "baselineChecked": [
+          {
+            "id": "n7043400785",
+            "name": "Khair-U’l-Manazil Masjid",
+            "distanceM": 365.81906196513546,
+            "insideRadius": false
+          },
+          {
+            "id": "n11816164804",
+            "name": "unnamed aircraft (n11816164804)",
+            "distanceM": 366.3396863008503,
+            "insideRadius": false
+          },
+          {
+            "id": "w973075865",
+            "name": "unnamed citywalls (w973075865)",
+            "distanceM": 441.5860111330963,
+            "insideRadius": false
+          },
+          {
+            "id": "w973075861",
+            "name": "Sher Shah Suri Gate",
+            "distanceM": 443.31509250255664,
+            "insideRadius": false
+          },
+          {
+            "id": "n11816141464",
+            "name": "unnamed aircraft (n11816141464)",
+            "distanceM": 460.37921105290496,
+            "insideRadius": false
+          }
+        ]
+      }
+    }
+  ]
 };
 
 export default page;

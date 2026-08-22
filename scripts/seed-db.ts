@@ -99,13 +99,26 @@ async function main() {
   }
 
   const client = createClient(url, key);
-  const { error } = await client.from("candidates").upsert(all, { onConflict: "id" });
+
+  // the cache calls every Candidate a candidate, so writing status blindly would undo a
+  // Reviewer's decision. a row that already exists keeps the status the database has.
+  const existing = await client.from("candidates").select("id,status");
+  if (existing.error) {
+    console.error("could not read the existing queue:", existing.error.message);
+    process.exitCode = 1;
+    return;
+  }
+  const reviewed = new Map((existing.data ?? []).map((r) => [r.id as string, r.status as string]));
+  const kept = all.map((row) => ({ ...row, status: reviewed.get(row.id) ?? row.status }));
+  const moved = kept.filter((row) => row.status !== "candidate").length;
+
+  const { error } = await client.from("candidates").upsert(kept, { onConflict: "id" });
   if (error) {
     console.error("upsert failed:", error.message);
     process.exitCode = 1;
     return;
   }
-  console.log(`supabase: ${all.length} Candidates upserted`);
+  console.log(`supabase: ${kept.length} Candidates upserted, ${moved} left where a Reviewer put them`);
 }
 
 main();

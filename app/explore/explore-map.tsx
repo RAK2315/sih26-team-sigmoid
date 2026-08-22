@@ -263,7 +263,11 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
       </div>
 
       {openCandidate && (
-        <CachedEvidence candidate={openCandidate} onClose={() => setOpenCandidate(null)} />
+        <CachedEvidence
+          candidate={openCandidate}
+          onClose={() => setOpenCandidate(null)}
+          variant="overlay"
+        />
       )}
     </div>
   );

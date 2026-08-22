@@ -75,7 +75,308 @@ const page: AnalyseResult = {
       }
     }
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "id": "c_35_1",
+      "mentionId": "m_35_1",
+      "centroid": [
+        77.216375,
+        28.627592
+      ],
+      "uncertaintyRadiusM": 175,
+      "status": "candidate",
+      "matchedBaselineFeature": {
+        "id": "w223456559",
+        "name": "Jantar Mantar",
+        "distanceM": 58.893444707402395
+      },
+      "confidence": {
+        "total": 0.5897599522682561,
+        "parts": {
+          "clueSpecificity": 0.3,
+          "anchorPrecision": 0.8,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.8317330151217075,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "misra-yantra",
+        "anchorName": "Misra Yantra",
+        "anchorSource": "osm:w1137558570",
+        "anchorCentroid": [
+          77.216375,
+          28.627592
+        ],
+        "bearingDeg": 225,
+        "distanceM": null,
+        "radiusParts": {
+          "anchorPrecisionM": 25,
+          "bearingSpreadM": 0,
+          "distanceVaguenessM": 150,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "matched_existing",
+        "baselineChecked": [
+          {
+            "id": "w1137558570",
+            "name": "Misra Yantra",
+            "distanceM": 0.031320799185814485,
+            "insideRadius": false
+          },
+          {
+            "id": "w223456559",
+            "name": "Jantar Mantar",
+            "distanceM": 58.893444707402395,
+            "insideRadius": true
+          },
+          {
+            "id": "w223456540",
+            "name": "Samrat Yantra",
+            "distanceM": 66.34479675642032,
+            "insideRadius": true
+          },
+          {
+            "id": "w1137558567",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 92.39786051071718,
+            "insideRadius": true
+          },
+          {
+            "id": "w1137558568",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 97.1443147968194,
+            "insideRadius": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "c_35_2",
+      "mentionId": "m_35_2",
+      "centroid": [
+        77.216375,
+        28.627592
+      ],
+      "uncertaintyRadiusM": 175,
+      "status": "candidate",
+      "matchedBaselineFeature": {
+        "id": "w223456559",
+        "name": "Jantar Mantar",
+        "distanceM": 58.893444707402395
+      },
+      "confidence": {
+        "total": 0.5897599522682561,
+        "parts": {
+          "clueSpecificity": 0.3,
+          "anchorPrecision": 0.8,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.8317330151217075,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "misra-yantra",
+        "anchorName": "Misra Yantra",
+        "anchorSource": "osm:w1137558570",
+        "anchorCentroid": [
+          77.216375,
+          28.627592
+        ],
+        "bearingDeg": 270,
+        "distanceM": null,
+        "radiusParts": {
+          "anchorPrecisionM": 25,
+          "bearingSpreadM": 0,
+          "distanceVaguenessM": 150,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "matched_existing",
+        "baselineChecked": [
+          {
+            "id": "w1137558570",
+            "name": "Misra Yantra",
+            "distanceM": 0.031320799185814485,
+            "insideRadius": false
+          },
+          {
+            "id": "w223456559",
+            "name": "Jantar Mantar",
+            "distanceM": 58.893444707402395,
+            "insideRadius": true
+          },
+          {
+            "id": "w223456540",
+            "name": "Samrat Yantra",
+            "distanceM": 66.34479675642032,
+            "insideRadius": true
+          },
+          {
+            "id": "w1137558567",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 92.39786051071718,
+            "insideRadius": true
+          },
+          {
+            "id": "w1137558568",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 97.1443147968194,
+            "insideRadius": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "c_35_3",
+      "mentionId": "m_35_3",
+      "centroid": [
+        77.216604,
+        28.62703
+      ],
+      "uncertaintyRadiusM": 180,
+      "status": "candidate",
+      "matchedBaselineFeature": {
+        "id": "w223456559",
+        "name": "Jantar Mantar",
+        "distanceM": 7.741439172777406
+      },
+      "confidence": {
+        "total": 0.602543631113907,
+        "parts": {
+          "clueSpecificity": 0.3,
+          "anchorPrecision": 0.7692307692307693,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.9784960022978406,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "samrat-yantra",
+        "anchorName": "Samrat Yantra",
+        "anchorSource": "osm:w223456540",
+        "anchorCentroid": [
+          77.216604,
+          28.62703
+        ],
+        "bearingDeg": 270,
+        "distanceM": null,
+        "radiusParts": {
+          "anchorPrecisionM": 30,
+          "bearingSpreadM": 0,
+          "distanceVaguenessM": 150,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "matched_existing",
+        "baselineChecked": [
+          {
+            "id": "w223456540",
+            "name": "Samrat Yantra",
+            "distanceM": 0.040593544352240156,
+            "insideRadius": false
+          },
+          {
+            "id": "w223456559",
+            "name": "Jantar Mantar",
+            "distanceM": 7.741439172777406,
+            "insideRadius": true
+          },
+          {
+            "id": "w1137558567",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 29.71101605505336,
+            "insideRadius": true
+          },
+          {
+            "id": "w1137558568",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 30.776218034285584,
+            "insideRadius": true
+          },
+          {
+            "id": "w500413797",
+            "name": "Ram Yantra",
+            "distanceM": 53.172832186119194,
+            "insideRadius": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "c_35_4",
+      "mentionId": "m_35_4",
+      "centroid": [
+        77.216526,
+        28.626772
+      ],
+      "uncertaintyRadiusM": 175,
+      "status": "candidate",
+      "matchedBaselineFeature": {
+        "id": "w1137558568",
+        "name": "Jai Prakash Yantra",
+        "distanceM": 18.13604901039411
+      },
+      "confidence": {
+        "total": 0.6072274075669739,
+        "parts": {
+          "clueSpecificity": 0.3,
+          "anchorPrecision": 0.8,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.9481827171131597,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "jai-prakash-yantra",
+        "anchorName": "Jai Prakash Yantra",
+        "anchorSource": "osm:w1137558567",
+        "anchorCentroid": [
+          77.216526,
+          28.626772
+        ],
+        "bearingDeg": 135,
+        "distanceM": null,
+        "radiusParts": {
+          "anchorPrecisionM": 25,
+          "bearingSpreadM": 0,
+          "distanceVaguenessM": 150,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "matched_existing",
+        "baselineChecked": [
+          {
+            "id": "w1137558567",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 0.03475706557350085,
+            "insideRadius": false
+          },
+          {
+            "id": "w1137558568",
+            "name": "Jai Prakash Yantra",
+            "distanceM": 18.13604901039411,
+            "insideRadius": true
+          },
+          {
+            "id": "w500413797",
+            "name": "Ram Yantra",
+            "distanceM": 24.34904705618719,
+            "insideRadius": true
+          },
+          {
+            "id": "w223456540",
+            "name": "Samrat Yantra",
+            "distanceM": 29.682033062203875,
+            "insideRadius": true
+          },
+          {
+            "id": "w223456559",
+            "name": "Jantar Mantar",
+            "distanceM": 37.03711117374717,
+            "insideRadius": true
+          }
+        ]
+      }
+    }
+  ]
 };
 
 export default page;

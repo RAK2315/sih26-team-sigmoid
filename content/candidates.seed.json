@@ -34,6 +34,36 @@
   }
  },
  {
+  "id": "c_133_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 133,
+  "name": "Unknown",
+  "structureType": "tomb",
+  "period": "Mughal period",
+  "passage": "Some 140 yards to the east of Mirza Muzaffar’s tomb (No. 151).",
+  "anchorId": "mirza-muzaffar-tomb",
+  "anchorName": "Mirza Muzaffar's tomb",
+  "bearing": "E",
+  "distanceValue": 140,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.25026121824034,
+   28.595739993694814
+  ],
+  "uncertaintyRadiusM": 102,
+  "status": "candidate",
+  "confidence": 0.7033,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.7692307692307693,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "representation_gap",
+  "matchedFeature": null
+ },
+ {
   "id": "c_264_1",
   "volumeId": "zafar-hasan-v2",
   "pageNo": 264,
@@ -68,6 +98,74 @@
   }
  },
  {
+  "id": "c_130_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 130,
+  "name": "Tomb locally known as Sundarwala Burj",
+  "structureType": "tomb",
+  "period": "Mughal",
+  "passage": "Some 270 yards from the N. E. corner of Buhalima’s Garden (No. 178), towards the north.",
+  "anchorId": "bu-halima-garden",
+  "anchorName": "Bu Halima's Garden",
+  "bearing": "N",
+  "distanceValue": 270,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24732299999998,
+   28.595356314059593
+  ],
+  "uncertaintyRadiusM": 229,
+  "status": "candidate",
+  "confidence": 0.6922,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.5263157894736842,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.7621163392308032,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "n14031269506",
+   "name": "unnamed monument (n14031269506)",
+   "distanceM": 109
+  }
+ },
+ {
+  "id": "c_130_4",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 130,
+  "name": "Tomb locally known as Sundarwala Mahal",
+  "structureType": "tomb",
+  "period": null,
+  "passage": "Some 270 yards from the N. E. comer of Buhalima’s Garden towards the north, and some 110 yards to the east of No. 148.",
+  "anchorId": "bu-halima-garden",
+  "anchorName": "Bu Halima's Garden",
+  "bearing": "N",
+  "distanceValue": 270,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.24732299999998,
+   28.595356314059593
+  ],
+  "uncertaintyRadiusM": 229,
+  "status": "candidate",
+  "confidence": 0.6922,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.5263157894736842,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.7621163392308032,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "n14031269506",
+   "name": "unnamed monument (n14031269506)",
+   "distanceM": 109
+  }
+ },
+ {
   "id": "c_61_3",
   "volumeId": "zafar-hasan-v2",
   "pageNo": 61,
@@ -75,6 +173,36 @@
   "structureType": "tomb",
   "period": "Mughal",
   "passage": "Some 400 yards to the S. W. of Khairul Manazil (No. 83).",
+  "anchorId": "khair-ul-manazil",
+  "anchorName": "Khair-ul-Manazil",
+  "bearing": "SW",
+  "distanceValue": 400,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.23690570146383,
+   28.60516704961927
+  ],
+  "uncertaintyRadiusM": 246,
+  "status": "candidate",
+  "confidence": 0.6868,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.7142857142857143,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "representation_gap",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_68_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 68,
+  "name": "Grave of Hazrat Bibi Fatima Sam",
+  "structureType": "tomb",
+  "period": null,
+  "passage": "Some 400 yards to the S.-W. of Khair-ul-Manazil No. 83.",
   "anchorId": "khair-ul-manazil",
   "anchorName": "Khair-ul-Manazil",
   "bearing": "SW",
@@ -298,6 +426,176 @@
   }
  },
  {
+  "id": "c_35_4",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 35,
+  "name": "tree",
+  "structureType": "other",
+  "period": null,
+  "passage": "south-east of the eastern Jai Prakas",
+  "anchorId": "jai-prakash-yantra",
+  "anchorName": "Jai Prakash Yantra",
+  "bearing": "SE",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.216526,
+   28.626772
+  ],
+  "uncertaintyRadiusM": 175,
+  "status": "candidate",
+  "confidence": 0.6072,
+  "confidenceParts": {
+   "clueSpecificity": 0.3,
+   "anchorPrecision": 0.8,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.9481827171131597,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w1137558568",
+   "name": "Jai Prakash Yantra",
+   "distanceM": 18
+  }
+ },
+ {
+  "id": "c_35_3",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 35,
+  "name": "small building (a chowkidar’s house)",
+  "structureType": "other",
+  "period": null,
+  "passage": "To the \\vest of the Samrat Yantra",
+  "anchorId": "samrat-yantra",
+  "anchorName": "Samrat Yantra",
+  "bearing": "W",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.216604,
+   28.62703
+  ],
+  "uncertaintyRadiusM": 180,
+  "status": "candidate",
+  "confidence": 0.6025,
+  "confidenceParts": {
+   "clueSpecificity": 0.3,
+   "anchorPrecision": 0.7692307692307693,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.9784960022978406,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w223456559",
+   "name": "Jantar Mantar",
+   "distanceM": 8
+  }
+ },
+ {
+  "id": "c_205_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 205,
+  "name": "Ruins of some buildings situated in a garden.",
+  "structureType": "garden",
+  "period": "Mughal",
+  "passage": "150 yards east of Aliganj.",
+  "anchorId": "aliganj",
+  "anchorName": "Aliganj",
+  "bearing": "E",
+  "distanceValue": 150,
+  "distanceUnit": "yards",
+  "centroid": [
+   77.22124769662479,
+   28.582263992765952
+  ],
+  "uncertaintyRadiusM": 477,
+  "status": "candidate",
+  "confidence": 0.5985,
+  "confidenceParts": {
+   "clueSpecificity": 0.95,
+   "anchorPrecision": 0.2,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.7901111211975339,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "n10823999060",
+   "name": "Lodhi Art District",
+   "distanceM": 200
+  }
+ },
+ {
+  "id": "c_35_1",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 35,
+  "name": "two pillars",
+  "structureType": "other",
+  "period": null,
+  "passage": "To the south-west of the Misra Yantra",
+  "anchorId": "misra-yantra",
+  "anchorName": "Misra Yantra",
+  "bearing": "SW",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.216375,
+   28.627592
+  ],
+  "uncertaintyRadiusM": 175,
+  "status": "candidate",
+  "confidence": 0.5898,
+  "confidenceParts": {
+   "clueSpecificity": 0.3,
+   "anchorPrecision": 0.8,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.8317330151217075,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w223456559",
+   "name": "Jantar Mantar",
+   "distanceM": 59
+  }
+ },
+ {
+  "id": "c_35_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 35,
+  "name": "wall",
+  "structureType": "other",
+  "period": null,
+  "passage": "to the west of the Misra Yantra",
+  "anchorId": "misra-yantra",
+  "anchorName": "Misra Yantra",
+  "bearing": "W",
+  "distanceValue": null,
+  "distanceUnit": null,
+  "centroid": [
+   77.216375,
+   28.627592
+  ],
+  "uncertaintyRadiusM": 175,
+  "status": "candidate",
+  "confidence": 0.5898,
+  "confidenceParts": {
+   "clueSpecificity": 0.3,
+   "anchorPrecision": 0.8,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.8317330151217075,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "matched_existing",
+  "matchedFeature": {
+   "id": "w223456559",
+   "name": "Jantar Mantar",
+   "distanceM": 59
+  }
+ },
+ {
   "id": "c_198_2",
   "volumeId": "zafar-hasan-v2",
   "pageNo": 198,
@@ -409,6 +707,66 @@
    28.627448090688972
   ],
   "uncertaintyRadiusM": 3648,
+  "status": "candidate",
+  "confidence": 0.5518,
+  "confidenceParts": {
+   "clueSpecificity": 0.5,
+   "anchorPrecision": 0.7142857142857143,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_45_2",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 45,
+  "name": "Unknown",
+  "structureType": "mosque",
+  "period": null,
+  "passage": "About ^ mile to the south of Agar Sains baoli No. 38 and i mile to the east of No. 35.",
+  "anchorId": "agrasen-ki-baoli",
+  "anchorName": "Agrasen ki Baoli",
+  "bearing": "S",
+  "distanceValue": 0.5,
+  "distanceUnit": "miles",
+  "centroid": [
+   77.225012,
+   28.618856420842807
+  ],
+  "uncertaintyRadiusM": 574,
+  "status": "candidate",
+  "confidence": 0.5518,
+  "confidenceParts": {
+   "clueSpecificity": 0.5,
+   "anchorPrecision": 0.7142857142857143,
+   "sourceReliability": 0.9,
+   "modernEvidence": 0.35,
+   "crossSourceAgreement": 0
+  },
+  "baselineVerdict": "inconclusive",
+  "matchedFeature": null
+ },
+ {
+  "id": "c_77_4",
+  "volumeId": "zafar-hasan-v2",
+  "pageNo": 77,
+  "name": "Sarai of Nawab Shaikh Farid Khan, known as Murtaza Khan",
+  "structureType": "caravanserai",
+  "period": null,
+  "passage": "About half a mile to the south of the Delhi gate of Shahjahanabad, occupying the centre of the enclosure of the District jail.",
+  "anchorId": "delhi-gate-shahjahanabad",
+  "anchorName": "Delhi gate of Shahjahanabad",
+  "bearing": "S",
+  "distanceValue": 0.5,
+  "distanceUnit": "miles",
+  "centroid": [
+   77.240564,
+   28.63394442084281
+  ],
+  "uncertaintyRadiusM": 574,
   "status": "candidate",
   "confidence": 0.5518,
   "confidenceParts": {

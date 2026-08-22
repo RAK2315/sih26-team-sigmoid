@@ -10,9 +10,11 @@ import EvidencePanel from "./evidence-panel";
 export default function CachedEvidence({
   candidate,
   onClose,
+  variant = "column",
 }: {
   candidate: StoredCandidate;
   onClose: () => void;
+  variant?: "column" | "overlay";
 }) {
   const cached = DISCOVERY_CACHE[`${candidate.volumeId}-${candidate.pageNo}`];
   const full = cached?.candidates.find((c) => c.id === candidate.id) ?? null;
@@ -21,7 +23,13 @@ export default function CachedEvidence({
 
   if (!full || !mention || !raw) {
     return (
-      <aside className="sheet fixed inset-x-0 top-14 bottom-0 z-[900] overflow-y-auto border-t border-ink-faint/40 bg-paper-raised p-4 lg:static lg:inset-auto lg:z-auto lg:w-96 lg:shrink-0 lg:border-t-0 lg:border-l">
+      <aside
+        className={`sheet fixed inset-x-0 top-14 bottom-0 z-[900] overflow-y-auto border-t border-ink-faint/40 bg-paper-raised p-4 lg:border-t-0 lg:border-l ${
+          variant === "overlay"
+            ? "lg:top-0 lg:right-0 lg:bottom-0 lg:left-auto lg:w-[28rem]"
+            : "lg:static lg:inset-auto lg:z-auto lg:w-96 lg:shrink-0"
+        }`}
+      >
         <p className="text-sm text-ink-muted">
           The Evidence for this Candidate is not in the committed cache, so it cannot be shown. It
           is not summarised or guessed at.
@@ -52,6 +60,7 @@ export default function CachedEvidence({
       source="cached"
       modelId={cached.modelId}
       onClose={onClose}
+      variant={variant}
     />
   );
 }

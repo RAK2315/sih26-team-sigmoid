@@ -75,7 +75,79 @@ const page: AnalyseResult = {
       }
     }
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "id": "c_133_1",
+      "mentionId": "m_133_1",
+      "centroid": [
+        77.25026121824034,
+        28.595739993694814
+      ],
+      "uncertaintyRadiusM": 102.22836340075413,
+      "status": "candidate",
+      "matchedBaselineFeature": null,
+      "confidence": {
+        "total": 0.7032692307692308,
+        "parts": {
+          "clueSpecificity": 0.95,
+          "anchorPrecision": 0.7692307692307693,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.35,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "mirza-muzaffar-tomb",
+        "anchorName": "Mirza Muzaffar's tomb",
+        "anchorSource": "osm:w348302815",
+        "anchorCentroid": [
+          77.24895,
+          28.59574
+        ],
+        "bearingDeg": 90,
+        "distanceM": 128.016,
+        "radiusParts": {
+          "anchorPrecisionM": 30,
+          "bearingSpreadM": 53.02596340075413,
+          "distanceVaguenessM": 19.202399999999997,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "representation_gap",
+        "baselineChecked": [
+          {
+            "id": "w403809790",
+            "name": "North Pavilion",
+            "distanceM": 112.1716689281428,
+            "insideRadius": false
+          },
+          {
+            "id": "w348302815",
+            "name": "Mirza Muzaffar Hussain’s Tomb",
+            "distanceM": 127.65565948533254,
+            "insideRadius": false
+          },
+          {
+            "id": "w432131635",
+            "name": "unnamed tomb (w432131635)",
+            "distanceM": 181.12523305241524,
+            "insideRadius": false
+          },
+          {
+            "id": "w432131641",
+            "name": "unnamed tomb (w432131641)",
+            "distanceM": 181.9895001183579,
+            "insideRadius": false
+          },
+          {
+            "id": "w432131639",
+            "name": "unnamed tomb (w432131639)",
+            "distanceM": 182.84516891253304,
+            "insideRadius": false
+          }
+        ]
+      }
+    }
+  ]
 };
 
 export default page;

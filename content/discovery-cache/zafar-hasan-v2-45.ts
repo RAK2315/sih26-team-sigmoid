@@ -77,6 +77,77 @@ const page: AnalyseResult = {
   ],
   "candidates": [
     {
+      "id": "c_45_2",
+      "mentionId": "m_45_2",
+      "centroid": [
+        77.225012,
+        28.618856420842807
+      ],
+      "uncertaintyRadiusM": 574.4740556618831,
+      "status": "candidate",
+      "matchedBaselineFeature": null,
+      "confidence": {
+        "total": 0.5517857142857143,
+        "parts": {
+          "clueSpecificity": 0.5,
+          "anchorPrecision": 0.7142857142857143,
+          "sourceReliability": 0.9,
+          "modernEvidence": 0.35,
+          "crossSourceAgreement": 0
+        }
+      },
+      "evidence": {
+        "anchorId": "agrasen-ki-baoli",
+        "anchorName": "Agrasen ki Baoli",
+        "anchorSource": "osm:w500411689",
+        "anchorCentroid": [
+          77.225012,
+          28.626093
+        ],
+        "bearingDeg": 180,
+        "distanceM": 804.672,
+        "radiusParts": {
+          "anchorPrecisionM": 40,
+          "bearingSpreadM": 333.30605566188314,
+          "distanceVaguenessM": 201.168,
+          "floorTopUpM": 0
+        },
+        "baselineVerdict": "inconclusive",
+        "baselineChecked": [
+          {
+            "id": "n14079933348",
+            "name": "unnamed cannon (n14079933348)",
+            "distanceM": 127.26051643748424,
+            "insideRadius": true
+          },
+          {
+            "id": "n7975753230",
+            "name": "unnamed locomotive (n7975753230)",
+            "distanceM": 650.951728817744,
+            "insideRadius": false
+          },
+          {
+            "id": "n9443637634",
+            "name": "Param Yodha Sthal",
+            "distanceM": 741.4656989620663,
+            "insideRadius": false
+          },
+          {
+            "id": "w361709652",
+            "name": "India Gate",
+            "distanceM": 790.6680713117704,
+            "insideRadius": false
+          },
+          {
+            "id": "w500411689",
+            "name": "Agrasen ki Baoli",
+            "distanceM": 804.6386424236447,
+            "insideRadius": false
+          }
+        ]
+      }
+    },
+    {
       "id": "c_45_4",
       "mentionId": "m_45_4",
       "centroid": [
