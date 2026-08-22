@@ -1,32 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const REDUCED = "(prefers-reduced-motion: reduce)";
+const WIDE = "(min-width: 1024px)";
+
+function watcher(query: string) {
+  return (onChange: () => void) => {
+    const media = window.matchMedia(query);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  };
+}
+
+const watchReduced = watcher(REDUCED);
+const watchWide = watcher(WIDE);
 
 // two animations here carry information, so the reduced path has to show the end state, not nothing
 export function useReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(query.matches);
-    const listen = () => setReduced(query.matches);
-    query.addEventListener("change", listen);
-    return () => query.removeEventListener("change", listen);
-  }, []);
-
-  return reduced;
+  return useSyncExternalStore(
+    watchReduced,
+    () => window.matchMedia(REDUCED).matches,
+    () => false,
+  );
 }
 
 export function useWideScreen(): boolean {
-  const [wide, setWide] = useState(false);
-
-  useEffect(() => {
-    const query = window.matchMedia("(min-width: 1024px)");
-    setWide(query.matches);
-    const listen = () => setWide(query.matches);
-    query.addEventListener("change", listen);
-    return () => query.removeEventListener("change", listen);
-  }, []);
-
-  return wide;
+  return useSyncExternalStore(
+    watchWide,
+    () => window.matchMedia(WIDE).matches,
+    () => false,
+  );
 }
