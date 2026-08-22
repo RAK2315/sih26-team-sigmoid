@@ -1,4 +1,4 @@
-import { bearing, booleanPointInPolygon, buffer, destination, distance, polygon as polygonFeature } from "@turf/turf";
+import { bearing, booleanIntersects, booleanPointInPolygon, buffer, destination, distance, polygon as polygonFeature } from "@turf/turf";
 import type { Coord } from "@/lib/types";
 
 // leaflet wants lat,lng and everything else here is lng,lat. this is the only place that flips
@@ -19,6 +19,11 @@ export function approachRing(zone: GeoJSON.Polygon, meters: number): GeoJSON.Pol
 
 export function isInside(at: Coord, polygon: GeoJSON.Polygon): boolean {
   return booleanPointInPolygon(at, polygon);
+}
+
+// the Facing cone is drawn on the map, so the same wedge is what decides whether it reaches
+export function overlaps(a: GeoJSON.Polygon, b: GeoJSON.Polygon): boolean {
+  return booleanIntersects(a, b);
 }
 
 export function bearingTo(from: Coord, to: Coord): number {

@@ -134,7 +134,7 @@ export default function TourMapCanvas({
       ? null
       : sector(
           at,
-          30,
+          TRIGGER_CONFIG.sightRangeM,
           fix.headingDeg - TRIGGER_CONFIG.facingToleranceDeg,
           fix.headingDeg + TRIGGER_CONFIG.facingToleranceDeg,
         );

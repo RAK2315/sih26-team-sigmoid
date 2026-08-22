@@ -5,7 +5,7 @@ import type { Coord, Fix } from "../lib/types";
 
 const CONFIG = {
   dwellMs: 3000, facingToleranceDeg: 60, approachBufferM: 25,
-  dwellDriftM: 1.5, rearmBufferM: 10, rearmMs: 3000,
+  dwellDriftM: 1.5, rearmBufferM: 10, rearmMs: 3000, sightRangeM: 40,
 };
 const prepared = prepare([diwanIAam], CONFIG);
 

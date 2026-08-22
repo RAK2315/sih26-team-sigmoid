@@ -145,7 +145,7 @@ export default function Tour({
     setStatuses(result.statuses);
 
     // a Narration runs until the Visitor walks out of that Heritage Point's ring
-    if (speaking && !result.statuses.find((s) => s.pointId === speaking.pointId)?.inRing) {
+    if (speaking && !result.statuses.find((s) => s.pointId === speaking.pointId)?.withinReach) {
       audio.current?.pause();
       setSpeaking(null);
     }

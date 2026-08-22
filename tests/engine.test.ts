@@ -14,6 +14,7 @@ const CONFIG: EngineConfig = {
   dwellDriftM: 1.5,
   rearmBufferM: 10,
   rearmMs: 3000,
+  sightRangeM: 40,
 };
 
 function heritagePoint(id: string, zone: GeoJSON.Polygon, centroid: Coord): HeritagePoint {
@@ -163,5 +164,73 @@ describe("Threshold Crossing", () => {
     ]);
 
     expect(result.crossings.filter((c) => c.kind === "inside")).toHaveLength(0);
+  });
+});
+
+// 70 m due south of the hall, which is well outside a 25 m Approach Ring but close enough that
+// a 40 m sight line thrown from here lands on it
+const IN_SIGHT_OF_DIWAN_I_AAM: Coord = destination(diwanIAamCentroid, 70, 180, {
+  units: "meters",
+}).geometry.coordinates as Coord;
+
+const FAR_FROM_DIWAN_I_AAM: Coord = destination(diwanIAamCentroid, 200, 180, {
+  units: "meters",
+}).geometry.coordinates as Coord;
+
+describe("the sight line", () => {
+  test("fires from outside the Approach Ring when the Visitor is looking at it", () => {
+    const result = walk(initialState(), [
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, 0, 0),
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, 0, 1500),
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, 0, 3000),
+    ]);
+
+    expect(result.statuses[0].inRing).toBe(false);
+    expect(result.statuses[0].inSight).toBe(true);
+    expect(result.crossings.map((c) => c.kind)).toEqual(["approach"]);
+  });
+
+  test("stays quiet from the same spot when the Visitor has their back to it", () => {
+    const result = walk(initialState(), [
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, 180, 0),
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, 180, 1500),
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, 180, 3000),
+    ]);
+
+    expect(result.statuses[0].inSight).toBe(false);
+    expect(result.crossings).toHaveLength(0);
+  });
+
+  test("stays quiet past the sight range even facing straight at it", () => {
+    const result = walk(initialState(), [
+      fix(FAR_FROM_DIWAN_I_AAM, 0, 0),
+      fix(FAR_FROM_DIWAN_I_AAM, 0, 1500),
+      fix(FAR_FROM_DIWAN_I_AAM, 0, 3000),
+    ]);
+
+    expect(result.statuses[0].inSight).toBe(false);
+    expect(result.crossings).toHaveLength(0);
+  });
+
+  test("does nothing without a compass, because a sight line needs a direction", () => {
+    const result = walk(initialState(), [
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, null, 0),
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, null, 1500),
+      fix(IN_SIGHT_OF_DIWAN_I_AAM, null, 3000),
+    ]);
+
+    expect(result.statuses[0].inSight).toBe(false);
+    expect(result.crossings).toHaveLength(0);
+  });
+
+  test("leaves the Approach Ring alone, so a Visitor inside it with no compass still hears it", () => {
+    const result = walk(initialState(), [
+      fix(SOUTH_OF_DIWAN_I_AAM, null, 0),
+      fix(SOUTH_OF_DIWAN_I_AAM, null, 1500),
+      fix(SOUTH_OF_DIWAN_I_AAM, null, 3000),
+    ]);
+
+    expect(result.statuses[0].inRing).toBe(true);
+    expect(result.crossings.map((c) => c.kind)).toEqual(["approach"]);
   });
 });

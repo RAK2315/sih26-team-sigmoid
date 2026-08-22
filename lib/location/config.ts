@@ -8,6 +8,7 @@ export const TRIGGER_CONFIG: EngineConfig = {
   dwellDriftM: Number(process.env.NEXT_PUBLIC_DWELL_DRIFT_M ?? 1.5),
   rearmBufferM: Number(process.env.NEXT_PUBLIC_REARM_BUFFER_M ?? 10),
   rearmMs: Number(process.env.NEXT_PUBLIC_REARM_MS ?? 3000),
+  sightRangeM: Number(process.env.NEXT_PUBLIC_SIGHT_RANGE_M ?? 40),
 };
 
 // a real fix has to clear the Dwell drift tolerance by a wide margin or standing still would

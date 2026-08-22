@@ -40,9 +40,17 @@ _Avoid_: orientation, bearing, direction, heading
 The unbroken time a Visitor holds every trigger condition. Walking past is not Dwelling.
 _Avoid_: wait, delay, linger time
 
+**Sight Line**:
+The wedge thrown forward from a Visitor's Facing, as wide as the Facing tolerance and as long as the sight range. It is drawn on the map, and what it touches is what can speak.
+_Avoid_: cone, view frustum, ray, line of sight
+
 **Threshold Crossing**:
-The moment a Visitor is inside an Approach Ring, Facing the Heritage Point, and has Dwelled long enough. The event the whole product is named for.
+The moment a Heritage Point is Within Reach of a Visitor, who is Facing it and has Dwelled long enough. The event the whole product is named for.
 _Avoid_: entry, trigger, geofence event, arrival
+
+**Within Reach**:
+Either the Visitor stands inside the Approach Ring, or their Sight Line touches it. A place you can see across a courtyard is close enough to speak; a place behind you is not, at any distance.
+_Avoid_: nearby, in range, proximity
 
 **Walk**:
 One Visitor's continuous session moving through one Heritage Site.

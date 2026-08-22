@@ -15,7 +15,7 @@ const DWELL_S = TRIGGER_CONFIG.dwellMs / 1000;
 function readings(status: TriggerStatus | null): Reading[] {
   if (status === null) {
     return [
-      { label: "Inside Approach Ring", value: "no", met: false },
+      { label: "Within reach", value: "nothing near enough", met: false },
       { label: "Facing", value: "nothing near enough to face", met: false },
       { label: "Stood still", value: `0.0s of ${DWELL_S}s`, met: false },
     ];
@@ -26,9 +26,13 @@ function readings(status: TriggerStatus | null): Reading[] {
 
   return [
     {
-      label: "Inside Approach Ring",
-      value: status.inRing ? "yes" : "no",
-      met: status.inRing,
+      label: "Within reach",
+      value: status.inRing
+        ? "inside the Approach Ring"
+        : status.inSight
+          ? `in your sight line, ${TRIGGER_CONFIG.sightRangeM} m`
+          : "too far away",
+      met: status.withinReach,
     },
     {
       label: "Facing",
@@ -63,7 +67,7 @@ export default function TriggerPanel({
   // the panel reports on one Heritage Point, the one closest to speaking
   const near = points
     .map((point) => ({ point, status: statuses.find((s) => s.pointId === point.id) ?? null }))
-    .filter((row) => row.status?.inRing === true)
+    .filter((row) => row.status?.withinReach === true)
     .sort((a, b) => (b.status?.dwellMs ?? 0) - (a.status?.dwellMs ?? 0));
 
   const subject = near[0] ?? null;
@@ -149,8 +153,9 @@ export default function TriggerPanel({
       </div>
 
       <p className="font-archive border-t border-ink-faint/25 px-4 py-2 text-[10px] leading-relaxed text-ink-faint">
-        A Heritage Point speaks when you are inside its Approach Ring, facing within{" "}
-        {TRIGGER_CONFIG.facingToleranceDeg} degrees, and have stood still for {DWELL_S} seconds.
+        A Heritage Point speaks when you are inside its Approach Ring or your sight line reaches
+        it, you are facing within {TRIGGER_CONFIG.facingToleranceDeg} degrees, and you have stood
+        still for {DWELL_S} seconds. The sight line is the cone drawn on the map.
       </p>
     </div>
   );

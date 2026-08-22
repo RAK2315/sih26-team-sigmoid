@@ -1,4 +1,4 @@
-import { approachRing, bearingTo, headingOffBy, isInside, metresBetween } from "./geometry";
+import { approachRing, bearingTo, headingOffBy, isInside, metresBetween, overlaps, sector } from "./geometry";
 import type { Coord, Fix, HeritagePoint, ThresholdCrossing } from "@/lib/types";
 
 export interface EngineConfig {
@@ -8,6 +8,8 @@ export interface EngineConfig {
   dwellDriftM: number;
   rearmBufferM: number;
   rearmMs: number;
+  // how far the Visitor's sight line carries. it is the length of the cone drawn on the map
+  sightRangeM: number;
 }
 
 export interface PreparedPoint {
@@ -21,6 +23,8 @@ export interface PreparedPoint {
 export interface TriggerStatus {
   pointId: string;
   inRing: boolean;
+  inSight: boolean;
+  withinReach: boolean;
   facing: boolean;
   offByDeg: number | null;
   driftM: number;
@@ -80,6 +84,16 @@ export function step(
 ): StepResult {
   const at: Coord = [fix.lng, fix.lat];
   const elapsed = state.lastT === null ? 0 : Math.max(0, fix.t - state.lastT);
+  // one wedge for the whole tick, because every Heritage Point is looked at from the same eyes
+  const cone =
+    fix.headingDeg === null
+      ? null
+      : sector(
+          at,
+          config.sightRangeM,
+          fix.headingDeg - config.facingToleranceDeg,
+          fix.headingDeg + config.facingToleranceDeg,
+        );
 
   const points: Record<string, PointState> = {};
   const statuses: TriggerStatus[] = [];
@@ -92,17 +106,20 @@ export function step(
       fix.headingDeg === null ? null : headingOffBy(fix.headingDeg, bearingTo(at, point.centroid));
     // no compass means the Facing gate turns off rather than blocking the crossing
     const facing = offByDeg === null || offByDeg <= config.facingToleranceDeg;
+    // a place you can see from across the courtyard should speak, so the drawn cone is the gate
+    const inSight = cone === null ? false : overlaps(cone, point.ring);
+    const withinReach = inRing || inSight;
     const driftM = before.dwellFrom === null ? 0 : metresBetween(before.dwellFrom, at);
 
     // someone still walking has not arrived, so Dwell only counts while they stay put
-    const held = inRing && facing && before.dwellFrom !== null && driftM <= config.dwellDriftM;
+    const held = withinReach && facing && before.dwellFrom !== null && driftM <= config.dwellDriftM;
     const clear = !isInside(at, point.rearmRing);
     const clearSinceT = clear ? (before.clearSinceT ?? fix.t) : null;
     const rearmed = before.fired && clearSinceT !== null && fix.t - clearSinceT >= config.rearmMs;
 
     const next: PointState = held
       ? { ...before, clearSinceT, dwellMs: before.dwellMs + elapsed }
-      : { ...before, clearSinceT, dwellMs: 0, dwellFrom: inRing && facing ? at : null };
+      : { ...before, clearSinceT, dwellMs: 0, dwellFrom: withinReach && facing ? at : null };
     if (rearmed) {
       next.fired = false;
       next.firedInside = false;
@@ -123,6 +140,8 @@ export function step(
     statuses.push({
       pointId: point.pointId,
       inRing,
+      inSight,
+      withinReach,
       facing,
       offByDeg,
       driftM,
