@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Cormorant_Garamond, IBM_Plex_Mono, IBM_Plex_Sans, Noto_Serif_Devanagari } from "next/font/google";
 import "./globals.css";
 import OfflineBanner from "./offline-banner";
+import PageEnter from "./page-enter";
+import SiteNav from "./site-nav";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -41,27 +43,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${cormorant.variable} ${plexSans.variable} ${plexMono.variable} ${notoDeva.variable}`}
     >
       <body className="flex min-h-screen flex-col">
-        <header className="flex h-14 shrink-0 items-center justify-between border-b border-ink-faint/40 px-6">
-          <Link href="/" className="font-display text-xl tracking-wide text-ink">
+        <header className="flex h-14 shrink-0 items-center justify-between gap-4 border-b border-ink-faint/40 px-4 lg:px-6">
+          <Link href="/" className="font-display shrink-0 text-xl tracking-wide text-ink">
             VIRASAT
           </Link>
-          <nav className="flex gap-6 text-sm text-ink-muted">
-            <Link href="/vision" className="hover:text-madder">
-              Why
-            </Link>
-            <Link href="/explore" className="hover:text-madder">
-              Explore
-            </Link>
-            <Link href="/discover" className="hover:text-madder">
-              Discover
-            </Link>
-            <Link href="/authority" className="hover:text-madder">
-              Authority
-            </Link>
-          </nav>
+          <SiteNav />
         </header>
         <OfflineBanner />
-        <div className="flex min-h-0 flex-1 flex-col">{children}</div>
+        <PageEnter>{children}</PageEnter>
       </body>
     </html>
   );

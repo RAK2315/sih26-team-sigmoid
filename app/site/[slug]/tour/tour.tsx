@@ -368,7 +368,8 @@ export default function Tour({
           </div>
         )}
 
-        <div className="mt-4">
+        {/* the rail is long and this is the thing a Visitor standing in front of a wall needs */}
+        <div className="sticky top-0 z-20 mt-4 lg:static">
           <TriggerPanel points={routePoints} statuses={statuses} live={live} fix={fix} />
         </div>
 

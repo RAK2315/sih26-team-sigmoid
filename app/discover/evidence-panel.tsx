@@ -38,8 +38,16 @@ export default function EvidencePanel({
   onClose: () => void;
 }) {
   return (
-    <aside className="fixed inset-y-0 right-0 z-[900] flex w-full max-w-md flex-col overflow-y-auto border-l border-ink-faint/40 bg-paper-raised shadow-paper lg:static lg:z-auto lg:w-96 lg:shrink-0">
-      <header className="flex items-start justify-between gap-3 border-b border-ink-faint/30 p-4">
+    <>
+      {/* on a phone the panel covers the page, so there has to be somewhere to press to leave */}
+      <button
+        type="button"
+        aria-label="Close the Evidence"
+        onClick={onClose}
+        className="fixed inset-0 z-[890] bg-ink/20 lg:hidden"
+      />
+      <aside className="sheet fixed inset-x-0 top-14 bottom-0 z-[900] flex flex-col overflow-y-auto border-t border-ink-faint/40 bg-paper-raised shadow-paper lg:static lg:inset-auto lg:z-auto lg:w-96 lg:shrink-0 lg:border-t-0 lg:border-l">
+      <header className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-ink-faint/30 bg-paper-raised p-4">
         <div>
           <p className="font-archive text-xs tracking-widest text-ink-faint uppercase">Evidence</p>
           <h2 className="font-display mt-1 text-2xl leading-tight text-ink">{mention.name}</h2>
@@ -180,7 +188,8 @@ export default function EvidencePanel({
           </Section>
         </>
       )}
-    </aside>
+      </aside>
+    </>
   );
 }
 

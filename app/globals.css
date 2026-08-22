@@ -131,6 +131,22 @@ body::after {
   animation: highlight-sweep .85s cubic-bezier(.2,.7,.3,1) both;
 }
 
+/* one route replacing another should read as a page turning, not a cut */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.page-enter { animation: page-enter .35s cubic-bezier(.2,.7,.3,1) both; }
+
+/* on a phone the Evidence has nowhere to slide in from, so it rises instead */
+@keyframes sheet-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.sheet { animation: sheet-up .32s cubic-bezier(.2,.7,.3,1) both; }
+
 /* the line from the passage to the pin is the route to the evidence, so it draws itself */
 .thread-draw { animation: fade .25s ease both; }
 
@@ -145,7 +161,8 @@ body::after {
 .leaflet-container { animation: fade .8s ease both; }
 
 @media (prefers-reduced-motion: reduce) {
-  .rise, .fade-in, .ink-in, .rule-draw, .stagger > *, .leaflet-container, .breathe, .thread-draw {
+  .rise, .fade-in, .ink-in, .rule-draw, .stagger > *, .leaflet-container, .breathe, .thread-draw,
+  .page-enter, .sheet {
     animation: none !important;
   }
   .leaflet-container { opacity: 1; }
