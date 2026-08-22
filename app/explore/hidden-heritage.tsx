@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { metresBetween } from "@/lib/location/geometry";
-import type { Coord, HeritageSite, StoredCandidate } from "@/lib/types";
+import type { ArchiveImage, Coord, HeritageSite, StoredCandidate } from "@/lib/types";
 
 export interface HiddenEntry {
   id: string;
@@ -13,6 +14,8 @@ export interface HiddenEntry {
   // true when the place is on this list because we judged it so, not because evidence put it here
   editorial: boolean;
   centroid: Coord;
+  image?: ArchiveImage;
+  href?: string;
 }
 
 // representationScore is a number we set by hand. it orders this list and it is not derived from
@@ -41,6 +44,8 @@ export function buildHidden(
         verified: false,
         editorial: true,
         centroid: s.centroid,
+        image: s.image,
+        href: s.pointIds.length > 0 ? `/site/${s.id}/plan` : undefined,
         score: siteScore(s, distanceM),
       };
     });
@@ -62,6 +67,8 @@ export function buildHidden(
         verified: true,
         editorial: false,
         centroid: c.centroid,
+        image: undefined,
+        href: undefined,
         score: 1 / (1 + distanceM / 3000),
       };
     });
@@ -75,86 +82,158 @@ export function buildHidden(
     });
 }
 
+function Card({ entry }: { entry: HiddenEntry }) {
+  return (
+    <article
+      className={`flex flex-col border bg-paper-raised ${
+        entry.verified ? "border-state-verified/50" : "border-ink-faint/40"
+      }`}
+    >
+      {entry.image ? (
+        <div className="aspect-[4/3] overflow-hidden bg-paper-sunk">
+          <img
+            src={entry.image.url}
+            alt={entry.image.alt}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      ) : (
+        // a Representation Gap with no photograph is the argument, not a gap in the page
+        <div className="flex aspect-[4/3] flex-col justify-center border-b border-ink-faint/25 bg-paper-sunk/60 p-5">
+          <svg
+            viewBox="0 0 120 120"
+            className="h-16 w-16 text-state-verified"
+            fill="none"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <circle cx="60" cy="60" r="46" strokeDasharray="3 5" strokeWidth="1.2" />
+            <circle cx="60" cy="60" r="4" fill="currentColor" stroke="none" />
+          </svg>
+          <p className="font-archive mt-3 text-[11px] leading-relaxed text-ink-faint">
+            No photograph of this exists on Commons under a licence we can use. That is not a hole
+            in this page. It is the finding.
+          </p>
+        </div>
+      )}
+
+      <div className="flex flex-1 flex-col p-4">
+        <div className="flex items-baseline justify-between gap-2">
+          <span
+            className={`font-archive text-[10px] tracking-[0.2em] uppercase ${
+              entry.verified ? "text-state-verified" : "text-state-candidate"
+            }`}
+          >
+            {entry.verified ? "Confirmed by a Reviewer" : "Editorial"}
+          </span>
+          <span className="font-archive shrink-0 text-[11px] text-ink-faint">
+            {(entry.distanceM / 1000).toFixed(1)} km
+          </span>
+        </div>
+
+        <h3 className="font-display mt-1 text-2xl leading-tight text-ink">{entry.name}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-ink-muted">{entry.why}</p>
+        <p className="font-archive mt-3 flex-1 text-[11px] leading-relaxed text-ink-faint">
+          {entry.evidence}
+        </p>
+
+        {entry.href && (
+          <Link
+            href={entry.href}
+            className="font-archive mt-4 inline-block border border-ink-faint/50 px-3 py-1.5 text-[11px] tracking-widest text-ink uppercase transition-colors duration-200 hover:border-madder hover:text-madder"
+          >
+            Begin tour &rarr;
+          </Link>
+        )}
+      </div>
+    </article>
+  );
+}
+
 export default function HiddenHeritage({
   sites,
   candidates,
   source,
   from,
-  onPick,
 }: {
   sites: HeritageSite[];
   candidates: StoredCandidate[] | null;
   source: "live" | "stale" | "unreachable";
   from: Coord;
-  onPick: (centroid: Coord) => void;
 }) {
   const entries = candidates === null ? null : buildHidden(sites, candidates, from);
+  const confirmed = (entries ?? []).filter((e) => e.verified);
+  const editorial = (entries ?? []).filter((e) => !e.verified);
 
   return (
-    <div className="border border-ink-faint/40 bg-paper-raised p-4 shadow-paper">
-      <p className="font-archive text-xs tracking-widest text-ink-faint uppercase">
+    <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-12 lg:py-20">
+      <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
         Hidden heritage
       </p>
-      <p className="mt-1 text-sm leading-relaxed text-ink-muted">
-        Places near you that almost nobody visits, and what each claim rests on.
+      <h2 className="font-display mt-3 max-w-3xl text-4xl leading-tight text-ink lg:text-5xl">
+        Places almost nobody visits, and what each claim rests on
+      </h2>
+      <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
+        Two different kinds of thing sit on this list and the difference is the whole point. One
+        kind came out of the survey and was confirmed by a person. The other is our opinion, and
+        it is labelled as our opinion.
       </p>
 
       {source === "stale" && (
-        <p className="font-archive mt-2 text-[11px] leading-relaxed text-state-candidate">
+        <p className="font-archive mt-4 text-[11px] leading-relaxed text-state-candidate">
           stale &middot; the database is unreachable, so confirmed Candidates come from the
           snapshot committed with the app
         </p>
       )}
       {source === "unreachable" && (
-        <p className="font-archive mt-2 text-[11px] leading-relaxed text-state-candidate">
-          offline &middot; only the eleven Heritage Sites are listed. Candidates confirmed by a
-          Reviewer need the network and are missing from this list.
+        <p className="font-archive mt-4 text-[11px] leading-relaxed text-state-candidate">
+          offline &middot; only the Heritage Sites are listed. Candidates confirmed by a Reviewer
+          need the network and are missing from this list.
         </p>
       )}
 
       {entries === null && (
-        <div className="mt-3 space-y-2">
-          <div className="h-3 w-3/4 bg-paper-sunk" />
-          <div className="h-3 w-1/2 bg-paper-sunk" />
-          <div className="h-3 w-2/3 bg-paper-sunk" />
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="h-72 bg-paper-sunk" />
+          ))}
         </div>
       )}
 
+      {confirmed.length > 0 && (
+        <>
+          <p className="font-archive mt-10 border-b border-state-verified/40 pb-2 text-[11px] tracking-[0.2em] text-state-verified uppercase">
+            Recorded once, confirmed by a Reviewer, on nobody else&apos;s map
+          </p>
+          <div className="stagger mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {confirmed.map((entry) => (
+              <Card key={entry.id} entry={entry} />
+            ))}
+          </div>
+        </>
+      )}
+
+      {editorial.length > 0 && (
+        <>
+          <p className="font-archive mt-12 border-b border-state-candidate/40 pb-2 text-[11px] tracking-[0.2em] text-state-candidate uppercase">
+            Our judgement, not a measurement
+          </p>
+          <div className="stagger mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {editorial.map((entry) => (
+              <Card key={entry.id} entry={entry} />
+            ))}
+          </div>
+        </>
+      )}
+
       {entries !== null && entries.length === 0 && (
-        <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-          Nothing to surface here. This panel lists Heritage Sites we judge under-visited and
+        <p className="mt-6 text-sm leading-relaxed text-ink-muted">
+          Nothing to surface here. This list holds Heritage Sites we judge under-visited and
           Candidates a Reviewer has confirmed, and right now neither has anything within reach.
         </p>
       )}
-      <ul className="mt-3 max-h-64 overflow-y-auto">
-        {(entries ?? []).map((e) => (
-          <li key={e.id} className="border-t border-ink-faint/20 py-2">
-            <button type="button" onClick={() => onPick(e.centroid)} className="w-full text-left">
-              <div className="flex items-baseline justify-between gap-2">
-                <span
-                  className={`text-sm ${e.verified ? "font-medium text-state-verified" : "text-ink"}`}
-                >
-                  {e.verified && "✓ "}
-                  {e.name}
-                  {e.editorial && (
-                    <span className="font-archive ml-2 text-[10px] tracking-wide text-state-candidate uppercase">
-                      editorial
-                    </span>
-                  )}
-                </span>
-                <span className="font-archive shrink-0 text-[11px] text-ink-faint">
-                  {(e.distanceM / 1000).toFixed(1)} km
-                </span>
-              </div>
-              <p className="font-archive mt-0.5 text-[11px] leading-relaxed text-ink-faint">
-                {e.why}
-                <br />
-                {e.evidence}
-              </p>
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </section>
   );
 }
