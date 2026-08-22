@@ -10,6 +10,7 @@ import EvidenceThread, { type PinPoint } from "./evidence-thread";
 import Gaps, { type Gap } from "./gaps";
 import MentionCard from "./mention-card";
 import PageText from "./page-text";
+import { ANCHORS } from "@/content/anchors";
 
 const DiscoverMapCanvas = dynamic(() => import("./discover-map-canvas"), {
   ssr: false,
@@ -27,6 +28,19 @@ export interface ShelfPage {
 }
 
 type Phase = "idle" | "reading" | "done" | "unavailable" | "offline";
+
+const ANCHOR_COUNT = ANCHORS.length;
+
+// a real entry from Volume II, so pressing Use the example reads something the survey printed
+const PASTE_EXAMPLE = `No. 236. (a) Chaunsath Khamba.
+(b) Village of Nizamuddin.
+(e) 1033 A.H. (1623-4 A.D.).
+(j) Chaunsath Khamba is the tomb of Mirza Aziz Kokaltash, and was built by him during his lifetime. It is so-called on account of the sixty-four (Chaunsath) pillars (Khamba) which it contains.
+
+No. 237. (a) Tomb (unknown).
+(b) Village of Nizamuddin, some 5 yards to S. W. of Chaunsath Khamba (No. 236).
+(e) Afghan.
+(j) The tomb is 15 feet 9 inches square and is covered by a masonry dome supported on eight stone pillars forming an octagon internally.`;
 
 // one press of Analyse plays as one move: the passage lights, a line reaches the map,
 // the circle lands wide and closes, then the cards arrive
@@ -72,6 +86,8 @@ export default function Discover({
   const [leadId, setLeadId] = useState<string | null>(null);
   const [stage, setStage] = useState<Stage>("none");
   const [pin, setPin] = useState<PinPoint | null>(null);
+  // null means the shelf. a string means the visitor brought their own page.
+  const [pasted, setPasted] = useState<string | null>(null);
 
   const reduced = useReducedMotion();
   const wide = useWideScreen();
@@ -103,6 +119,7 @@ export default function Discover({
 
   function choose(next: ShelfPage) {
     stopSequence();
+    setPasted(null);
     setPage(next);
     setPhase("idle");
     setResult(null);
@@ -134,7 +151,8 @@ export default function Discover({
   }
 
   // the Page is passed in rather than read off state, because a Gap card sets both at once
-  async function analysePage(target: ShelfPage) {
+  // one path for both, because a pasted page and a shelf Page are read by the same pipeline
+  async function read(request: { url: string; body: unknown }) {
     stopSequence();
     setPhase("reading");
     setResult(null);
@@ -142,10 +160,10 @@ export default function Discover({
     setLeadId(null);
     setStage("none");
     try {
-      const res = await fetch("/api/discover/analyse", {
+      const res = await fetch(request.url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ volumeId, pageNo: target.pageNo }),
+        body: JSON.stringify(request.body),
       });
       if (!res.ok) {
         setPhase("unavailable");
@@ -161,9 +179,24 @@ export default function Discover({
     }
   }
 
+  function startPasting() {
+    stopSequence();
+    setPasted("");
+    setPhase("idle");
+    setResult(null);
+    setOpenId(null);
+    setLeadId(null);
+    setStage("none");
+  }
+
+  function analysePage(target: ShelfPage) {
+    return read({ url: "/api/discover/analyse", body: { volumeId, pageNo: target.pageNo } });
+  }
+
   function openPage(pageNo: number) {
     const target = pages.find((p) => p.pageNo === pageNo);
     if (!target) return;
+    setPasted(null);
     setPage(target);
     toolRef.current?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
     void analysePage(target);
@@ -197,46 +230,112 @@ export default function Discover({
       </div>
 
       <div className="flex min-h-[38rem] flex-1 flex-col lg:flex-row">
-        <Shelf pages={pages} current={page} title={title} onChoose={choose} />
+        <Shelf
+          pages={pages}
+          current={page}
+          title={title}
+          onChoose={choose}
+          pasting={pasted !== null}
+          onPaste={startPasting}
+        />
 
         <section className="flex min-w-0 flex-1 flex-col border-ink-faint/30 lg:flex-row lg:border-x">
         <div className="flex min-w-0 flex-1 flex-col overflow-y-auto p-4">
           <header className="flex flex-wrap items-baseline justify-between gap-2">
             <h1 className="font-display text-2xl text-ink">
-              Scan {page.pageNo}
+              {pasted === null ? `Scan ${page.pageNo}` : "Your own page"}
               <span className="font-archive ml-2 text-xs text-ink-faint">
-                {page.printedPageNo === null
-                  ? "no printed page number"
-                  : `printed page ${page.printedPageNo}`}
+                {pasted !== null
+                  ? `${pasted.trim().length} characters`
+                  : page.printedPageNo === null
+                    ? "no printed page number"
+                    : `printed page ${page.printedPageNo}`}
               </span>
             </h1>
             <button
               type="button"
-              onClick={() => void analysePage(page)}
-              disabled={phase === "reading"}
+              onClick={() =>
+                void (pasted === null
+                  ? analysePage(page)
+                  : read({ url: "/api/discover/read", body: { text: pasted } }))
+              }
+              disabled={phase === "reading" || (pasted !== null && pasted.trim().length < 40)}
               className="border border-madder px-4 py-2 text-sm text-madder transition-colors duration-200 hover:bg-madder hover:text-paper disabled:opacity-40"
             >
               {phase === "reading" ? "Reading the page" : "Analyse"}
             </button>
           </header>
 
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={page.imageUrl}
-            alt={`Scan of page ${page.printedPageNo ?? page.pageNo}`}
-            className="mt-3 w-full border border-ink-faint/30 bg-paper-raised"
-          />
+          {pasted === null ? (
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={page.imageUrl}
+                alt={`Scan of page ${page.printedPageNo ?? page.pageNo}`}
+                className="mt-3 w-full border border-ink-faint/30 bg-paper-raised"
+              />
 
-          <PageText text={page.text} highlight={highlight} markRef={markRef} boxRef={textBoxRef} />
+              <PageText
+                text={page.text}
+                highlight={highlight}
+                markRef={markRef}
+                boxRef={textBoxRef}
+              />
 
-          <p className="font-archive mt-4 text-[11px] leading-relaxed text-ink-faint">
-            {title}
-            <br />
-            {licence}.{" "}
-            <a href={sourceUrl} className="underline" target="_blank" rel="noreferrer">
-              archive.org
-            </a>
-          </p>
+              <p className="font-archive mt-4 text-[11px] leading-relaxed text-ink-faint">
+                {title}
+                <br />
+                {licence}.{" "}
+                <a href={sourceUrl} className="underline" target="_blank" rel="noreferrer">
+                  archive.org
+                </a>
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="mt-3 max-w-prose text-sm leading-relaxed text-ink-muted">
+                Paste a passage from any survey, gazetteer or field note that says where something
+                stands. It is read by the same pipeline the shelf uses, measured against the same{" "}
+                {ANCHOR_COUNT} Anchors and checked against the same Modern Baseline. Nothing you
+                paste is stored, and there is no cached copy to fall back on, so if no model
+                answers you are told so rather than shown something else.
+              </p>
+              <textarea
+                value={pasted}
+                onChange={(event) => setPasted(event.target.value)}
+                maxLength={6000}
+                spellCheck={false}
+                placeholder={PASTE_EXAMPLE}
+                className="font-archive mt-3 min-h-64 w-full border border-ink-faint/40 bg-paper-raised p-3 text-[12px] leading-relaxed text-ink placeholder:text-ink-faint/70"
+              />
+              <div className="mt-2 flex flex-wrap items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setPasted(PASTE_EXAMPLE)}
+                  className="font-archive border border-ink-faint/40 px-3 py-1.5 text-[11px] tracking-widest text-ink-muted uppercase transition-colors duration-200 hover:border-madder hover:text-madder"
+                >
+                  Use the example
+                </button>
+                <button
+                  type="button"
+                  onClick={() => choose(page)}
+                  className="font-archive text-[11px] text-ink-faint hover:text-madder"
+                >
+                  back to the shelf
+                </button>
+              </div>
+
+              {/* the highlight lands on the visitor's own characters, same as on a Page */}
+              {result !== null && (
+                <PageText
+                  text={pasted}
+                  highlight={highlight}
+                  markRef={markRef}
+                  boxRef={textBoxRef}
+                />
+              )}
+            </>
+          )}
         </div>
 
         <div className="flex min-h-[22rem] w-full flex-col lg:w-[26rem] lg:border-l lg:border-ink-faint/30">
@@ -307,11 +406,15 @@ function Shelf({
   current,
   title,
   onChoose,
+  pasting,
+  onPaste,
 }: {
   pages: ShelfPage[];
   current: ShelfPage;
   title: string;
   onChoose: (page: ShelfPage) => void;
+  pasting: boolean;
+  onPaste: () => void;
 }) {
   return (
     <aside className="flex w-full shrink-0 flex-col lg:w-56">
@@ -323,6 +426,21 @@ function Shelf({
           is how many places that page put on the map last time it was read.
         </p>
       </div>
+      <button
+        type="button"
+        onClick={onPaste}
+        className={`border-b border-ink-faint/30 px-4 py-3 text-left transition-colors duration-200 ${
+          pasting ? "bg-paper-sunk text-ink" : "text-ink-muted hover:bg-paper-sunk/60"
+        }`}
+      >
+        <span className="font-archive block text-[11px] tracking-[0.2em] text-madder uppercase">
+          Bring your own page
+        </span>
+        <span className="mt-1 block text-xs leading-relaxed">
+          Paste any passage that says where something stands and watch the same pipeline read it.
+        </span>
+      </button>
+
       <ol className="flex max-h-40 flex-row gap-1 overflow-auto p-2 lg:max-h-none lg:flex-1 lg:flex-col">
         {pages.map((p) => (
           <li key={p.pageNo}>
