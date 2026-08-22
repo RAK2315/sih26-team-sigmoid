@@ -61,6 +61,7 @@ export interface LivingTradition {
   name: string;
   text: string;
   status: TraditionStatus;
+  image?: ArchiveImage;
 }
 
 export interface ArchiveImage {
@@ -93,6 +94,7 @@ export interface HeritageSite {
   representationScore: number;
   // "osm:w264863907" where a mapped feature confirms it, "approximate" where nothing does
   coordSource: string;
+  image?: ArchiveImage;
 }
 
 export interface HeritagePoint {

@@ -1,3 +1,4 @@
+import { IMAGES } from "@/content/images";
 import type { HeritagePoint } from "@/lib/types";
 import { centroid, zone } from "@/content/zones/red-fort-lahori-gate";
 
@@ -34,5 +35,6 @@ export const lahoriGate: HeritagePoint = {
     name: "The address from the ramparts",
     text: "Every fifteenth of August since 1947 the Prime Minister has spoken to the country from the rampart above this gate, and the flag goes up before the speech. It is the one Mughal building in Delhi whose most important use is younger than the Republic.",
     status: "living",
+    image: IMAGES["traditions/ramparts-address"],
   },
 };

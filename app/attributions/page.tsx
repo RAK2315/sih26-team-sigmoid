@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import Link from "next/link";
+import { IMAGES } from "@/content/images";
 import volume from "@/content/pages/zafar-hasan-v2.json";
 import { points } from "@/content/points";
 import type { ArchiveImage } from "@/lib/types";
@@ -68,6 +69,42 @@ export default function Attributions() {
                   <Row image={point.thenNow!.then} pointName={point.name} half="then" />
                   <Row image={point.thenNow!.now} pointName={point.name} half="now" />
                 </Fragment>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="font-display text-3xl text-ink">Photographs and plates</h2>
+        <p className="mt-1 text-sm text-ink-muted">
+          {Object.keys(IMAGES).length} images used across the site portraits, the Living
+          Traditions and the printed plates. All from Wikimedia Commons.
+        </p>
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full min-w-[36rem] text-left">
+            <thead>
+              <tr className="font-archive text-[11px] tracking-widest text-ink-faint uppercase">
+                <th className="pb-2 pr-4 font-normal">Where it is used</th>
+                <th className="pb-2 pr-4 font-normal">Author</th>
+                <th className="pb-2 pr-4 font-normal">Date</th>
+                <th className="pb-2 pr-4 font-normal">Licence</th>
+                <th className="pb-2 font-normal">File</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(IMAGES).map(([key, image]) => (
+                <tr key={key} className="border-t border-ink-faint/20 align-top">
+                  <td className="font-archive py-2 pr-4 text-xs text-ink">{key}</td>
+                  <td className="py-2 pr-4 text-sm text-ink-muted">{image.author}</td>
+                  <td className="font-archive py-2 pr-4 text-xs text-ink-muted">{image.year}</td>
+                  <td className="font-archive py-2 pr-4 text-xs text-ink-muted">{image.licence}</td>
+                  <td className="py-2 text-xs">
+                    <a href={image.sourceUrl} className="text-indigo underline hover:text-madder">
+                      Wikimedia Commons
+                    </a>
+                  </td>
+                </tr>
               ))}
             </tbody>
           </table>

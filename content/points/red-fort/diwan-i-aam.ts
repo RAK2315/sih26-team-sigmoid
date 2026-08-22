@@ -1,3 +1,4 @@
+import { IMAGES } from "@/content/images";
 import type { HeritagePoint } from "@/lib/types";
 import { centroid, zone } from "@/content/zones/red-fort-diwan-i-aam";
 
@@ -34,5 +35,6 @@ export const diwanIAam: HeritagePoint = {
     name: "Darshan from the jharokha",
     text: "Every morning the Emperor showed himself to whoever had come, from a balcony above this hall, and the day could not begin until he did. Anyone could stand in the court below and be seen. The Mughal court ended in 1857 and the daily appearance ended with it, though it was staged once more in December 1911 for George V.",
     status: "lost",
+    image: IMAGES["traditions/jharokha"],
   },
 };

@@ -1,3 +1,4 @@
+import { IMAGES } from "@/content/images";
 import type { HeritageSite } from "@/lib/types";
 
 export const shallowSites: HeritageSite[] = [
@@ -14,6 +15,7 @@ export const shallowSites: HeritageSite[] = [
       "A hundred and three steps down to water that is no longer there, sunk between office towers off Hailey Road. Nobody knows who first cut it.",
     representationScore: 0.62,
     coordSource: "osm:w500411689",
+    image: IMAGES["sites/agrasen-ki-baoli"],
   },
   {
     id: "feroz-shah-kotla",
@@ -28,6 +30,7 @@ export const shallowSites: HeritageSite[] = [
       "The fifth city of Delhi, and the pillar Ashoka raised sixteen centuries earlier that Feroz Shah had carried here and set on its roof.",
     representationScore: 0.44,
     coordSource: "osm:w97230893",
+    image: IMAGES["sites/feroz-shah-kotla"],
   },
   {
     id: "rajon-ki-baoli",
@@ -42,6 +45,7 @@ export const shallowSites: HeritageSite[] = [
       "A three-storey stepwell in Mehrauli that took its name from the masons who later camped in it. Daulat Khan built it in Sikandar Lodi's reign.",
     representationScore: 0.28,
     coordSource: "osm:w89583611",
+    image: IMAGES["sites/rajon-ki-baoli"],
   },
   {
     id: "zafar-mahal",
@@ -56,6 +60,7 @@ export const shallowSites: HeritageSite[] = [
       "The last building the Mughals put up in Delhi. Bahadur Shah Zafar meant to be buried in the empty plot beside it and died exiled in Rangoon instead.",
     representationScore: 0.24,
     coordSource: "approximate",
+    image: IMAGES["sites/zafar-mahal"],
   },
   {
     id: "bhuli-bhatiyari-ka-mahal",
@@ -70,6 +75,7 @@ export const shallowSites: HeritageSite[] = [
       "A Tughlaq hunting lodge in the Central Ridge, reached on foot through scrub. Better known now for the stories told about it than for anything recorded of it.",
     representationScore: 0.15,
     coordSource: "approximate",
+    image: IMAGES["sites/bhuli-bhatiyari-ka-mahal"],
   },
   {
     id: "satpula",
@@ -84,6 +90,7 @@ export const shallowSites: HeritageSite[] = [
       "A seven-arched dam in the wall of Jahanpanah that watered the fields south of the city. Its water was held to cure, and people carried it away by the potful.",
     representationScore: 0.22,
     coordSource: "osm:w204969641",
+    image: IMAGES["sites/satpula"],
   },
   {
     id: "chausath-khamba",
@@ -98,6 +105,7 @@ export const shallowSites: HeritageSite[] = [
       "Sixty-four marble pillars holding a flat roof over the grave of Mirza Aziz Koka, Akbar's foster brother. All of it is one material and one colour.",
     representationScore: 0.36,
     coordSource: "osm:w103505910",
+    image: IMAGES["sites/chausath-khamba"],
   },
   {
     id: "lal-gumbad",
@@ -112,5 +120,6 @@ export const shallowSites: HeritageSite[] = [
       "The tomb of the saint Kabiruddin Auliya, standing in red sandstone in the middle of a Malviya Nagar park. Thieves once cut a hole in it, and the hole is still there.",
     representationScore: 0.14,
     coordSource: "osm:w96679854",
+    image: IMAGES["sites/lal-gumbad"],
   },
 ];

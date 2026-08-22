@@ -1,3 +1,4 @@
+import { IMAGES } from "@/content/images";
 import type { HeritageSite } from "@/lib/types";
 
 export const humayunsTomb: HeritageSite = {
@@ -14,4 +15,5 @@ export const humayunsTomb: HeritageSite = {
     "Commissioned by a widow for her husband, and the first garden tomb in India. Everything the Taj Mahal would later do was tried here first.",
   representationScore: 0.93,
   coordSource: "osm:r2914318",
+  image: IMAGES["sites/humayuns-tomb"],
 };

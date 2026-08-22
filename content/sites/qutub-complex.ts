@@ -1,3 +1,4 @@
+import { IMAGES } from "@/content/images";
 import type { HeritageSite } from "@/lib/types";
 
 export const qutubComplex: HeritageSite = {
@@ -14,4 +15,5 @@ export const qutubComplex: HeritageSite = {
     "The first Muslim capital of Delhi, built from the stone of twenty-seven temples that stood on the same ground. Four dynasties added to it and none of them finished it.",
   representationScore: 0.95,
   coordSource: "osm:w818709474",
+  image: IMAGES["sites/qutub-complex"],
 };

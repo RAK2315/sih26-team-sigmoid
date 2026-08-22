@@ -1,3 +1,4 @@
+import { IMAGES } from "@/content/images";
 import type { HeritageSite } from "@/lib/types";
 
 export const redFort: HeritageSite = {
@@ -25,4 +26,5 @@ export const redFort: HeritageSite = {
     "Shah Jahan's citadel at Shahjahanabad, begun in 1639 and finished in 1648. The halls behind its walls held the working machinery of an empire, and the archive records each of them by name.",
   representationScore: 0.98,
   coordSource: "osm:w264863907",
+  image: IMAGES["sites/red-fort"],
 };
