@@ -150,6 +150,7 @@ body::after {
   }
   .leaflet-container { opacity: 1; }
   .breathe { opacity: 1; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
   /* the highlight says which passage was read, so it stays, it just does not sweep */
   .passage-sweep { animation: none !important; background-size: 100% 100%; }
 }

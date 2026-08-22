@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { divIcon } from "leaflet";
 import { MapContainer, Marker, Polygon, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { ringToLeaflet, sector, toLeaflet } from "@/lib/location/geometry";
+import { arc, ringToLeaflet, sector, toLeaflet } from "@/lib/location/geometry";
 import { TRIGGER_CONFIG } from "@/lib/location/config";
 import type { PreparedPoint, TriggerStatus } from "@/lib/location/engine";
 import type { Coord, Fix, HeritagePoint, HeritageSite } from "@/lib/types";
+import { useReducedMotion } from "@/app/use-reduced-motion";
 
 const VISITOR_ICON = divIcon({
   className: "",
@@ -15,6 +16,76 @@ const VISITOR_ICON = divIcon({
   iconAnchor: [8, 8],
   html: '<div style="width:16px;height:16px;border-radius:50%;background:#F4EDE0;border:2px solid #1F1B16;cursor:grab"></div>',
 });
+
+const DWELL_RING_M = 9;
+
+// fixes arrive every 200 to 500 ms, which would make the ring step instead of sweep, so the
+// seconds since the last fix are counted in and capped at the threshold the engine will use
+function useDwellProgress(dwellMs: number, fixT: number, reduced: boolean): number {
+  const stepped = Math.min(1, dwellMs / TRIGGER_CONFIG.dwellMs);
+  const [smooth, setSmooth] = useState(stepped);
+
+  useEffect(() => {
+    if (reduced || dwellMs === 0 || stepped >= 1) {
+      setSmooth(stepped);
+      return;
+    }
+    let frame = requestAnimationFrame(function step() {
+      const ahead = (dwellMs + (Date.now() - fixT)) / TRIGGER_CONFIG.dwellMs;
+      setSmooth(Math.max(stepped, Math.min(1, ahead)));
+      frame = requestAnimationFrame(step);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [dwellMs, fixT, stepped, reduced]);
+
+  return reduced ? stepped : smooth;
+}
+
+// its own component, so sweeping the ring does not redraw every Zone on the map each frame
+function DwellRing({ at, dwellMs, fixT }: { at: Coord; dwellMs: number; fixT: number }) {
+  const reduced = useReducedMotion();
+  const progress = useDwellProgress(dwellMs, fixT, reduced);
+  if (progress <= 0) return null;
+  const speaking = progress >= 1;
+
+  return (
+    <>
+      {/* the whole three seconds, so the sweep has something to fill against */}
+      <Polyline
+        positions={arc(at, DWELL_RING_M, 0, 360).map(toLeaflet)}
+        pathOptions={{ color: "#9A8F7C", weight: 1, opacity: 0.5, dashArray: "2 5" }}
+        interactive={false}
+      />
+      <Polygon
+        positions={ringToLeaflet(sector(at, DWELL_RING_M, 0, 360 * progress).coordinates[0])}
+        pathOptions={{
+          stroke: false,
+          fillColor: speaking ? "#3F6B5E" : "#9A3412",
+          fillOpacity: 0.08 + 0.12 * progress,
+        }}
+        interactive={false}
+      />
+      <Polyline
+        positions={arc(at, DWELL_RING_M, 0, 360 * progress).map(toLeaflet)}
+        pathOptions={{
+          color: speaking ? "#3F6B5E" : "#9A3412",
+          weight: 3,
+          opacity: 0.95,
+          lineCap: "round",
+        }}
+        interactive={false}
+      />
+      {/* it has spoken, and the halo says so without moving */}
+      {speaking && (
+        <Polyline
+          positions={arc(at, DWELL_RING_M + 5, 0, 360).map(toLeaflet)}
+          pathOptions={{ color: "#3F6B5E", weight: 1, opacity: 0.45 }}
+          interactive={false}
+        />
+      )}
+    </>
+  );
+}
 
 // a real Visitor is wherever they actually are, which is usually not where the map opened
 function FollowLive({ at, live }: { at: Coord; live: boolean }) {
@@ -57,7 +128,6 @@ export default function TourMapCanvas({
 }) {
   const at: Coord = [fix.lng, fix.lat];
   const dwelling = statuses.filter((s) => s.dwellMs > 0).sort((a, b) => b.dwellMs - a.dwellMs)[0];
-  const progress = dwelling ? Math.min(1, dwelling.dwellMs / TRIGGER_CONFIG.dwellMs) : 0;
 
   const cone =
     fix.headingDeg === null
@@ -125,13 +195,7 @@ export default function TourMapCanvas({
         />
       )}
 
-      {progress > 0 && (
-        <Polygon
-          positions={ringToLeaflet(sector(at, 7, 0, 360 * progress).coordinates[0])}
-          pathOptions={{ color: "#9A3412", weight: 2, fillColor: "#9A3412", fillOpacity: 0.35 }}
-          interactive={false}
-        />
-      )}
+      <DwellRing at={at} dwellMs={dwelling?.dwellMs ?? 0} fixT={fix.t} />
 
       <FollowLive at={at} live={live} />
 

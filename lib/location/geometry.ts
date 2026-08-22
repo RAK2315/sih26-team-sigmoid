@@ -48,6 +48,18 @@ export function sector(centre: Coord, radiusM: number, fromDeg: number, toDeg: n
   return { type: "Polygon", coordinates: [ring] };
 }
 
+// the Dwell ring is a stroke along the circumference, not a wedge, so it needs the arc on its own
+export function arc(centre: Coord, radiusM: number, fromDeg: number, toDeg: number): Coord[] {
+  const steps = 48;
+  const points: Coord[] = [];
+  for (let i = 0; i <= steps; i++) {
+    const heading = fromDeg + ((toDeg - fromDeg) * i) / steps;
+    const moved = destination(centre, radiusM, heading, { units: "meters" }).geometry.coordinates;
+    points.push([moved[0], moved[1]]);
+  }
+  return points;
+}
+
 export function moveBy(from: Coord, metres: number, headingDeg: number): Coord {
   const moved = destination(from, metres, headingDeg, { units: "meters" }).geometry.coordinates;
   return [moved[0], moved[1]];
