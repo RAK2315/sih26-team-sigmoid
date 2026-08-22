@@ -30,8 +30,8 @@ const notoDeva = Noto_Serif_Devanagari({
 });
 
 export const metadata: Metadata = {
-  title: "THRESHOLD",
-  description: "Cross it, and the place speaks.",
+  title: "VIRASAT",
+  description: "Stand where it happened.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="flex min-h-screen flex-col">
         <header className="flex h-14 shrink-0 items-center justify-between border-b border-ink-faint/40 px-6">
           <Link href="/" className="font-display text-xl tracking-wide text-ink">
-            THRESHOLD
+            VIRASAT
           </Link>
           <nav className="flex gap-6 text-sm text-ink-muted">
             <Link href="/explore" className="hover:text-madder">

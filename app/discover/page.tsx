@@ -2,7 +2,7 @@ import { DISCOVERY_CACHE } from "@/content/discovery-cache";
 import volume from "@/content/pages/zafar-hasan-v2.json";
 import Discover from "./discover";
 
-export const metadata = { title: "Discover - THRESHOLD" };
+export const metadata = { title: "Discover - VIRASAT" };
 
 export default function DiscoverPage() {
   return (

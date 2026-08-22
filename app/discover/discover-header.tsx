@@ -38,7 +38,7 @@ export default function DiscoverHeader({ pageCount }: { pageCount: number }) {
       <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
         The researcher&apos;s desk
       </p>
-      <h1 className="font-display mt-2 max-w-3xl text-4xl leading-tight text-ink lg:text-5xl">
+      <h1 className="ink-in font-display mt-2 max-w-3xl text-4xl leading-tight text-ink lg:text-5xl">
         Watch a 1919 page become a place on the map
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">
@@ -48,7 +48,7 @@ export default function DiscoverHeader({ pageCount }: { pageCount: number }) {
         is inspectable.
       </p>
 
-      <ol className="mt-6 grid gap-px border border-ink-faint/40 bg-ink-faint/40 sm:grid-cols-2 lg:grid-cols-4">
+      <ol className="stagger mt-6 grid gap-px border border-ink-faint/40 bg-ink-faint/40 sm:grid-cols-2 lg:grid-cols-4">
         {STEPS.map((step, i) => (
           <li key={step.label} className="flex gap-3 bg-paper-raised p-4">
             <span className="mt-0.5 shrink-0 text-madder">

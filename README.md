@@ -1,6 +1,6 @@
-# THRESHOLD
+# VIRASAT
 
-*Cross it, and the place speaks.*
+*विरासत · Stand where it happened.*
 
 **Smart India Hackathon 2026, internal round. Theme: Heritage & Culture. Team Sigmoid, JSS University.**
 
@@ -14,7 +14,7 @@ Archival heritage records contain thousands of historically significant Indian s
 
 Between 1916 and 1922 the Archaeological Survey of India catalogued roughly **1,300 monuments in Delhi**. Today about **174** are centrally protected. The rest did not all disappear. They stopped being findable: unmarked, unmapped, unexplained.
 
-THRESHOLD is two engines over one heritage graph.
+VIRASAT is two engines over one heritage record.
 
 **Discovery** reads the archival record, pulls out every structure a page mentions, converts its written location into a modern coordinate with an honest uncertainty radius, and checks whether anything on today's map sits inside it. If nothing does, we have surfaced a **Representation Gap**.
 
@@ -26,7 +26,7 @@ The two connect: a verified Candidate from the archive becomes a place a visitor
 
 | Read | Why |
 |---|---|
-| **[THRESHOLD-project-brief.pdf](./THRESHOLD-project-brief.pdf)** | **Everyone reads this first.** 19 pages, the whole project: problem, vocabulary, architecture, features, the demo, the risks, house rules. |
+| **[VIRASAT-project-brief.pdf](./docs/VIRASAT-project-brief.pdf)** | **Everyone reads this first.** 19 pages, the whole project: problem, vocabulary, architecture, features, the demo, the risks, house rules. |
 | [CONTEXT.md](./CONTEXT.md) | The shared vocabulary. Use these exact words. |
 | [plan/teammate-briefs/](./plan/teammate-briefs/) | Five independent build briefs, one per person. |
 

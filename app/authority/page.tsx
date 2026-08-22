@@ -1,7 +1,7 @@
 import volume from "@/content/pages/zafar-hasan-v2.json";
 import Authority from "./authority";
 
-export const metadata = { title: "Authority - THRESHOLD" };
+export const metadata = { title: "Authority - VIRASAT" };
 
 export default function AuthorityPage() {
   return (

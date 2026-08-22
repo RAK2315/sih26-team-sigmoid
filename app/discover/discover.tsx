@@ -311,7 +311,7 @@ function Results({
           {result.fallbackReason ? `, because no model answered: ${result.fallbackReason}` : ""}.
         </p>
       )}
-      <ul>
+      <ul className="stagger">
         {result.mentions.map((m: Mention) => (
           <MentionCard
             key={m.id}

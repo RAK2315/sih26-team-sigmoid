@@ -41,7 +41,7 @@ export default function AuthorityHeader({ candidates }: { candidates: StoredCand
       <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
         The reviewer&apos;s desk
       </p>
-      <h1 className="font-display mt-2 text-4xl leading-tight text-ink lg:text-5xl">
+      <h1 className="ink-in font-display mt-2 text-4xl leading-tight text-ink lg:text-5xl">
         Nothing automated gets past <span className="text-madder italic">Candidate</span>
       </h1>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">
@@ -51,7 +51,7 @@ export default function AuthorityHeader({ candidates }: { candidates: StoredCand
       </p>
 
       <div className="mt-6 overflow-x-auto">
-        <div className="flex min-w-max items-center gap-3">
+        <div className="stagger flex min-w-max items-center gap-3">
           <Box label="Candidate" count={count("candidate")} colour="text-state-candidate" />
 
           {/* the whole point of the page is that a person stands on this arrow */}

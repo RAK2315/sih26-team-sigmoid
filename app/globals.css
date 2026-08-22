@@ -75,3 +75,57 @@ body::after {
   color: var(--color-ink-muted);
   font-size: 10px;
 }
+
+/* Motion. Everything here respects prefers-reduced-motion, which the design system requires,
+   because the Uncertainty Radius contraction and the Dwell ring both carry information. */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes draw-rule {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes ink-in {
+  from { opacity: 0; letter-spacing: 0.12em; }
+  to   { opacity: 1; letter-spacing: normal; }
+}
+
+/* the passage the model copied out of the page, lighting up where it sits in the scan */
+@keyframes highlight-sweep {
+  from { background-size: 0% 100%; }
+  to   { background-size: 100% 100%; }
+}
+
+.rise      { animation: rise .5s cubic-bezier(.2,.7,.3,1) both; }
+.fade-in   { animation: fade .6s ease both; }
+.ink-in    { animation: ink-in .7s cubic-bezier(.2,.7,.3,1) both; }
+.rule-draw { animation: draw-rule .7s cubic-bezier(.2,.7,.3,1) both; transform-origin: left; }
+
+/* a stack of cards arriving one after another reads as a process, not a page load */
+.stagger > * { animation: rise .5s cubic-bezier(.2,.7,.3,1) both; }
+.stagger > *:nth-child(1) { animation-delay: .04s; }
+.stagger > *:nth-child(2) { animation-delay: .10s; }
+.stagger > *:nth-child(3) { animation-delay: .16s; }
+.stagger > *:nth-child(4) { animation-delay: .22s; }
+.stagger > *:nth-child(5) { animation-delay: .28s; }
+.stagger > *:nth-child(6) { animation-delay: .34s; }
+.stagger > *:nth-child(n+7) { animation-delay: .40s; }
+
+/* leaflet paints its own panes, so a fade on the container is the only safe way in */
+.leaflet-container { animation: fade .8s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise, .fade-in, .ink-in, .rule-draw, .stagger > *, .leaflet-container {
+    animation: none !important;
+  }
+  .leaflet-container { opacity: 1; }
+}

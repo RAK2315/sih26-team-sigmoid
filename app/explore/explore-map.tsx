@@ -19,14 +19,14 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
   const [selected, setSelected] = useState<HeritageSite | null>(null);
 
   return (
-    // every other map in the app sits in a box with a real height. this one held the whole page
-    // in absolutely positioned panels, so nothing gave the map any height to be 100% of.
-    <div className="relative min-h-[28rem] flex-1">
-      <div className="absolute inset-0">
+    // the panels stack under the map on a phone and float beside it from lg, because absolute
+    // children give a parent no height and this map used to collapse to nothing
+    <div className="relative flex min-h-0 flex-1 flex-col lg:block lg:min-h-[30rem]">
+      <div className="h-[52vh] min-h-[17rem] shrink-0 lg:absolute lg:inset-0 lg:h-auto lg:min-h-0">
         <ExploreMapCanvas sites={sites} selectedId={selected?.id ?? null} onSelect={setSelected} />
       </div>
 
-      <aside className="pointer-events-none absolute inset-x-0 bottom-0 z-[500] flex flex-col gap-3 p-4 lg:inset-y-0 lg:left-auto lg:right-0 lg:w-96 lg:overflow-y-auto">
+      <aside className="stagger z-[500] flex flex-col gap-3 p-4 lg:pointer-events-none lg:absolute lg:inset-y-0 lg:right-0 lg:w-96 lg:overflow-y-auto">
         <div className="pointer-events-auto border border-ink-faint/40 bg-paper-raised p-4 shadow-paper">
           {selected === null ? (
             <>

@@ -60,11 +60,17 @@ export default function Home() {
           <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
             Team Sigmoid &middot; SIH 2026
           </p>
-          <h1 className="font-display mt-5 text-7xl leading-[0.9] text-ink lg:text-8xl">
-            THRESHOLD
+          <h1 className="ink-in font-display mt-5 text-7xl leading-[0.9] text-ink lg:text-8xl">
+            VIRASAT
           </h1>
-          <p className="font-display mt-3 text-2xl text-madder italic lg:text-3xl">
-            Cross it, and the place speaks.
+          <p className="rise font-deva mt-1 text-3xl leading-tight text-ink-muted lg:text-4xl" style={{ animationDelay: ".18s" }}>
+            विरासत
+          </p>
+          <p className="rise font-display mt-4 text-2xl text-madder italic lg:text-3xl" style={{ animationDelay: ".30s" }}>
+            Stand where it happened.
+          </p>
+          <p className="rise font-archive mt-4 max-w-lg text-xs leading-relaxed text-ink-faint" style={{ animationDelay: ".42s" }}>
+            Virasat is what is handed down. Not only what was built, but what is still done.
           </p>
         </div>
       </section>
@@ -80,16 +86,26 @@ export default function Home() {
               monuments in Delhi. About 174 are centrally protected today. The rest did not all
               disappear. They stopped being findable.
             </p>
+            <p className="mt-4 text-base leading-relaxed text-ink-muted">
+              Stepwells, caravanserais, dargahs, garden tombs, whole quarters of a city. The
+              trouble was never that India lacks heritage. It is that most of it sits in
+              gazetteers, survey volumes and district records that nobody has put on a map.
+            </p>
           </div>
           <div>
             <p className="font-archive border-t border-ink-faint/40 pt-3 text-xs tracking-[0.2em] text-ink-faint uppercase">
               What we do about it
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              THRESHOLD reads what the archive already recorded, projects it back onto
+              VIRASAT reads what the archive already recorded, projects it back onto
               today&apos;s map with a radius that says how sure we are, has a person confirm each
               one, and then lets the place tell its own story to whoever is standing in front of
               it.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-ink-muted">
+              And a place is not only its stone. Every Heritage Point here carries a Living
+              Tradition too: the craft, the trade or the ritual it was built around, and whether
+              anyone still practises it.
             </p>
           </div>
         </div>
@@ -102,7 +118,7 @@ export default function Home() {
       </section>
 
       <section className="border-y border-ink-faint/40 bg-paper-raised">
-        <dl className="mx-auto grid w-full max-w-6xl grid-cols-2 lg:grid-cols-5">
+        <dl className="stagger mx-auto grid w-full max-w-6xl grid-cols-2 lg:grid-cols-5">
           {FIGURES.map((figure) => (
             <div
               key={figure.label}
@@ -130,12 +146,12 @@ export default function Home() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-12">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="stagger grid gap-4 md:grid-cols-3">
           {DOORS.map((door, i) => (
             <Link
               key={door.href}
               href={door.href}
-              className="group block border border-ink-faint/40 bg-paper-raised p-6 transition-colors hover:border-madder hover:bg-paper-sunk/40"
+              className="group block border border-ink-faint/40 bg-paper-raised p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-madder hover:bg-paper-sunk/40"
             >
               <p className="font-archive text-[11px] tracking-[0.2em] text-ink-faint uppercase">
                 {String(i + 1).padStart(2, "0")} &middot; {door.kicker}
@@ -157,7 +173,7 @@ export default function Home() {
           <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
             How one place travels through the system
           </p>
-          <ol className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-4">
+          <ol className="stagger mt-5 flex flex-wrap items-center gap-x-3 gap-y-4">
             {PIPELINE.map((step, i) => (
               <li key={step} className="flex items-center gap-3">
                 <span className="flex items-center gap-2">

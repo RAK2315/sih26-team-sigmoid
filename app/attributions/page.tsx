@@ -6,7 +6,7 @@ import volume from "@/content/pages/zafar-hasan-v2.json";
 import { points } from "@/content/points";
 import type { ArchiveImage } from "@/lib/types";
 
-export const metadata = { title: "Attributions - THRESHOLD" };
+export const metadata = { title: "Attributions - VIRASAT" };
 
 const withImages = points.filter((p) => p.thenNow);
 
@@ -40,7 +40,7 @@ export default function Attributions() {
       <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">Sources</p>
       <h1 className="font-display mt-2 text-5xl leading-none text-ink">Attributions</h1>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
-        Everything shown in THRESHOLD came from somewhere, and this page says where. No image of a
+        Everything shown in VIRASAT came from somewhere, and this page says where. No image of a
         real monument in this project was generated. Archival photography is public domain by age;
         modern photography is Creative Commons and credited both here and beside the image itself.
       </p>
