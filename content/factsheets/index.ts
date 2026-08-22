@@ -1,9 +1,13 @@
 import type { FactSheet } from "@/lib/types";
+import { barbersTombFactSheet } from "./humayuns-tomb-barbers-tomb";
+import { isaKhanFactSheet } from "./humayuns-tomb-isa-khan";
 import { humayunsTombFactSheet } from "./humayuns-tomb-mausoleum";
 import { atgahKhanFactSheet } from "./nizamuddin-atgah-khan";
 import { chaunsathKhambaFactSheet } from "./nizamuddin-chaunsath-khamba";
 import { nizamuddinDargahFactSheet } from "./nizamuddin-dargah";
+import { alaiMinarFactSheet } from "./qutub-complex-alai-minar";
 import { qutubMinarFactSheet } from "./qutub-complex-qutub-minar";
+import { quwwatulIslamFactSheet } from "./qutub-complex-quwwatul-islam";
 import { chattaChowkFactSheet } from "./red-fort-chatta-chowk";
 import { diwanIAamFactSheet } from "./red-fort-diwan-i-aam";
 import { diwanIKhasFactSheet } from "./red-fort-diwan-i-khas";
@@ -32,7 +36,11 @@ export const factSheets: FactSheet[] = [
   atgahKhanFactSheet,
   chaunsathKhambaFactSheet,
   qutubMinarFactSheet,
+  quwwatulIslamFactSheet,
+  alaiMinarFactSheet,
+  isaKhanFactSheet,
   humayunsTombFactSheet,
+  barbersTombFactSheet,
 ];
 
 export function factSheetForPoint(pointId: string): FactSheet | undefined {

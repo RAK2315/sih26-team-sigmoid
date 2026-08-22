@@ -1,4 +1,10 @@
 import type { NarrationText } from "@/lib/types";
+import { barbersTombArchitectureEn } from "./humayuns-tomb-barbers-tomb.architecture.en";
+import { barbersTombHistoryEn } from "./humayuns-tomb-barbers-tomb.history.en";
+import { barbersTombKidsEn } from "./humayuns-tomb-barbers-tomb.kids.en";
+import { isaKhanArchitectureEn } from "./humayuns-tomb-isa-khan.architecture.en";
+import { isaKhanHistoryEn } from "./humayuns-tomb-isa-khan.history.en";
+import { isaKhanKidsEn } from "./humayuns-tomb-isa-khan.kids.en";
 import { humayunsTombArchitectureEn } from "./humayuns-tomb-mausoleum.architecture.en";
 import { humayunsTombHistoryEn } from "./humayuns-tomb-mausoleum.history.en";
 import { humayunsTombKidsEn } from "./humayuns-tomb-mausoleum.kids.en";
@@ -11,7 +17,13 @@ import { chaunsathKhambaKidsEn } from "./nizamuddin-chaunsath-khamba.kids.en";
 import { nizamuddinDargahArchitectureEn } from "./nizamuddin-dargah.architecture.en";
 import { nizamuddinDargahHistoryEn } from "./nizamuddin-dargah.history.en";
 import { nizamuddinDargahKidsEn } from "./nizamuddin-dargah.kids.en";
+import { alaiMinarArchitectureEn } from "./qutub-complex-alai-minar.architecture.en";
+import { alaiMinarHistoryEn } from "./qutub-complex-alai-minar.history.en";
+import { alaiMinarKidsEn } from "./qutub-complex-alai-minar.kids.en";
 import { qutubMinarArchitectureEn } from "./qutub-complex-qutub-minar.architecture.en";
+import { quwwatulIslamArchitectureEn } from "./qutub-complex-quwwatul-islam.architecture.en";
+import { quwwatulIslamHistoryEn } from "./qutub-complex-quwwatul-islam.history.en";
+import { quwwatulIslamKidsEn } from "./qutub-complex-quwwatul-islam.kids.en";
 import { qutubMinarHistoryEn } from "./qutub-complex-qutub-minar.history.en";
 import { qutubMinarKidsEn } from "./qutub-complex-qutub-minar.kids.en";
 import { chattaChowkArchitectureEn } from "./red-fort-chatta-chowk.architecture.en";
@@ -97,9 +109,21 @@ export const narrationTexts: NarrationText[] = [
   qutubMinarHistoryEn,
   qutubMinarArchitectureEn,
   qutubMinarKidsEn,
+  quwwatulIslamHistoryEn,
+  quwwatulIslamArchitectureEn,
+  quwwatulIslamKidsEn,
+  alaiMinarHistoryEn,
+  alaiMinarArchitectureEn,
+  alaiMinarKidsEn,
+  isaKhanHistoryEn,
+  isaKhanArchitectureEn,
+  isaKhanKidsEn,
   humayunsTombHistoryEn,
   humayunsTombArchitectureEn,
   humayunsTombKidsEn,
+  barbersTombHistoryEn,
+  barbersTombArchitectureEn,
+  barbersTombKidsEn,
   diwanIAamHistoryInsideEn,
   rangMahalHistoryInsideEn,
   diwanIKhasHistoryInsideEn,

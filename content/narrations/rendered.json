@@ -977,6 +977,204 @@
     "voice": "en-IN-NeerjaNeural",
     "textHash": "baec3dc0f896be32"
   },
+  "qutub-complex/quwwatul-islam/history.en.approach": {
+    "audioUrl": "/audio/qutub-complex/quwwatul-islam/history.en.approach.mp3",
+    "durationSec": 37.182,
+    "sentences": [
+      "The Quwwatul Islam mosque, built in 1191 by Qutbuddin Aibak.",
+      "The inscription over the east gate says the materials of twenty seven temples went into it, and it says so as a boast.",
+      "Cunningham worked out what that meant on the ground: the older temple was pulled down to the plinth, and its columns were stood up again to make these colonnades.",
+      "So you are inside two buildings at once.",
+      "Altamsh doubled it in 1230 and Alauddin Khalji doubled it again ninety years later.",
+      "The outer edge of his extension was only found in the excavations of 1911."
+    ],
+    "cues": [
+      0.1,
+      5.031,
+      12.754,
+      22.171,
+      25.349,
+      31.525
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "f147d35ad03e8704"
+  },
+  "qutub-complex/quwwatul-islam/architecture.en.approach": {
+    "audioUrl": "/audio/qutub-complex/quwwatul-islam/architecture.en.approach.mp3",
+    "durationSec": 35.741,
+    "sentences": [
+      "The Quwwatul Islam mosque.",
+      "The court is a hundred and forty two feet by a hundred and eight, ringed by colonnades of grey stone, four pillars deep on the east and three on the north and south.",
+      "The prayer chamber on the west is a hundred and forty seven by forty, with five rows of pillars in it.",
+      "The thing to look at is the screen across its front.",
+      "Five ogee arches in red and yellow sandstone, carved with Hindu patterns, with bands of naskh lettering running through them.",
+      "The carvers were local and the script was not.",
+      "You can see both hands on the same stone."
+    ],
+    "cues": [
+      0.1,
+      2.161,
+      12.065,
+      18.273,
+      21.641,
+      29.406,
+      32.775
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "35fff8444d25c3a6"
+  },
+  "qutub-complex/quwwatul-islam/kids.en.approach": {
+    "audioUrl": "/audio/qutub-complex/quwwatul-islam/kids.en.approach.mp3",
+    "durationSec": 26.903,
+    "sentences": [
+      "This is the Quwwatul Islam mosque, and it is built out of other buildings.",
+      "The writing over the gate says stone from twenty seven temples was used here.",
+      "Look closely at the pillars.",
+      "Some of them still have the old carvings on them, flowers and bells and little figures, because nobody cut them off.",
+      "The mosque got bigger twice after it was built.",
+      "The last edge of it stayed lost underground until 1911, when somebody dug it up."
+    ],
+    "cues": [
+      0.1,
+      4.774,
+      9.297,
+      11.543,
+      18.153,
+      21.416
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "3179762147db188d"
+  },
+  "qutub-complex/alai-minar/history.en.approach": {
+    "audioUrl": "/audio/qutub-complex/alai-minar/history.en.approach.mp3",
+    "durationSec": 28.4,
+    "sentences": [
+      "The Alai Minar, and it is a stump because it was never finished.",
+      "Alauddin Khalji wanted a tower twice the Qutub Minar in height and twice around.",
+      "He got this far and died, and the work stopped the same year.",
+      "The survey passes on a story that the marble meant to face it went into Humayun's tomb instead.",
+      "If that is true, then a building four miles from here is partly made of this one.",
+      "Nobody finished it and nobody took it down either."
+    ],
+    "cues": [
+      0.1,
+      4.269,
+      9.374,
+      13.718,
+      19.544,
+      24.915
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "cde60ab3633e1228"
+  },
+  "qutub-complex/alai-minar/architecture.en.approach": {
+    "audioUrl": "/audio/qutub-complex/alai-minar/architecture.en.approach.mp3",
+    "durationSec": 30.54,
+    "sentences": [
+      "The Alai Minar is the only building here you can see the inside of without going in.",
+      "What stands is the rubble core.",
+      "Every finished tower on this site has one, and every finished tower hides it under dressed stone.",
+      "The survey says the architect plainly meant to face this with something better, and the surface you are looking at was never meant to be a surface.",
+      "It was going to be twice the Qutub Minar in both height and circumference.",
+      "Work out from the base how wide that would have made it."
+    ],
+    "cues": [
+      0.1,
+      5.476,
+      7.849,
+      14.036,
+      22.277,
+      26.959
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "dac42c138164a8e6"
+  },
+  "qutub-complex/alai-minar/kids.en.approach": {
+    "audioUrl": "/audio/qutub-complex/alai-minar/kids.en.approach.mp3",
+    "durationSec": 22.147,
+    "sentences": [
+      "This is the Alai Minar, the tower nobody ever finished.",
+      "A king decided to build one twice as tall and twice as wide as the Qutub Minar next door.",
+      "Then he died, and everyone stopped.",
+      "What is left is the rough insides, because the smooth stone was never put on the outside.",
+      "People say the marble for it was carted off and used on Humayun's tomb instead."
+    ],
+    "cues": [
+      0.1,
+      3.842,
+      9.382,
+      12.2,
+      17.391
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "2d2e995df56a43e2"
+  },
+  "humayuns-tomb/isa-khan/history.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/isa-khan/history.en.approach.mp3",
+    "durationSec": 33.506,
+    "sentences": [
+      "The tomb of Isa Khan, built in 1547, which makes it twenty years older than the emperor's tomb behind you.",
+      "Isa Khan Niyazi served Sher Shah Sur, the man who drove Humayun out of India.",
+      "When Sher Shah died it was largely Isa Khan who kept his son on the throne of Delhi.",
+      "So the Mughals built their mausoleum next door to a man who had fought them.",
+      "He built this while he was alive, which was the ordinary thing to do.",
+      "Six graves are inside and only his is identified with any confidence."
+    ],
+    "cues": [
+      0.1,
+      7.881,
+      13.072,
+      18.802,
+      23.665,
+      28.23
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "fd348da1f88f1542"
+  },
+  "humayuns-tomb/isa-khan/architecture.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/isa-khan/architecture.en.approach.mp3",
+    "durationSec": 33.305,
+    "sentences": [
+      "The tomb of Isa Khan is an octagon, and everything about it says so twice.",
+      "A verandah runs the whole way round under a deep chajja carried on heavy stone brackets.",
+      "The eight corners are propped with sloping buttresses, which is what gives it that squat, planted look.",
+      "Eight chattris on red sandstone columns stand at roof level, one for each side.",
+      "The dome is low and wide and springs from a sixteen sided drum.",
+      "Compare it with the tomb behind you, twenty years later and reaching for height instead."
+    ],
+    "cues": [
+      0.1,
+      5.381,
+      10.762,
+      17.203,
+      23.019,
+      27.627
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "1f8bb276f78678ef"
+  },
+  "humayuns-tomb/isa-khan/kids.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/isa-khan/kids.en.approach.mp3",
+    "durationSec": 24.838,
+    "sentences": [
+      "This is the tomb of Isa Khan, and it has eight sides.",
+      "Walk around and count them.",
+      "The man inside worked for the king who chased the emperor Humayun out of India.",
+      "A hundred years ago this whole building was full of houses, with families living in the rooms.",
+      "In 1905 they were moved out and the garden you are standing in was made.",
+      "It is older than the big tomb behind you, by about twenty years."
+    ],
+    "cues": [
+      0.1,
+      3.884,
+      6.003,
+      10.6,
+      16.035,
+      20.727
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "c4fff1a185f824ad"
+  },
   "humayuns-tomb/mausoleum/history.en.approach": {
     "audioUrl": "/audio/humayuns-tomb/mausoleum/history.en.approach.mp3",
     "durationSec": 32.478,
@@ -1046,6 +1244,70 @@
     ],
     "voice": "en-IN-NeerjaNeural",
     "textHash": "774fea14e15d7592"
+  },
+  "humayuns-tomb/barbers-tomb/history.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/barbers-tomb/history.en.approach.mp3",
+    "durationSec": 28.463,
+    "sentences": [
+      "This is called the Barber's Tomb, and the survey says plainly that nobody knows why.",
+      "Two people are buried here, a man and a woman, inside the emperor's own garden.",
+      "Neither grave carries a name.",
+      "One of them carries the figures nine nine nine, which is read as the Hijri year, about 1590.",
+      "Somebody important enough to be buried in this enclosure, and all that survived of them is a job title that may not even be right."
+    ],
+    "cues": [
+      0.1,
+      5.508,
+      11.133,
+      13.559,
+      20.222
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "ab1929c796fc9361"
+  },
+  "humayuns-tomb/barbers-tomb/architecture.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/barbers-tomb/architecture.en.approach.mp3",
+    "durationSec": 33.622,
+    "sentences": [
+      "The Barber's Tomb sits on a platform eight feet high and seventy six feet square, in Delhi quartzite picked out with red sandstone.",
+      "The chamber on top is only twenty four feet square inside.",
+      "There is a recessed arch on each of the four sides; three of them are filled with red sandstone jali screens and one is the door.",
+      "The dome stands on a sixteen sided drum with a chattri at each corner of the roof.",
+      "Go in and look up at the underside of the dome.",
+      "Traces of old blue floral painting are still there."
+    ],
+    "cues": [
+      0.1,
+      8.4,
+      12.701,
+      21.038,
+      26.419,
+      29.957
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "100e557d57729564"
+  },
+  "humayuns-tomb/barbers-tomb/kids.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/barbers-tomb/kids.en.approach.mp3",
+    "durationSec": 23.588,
+    "sentences": [
+      "This is called the Barber's Tomb, and here is the strange part: nobody knows why.",
+      "Two people are buried inside and neither grave has a name on it.",
+      "One has three nines carved on it, which is a date in a different calendar.",
+      "Somebody long ago started calling it the barber's tomb and the name stuck.",
+      "Go inside and look straight up.",
+      "There is still some old blue paint on the dome."
+    ],
+    "cues": [
+      0.1,
+      5.388,
+      9.255,
+      13.683,
+      18.217,
+      20.653
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "af58b55138135e2c"
   },
   "red-fort/diwan-i-aam/history.en.inside": {
     "audioUrl": "/audio/red-fort/diwan-i-aam/history.en.inside.mp3",

@@ -18,7 +18,11 @@ const ZONES: Record<string, number> = {
   "nizamuddin/chaunsath-khamba": 103505910,
   "nizamuddin/atgah-khan": 1448399383,
   "qutub-complex/qutub-minar": 369140381,
+  "qutub-complex/quwwatul-islam": 818709477,
+  "qutub-complex/alai-minar": 476004365,
   "humayuns-tomb/mausoleum": 220385654,
+  "humayuns-tomb/isa-khan": 163778459,
+  "humayuns-tomb/barbers-tomb": 220385656,
 };
 
 const MIRRORS = [

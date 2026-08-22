@@ -1,9 +1,13 @@
 import type { HeritagePoint } from "@/lib/types";
+import { barbersTomb } from "./humayuns-tomb/barbers-tomb";
+import { isaKhanTomb } from "./humayuns-tomb/isa-khan";
 import { humayunsTombMausoleum } from "./humayuns-tomb/mausoleum";
 import { atgahKhan } from "./nizamuddin/atgah-khan";
 import { chaunsathKhamba } from "./nizamuddin/chaunsath-khamba";
 import { nizamuddinDargah } from "./nizamuddin/dargah";
+import { alaiMinar } from "./qutub-complex/alai-minar";
 import { qutubMinar } from "./qutub-complex/qutub-minar";
+import { quwwatulIslam } from "./qutub-complex/quwwatul-islam";
 import { chattaChowk } from "./red-fort/chatta-chowk";
 import { diwanIAam } from "./red-fort/diwan-i-aam";
 import { diwanIKhas } from "./red-fort/diwan-i-khas";
@@ -33,7 +37,11 @@ export const points: HeritagePoint[] = [
   atgahKhan,
   chaunsathKhamba,
   qutubMinar,
+  quwwatulIslam,
+  alaiMinar,
+  isaKhanTomb,
   humayunsTombMausoleum,
+  barbersTomb,
 ];
 
 export function pointById(id: string): HeritagePoint | undefined {
