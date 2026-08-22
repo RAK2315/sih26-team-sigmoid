@@ -1,0 +1,33 @@
+{
+  "mentions": [
+    {
+      "name": "Matya Mahal Mosque",
+      "type": "mosque",
+      "period": null,
+      "passage": "MATYA MAHAL.- _\nNo. 75. («) Matya Mahal Mosque.\n(6) In the Muhalla.\n(c) Waqf, Mutawalli, Muhammad KaramuUah.\n{d) III.\n{e) Date unknown.\n(/) None.\n{g) Good.\n(A) Unnecessary.\n(y) The original mosque was small, but it was rebuilt and extended by\noneMunshi Agha Jan, about the year 1248 A.H. (1832—1833 AD)\nAdjoining it, towards the north-west, is a large well called Banjai^n-ki-\nbaoli (stepped well) which is supposed to belong to the pre-Mughal",
+      "spatialClue": null,
+      "id": "m_68_3",
+      "passageOffset": [
+        796,
+        1239
+      ]
+    },
+    {
+      "name": "Banjai^n-ki-baoli",
+      "type": "stepwell",
+      "period": null,
+      "passage": "Adjoining it, towards the north-west, is a large well called Banjai^n-ki-\nbaoli (stepped well) which is supposed to belong to the pre-Mughal",
+      "spatialClue": {
+        "anchorName": "Matya Mahal Mosque",
+        "bearing": "NW",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_68_4",
+      "passageOffset": [
+        1099,
+        1239
+      ]
+    }
+  ]
+}

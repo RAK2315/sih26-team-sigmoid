@@ -1,0 +1,38 @@
+{
+  "mentions": [
+    {
+      "name": "Hira Mahal",
+      "type": "pavilion",
+      "period": "About 1268 A.H. (1842 A.D.)",
+      "passage": ", (a) Hira Mahal.\n(6) North of the Hammam.\n(c) Archaeological Department.\n(d) II a.\n(e) About 1268 A.H. (1842 A.D.).\nij) None.\n(g) Good.\n(h) “ Protected Monument.”\n(j) A small marble pavilion measuring 22&apos; 3&quot; north and south by 19&apos; 4&quot;\neast and west with three open arehes on each face, built by\nBahadur Shah II. The work shows the contrast in the quality of\nlate IVIoghal Architecture, as compared with that of the period of\nShah Jahan. North of this building, and facing the main eastern\ncauseway of the Hayat Bakhsh garden, stood the Moti Mahal (see\nold picture of the last wall of the Fort in the Delhi Jiluseum)-\nThis was removed after the Mutiny and a battery erected on its\n4 site. This battery was removed in 1913, traces of the foundation of\nthe Moti Mahal being disclosed.\n{k) Eearn, p. lo4.\nJsar (1904), chap. Ill, 101.\n(Z) 1630, 2262, 2689.",
+      "spatialClue": {
+        "anchorName": "the Hammam",
+        "bearing": "N",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_47_1",
+      "passageOffset": [
+        22,
+        893
+      ]
+    },
+    {
+      "name": "Shah Burj",
+      "type": "tower",
+      "period": "1048-1058 (1039-1648 A.D.)",
+      "passage": "No42^ (a) Shah Burj.\n(6) North of the Hira Mahall at the north-east corner of the Fort.\n(c) Archseological Department.\nid,) II«.\nie) 1048-1058 (1039-1648 A.D.).\nif) None.\nig) Fair, but has suffered considerably from occupation during the last\n60 years.\n. (h) “ Protected Monument.”\nij) It is also called the “northern tower.” The main portion now consists\nof two storeys only, the dome having disappeared after the Mutiny.\nThe marble pavilion to the south is of singular beauty, although\nalready showing signs of the decadence in architecture which\nculminated in reign of Aurangzeb It measures some 69&apos; 2&quot; east\nand west by 33&apos; north and south. The centre of the north\nwall is occupied by a marble water cascade of pleasing design\nwhich slopes into a ‘ scalloped ’ marble basin. For many years after the\njlklutiny the building served as an officer’s residence, but in 1904 its\nconservation was taken up, the marble cascade being reconstructed\nand modern additions removed. The earthquake of the same year\nso damaged the strrrcture that it was necessary to take it almost all\ndown and rebuild it. The grass terrace between this pavilion and\nthe Hammam was laid out as it now exists in 1911. The Nahr-i-\nBihisht (see p. 21), the famous canal which supplied the many\nfountains and water channels of the palace, also served this build-\ning and thence proceeded along the entire length of the east wall.\nThe ceiling of the domed chamber behind the marble pavilion is",
+      "spatialClue": {
+        "anchorName": "the Hira Mahall",
+        "bearing": "N",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_47_2",
+      "passageOffset": [
+        894,
+        2369
+      ]
+    }
+  ]
+}

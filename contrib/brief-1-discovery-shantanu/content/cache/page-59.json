@@ -1,0 +1,21 @@
+{
+  "mentions": [
+    {
+      "name": "Unchi Masjid I",
+      "type": "mosque",
+      "period": null,
+      "passage": "Jfo. 48. Unchi Masjid I.\n(6) On the Phul-ki*Mandi Road.",
+      "spatialClue": {
+        "anchorName": "Phul-ki*Mandi Road",
+        "bearing": null,
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_59_4",
+      "passageOffset": [
+        1030,
+        1085
+      ]
+    }
+  ]
+}

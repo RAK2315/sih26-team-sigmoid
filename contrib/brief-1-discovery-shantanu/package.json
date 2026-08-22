@@ -1,0 +1,41 @@
+{
+  "name": "brief-1-discovery-shantanu",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "ingest": "tsx scripts/ingest.ts",
+    "build-cache": "tsx scripts/build-cache.ts",
+    "pull-baseline": "tsx scripts/pull-baseline.ts",
+    "verify": "tsx scripts/verify.ts"
+  },
+  "dependencies": {
+    "@google/genai": "2.17.1",
+    "@turf/turf": "7.4.0",
+    "leaflet": "1.9.4",
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-leaflet": "5.0.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.12",
+    "typescript": "^5",
+    "vitest": "4.1.11"
+  },
+  "packageManager": "pnpm@10.34.5"
+}
