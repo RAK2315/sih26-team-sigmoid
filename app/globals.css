@@ -105,13 +105,13 @@ body::after {
   to   { background-size: 100% 100%; }
 }
 
-.rise      { animation: rise .5s cubic-bezier(.2,.7,.3,1) both; }
-.fade-in   { animation: fade .6s ease both; }
-.ink-in    { animation: ink-in .7s cubic-bezier(.2,.7,.3,1) both; }
-.rule-draw { animation: draw-rule .7s cubic-bezier(.2,.7,.3,1) both; transform-origin: left; }
+.rise      { animation: rise .5s cubic-bezier(.2,.7,.3,1) backwards; }
+.fade-in   { animation: fade .6s ease backwards; }
+.ink-in    { animation: ink-in .7s cubic-bezier(.2,.7,.3,1) backwards; }
+.rule-draw { animation: draw-rule .7s cubic-bezier(.2,.7,.3,1) backwards; transform-origin: left; }
 
 /* a stack of cards arriving one after another reads as a process, not a page load */
-.stagger > * { animation: rise .5s cubic-bezier(.2,.7,.3,1) both; }
+.stagger > * { animation: rise .5s cubic-bezier(.2,.7,.3,1) backwards; }
 .stagger > *:nth-child(1) { animation-delay: .04s; }
 .stagger > *:nth-child(2) { animation-delay: .10s; }
 .stagger > *:nth-child(3) { animation-delay: .16s; }
@@ -137,7 +137,8 @@ body::after {
   to   { opacity: 1; transform: none; }
 }
 
-.page-enter { animation: page-enter .35s cubic-bezier(.2,.7,.3,1) both; }
+/* backwards, not both, so no transform is left behind to trap a fixed panel inside it */
+.page-enter { animation: page-enter .35s cubic-bezier(.2,.7,.3,1) backwards; }
 
 /* on a phone the Evidence has nowhere to slide in from, so it rises instead */
 @keyframes sheet-up {
@@ -145,10 +146,10 @@ body::after {
   to   { opacity: 1; transform: none; }
 }
 
-.sheet { animation: sheet-up .32s cubic-bezier(.2,.7,.3,1) both; }
+.sheet { animation: sheet-up .32s cubic-bezier(.2,.7,.3,1) backwards; }
 
 /* the line from the passage to the pin is the route to the evidence, so it draws itself */
-.thread-draw { animation: fade .25s ease both; }
+.thread-draw { animation: fade .25s ease backwards; }
 
 @keyframes breathe {
   0%, 100% { opacity: .45; }
@@ -158,7 +159,7 @@ body::after {
 .breathe { animation: breathe 1.4s ease-in-out infinite; }
 
 /* leaflet paints its own panes, so a fade on the container is the only safe way in */
-.leaflet-container { animation: fade .8s ease both; }
+.leaflet-container { animation: fade .8s ease backwards; }
 
 @media (prefers-reduced-motion: reduce) {
   .rise, .fade-in, .ink-in, .rule-draw, .stagger > *, .leaflet-container, .breathe, .thread-draw,
