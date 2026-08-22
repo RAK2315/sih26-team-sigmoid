@@ -158,6 +158,10 @@ body::after {
 
 .breathe { animation: breathe 1.4s ease-in-out infinite; }
 
+/* a long page should arrive as you reach it, not all at once above the fold */
+[data-reveal="pending"] { opacity: 0; }
+[data-reveal="shown"]   { animation: rise .55s cubic-bezier(.2,.7,.3,1) backwards; }
+
 /* leaflet paints its own panes, so a fade on the container is the only safe way in */
 .leaflet-container { animation: fade .8s ease backwards; }
 
@@ -169,6 +173,7 @@ body::after {
   .leaflet-container { opacity: 1; }
   .breathe { opacity: 1; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
+  [data-reveal] { opacity: 1 !important; animation: none !important; }
   /* the highlight says which passage was read, so it stays, it just does not sweep */
   .passage-sweep { animation: none !important; background-size: 100% 100%; }
 }

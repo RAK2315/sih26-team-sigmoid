@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "../reveal";
 import { ANCHORS } from "@/content/anchors";
 import { DISCOVERY_CACHE } from "@/content/discovery-cache";
 import { points } from "@/content/points";
@@ -72,174 +73,184 @@ export default function Vision() {
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-6 py-14 lg:px-12">
-        <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
-          Where the visitors go
-        </p>
-        <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
-          Tourism and heritage are the same argument
-        </h2>
-        <div className="mt-6 grid gap-8 md:grid-cols-2">
-          <p className="text-base leading-relaxed text-ink-muted">
-            Delhi has roughly 1,300 recorded monuments. Almost every visitor sees the same five.
-            The concentration is not an accident: those five are the ones with a road, a ticket
-            counter, a sign, and a page on the internet. Everything else is invisible in the way
-            that matters, which is that you cannot find it, and if you did find it nothing there
-            would tell you what it was.
+        <Reveal>
+          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+            Where the visitors go
           </p>
-          <p className="text-base leading-relaxed text-ink-muted">
-            That is why the Walk is not a gimmick. A place with no signage and no guide can still
-            speak, if the visitor&apos;s own phone knows where they are standing. Attention is
-            what funds preservation. Spread the attention and you spread the reason to keep the
-            thing standing. A stepwell that fifty people a week walk to is a stepwell somebody
-            has a reason to repair.
-          </p>
-        </div>
+          <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
+            Tourism and heritage are the same argument
+          </h2>
+          <div className="mt-6 grid gap-8 md:grid-cols-2">
+            <p className="text-base leading-relaxed text-ink-muted">
+              Delhi has roughly 1,300 recorded monuments. Almost every visitor sees the same five.
+              The concentration is not an accident: those five are the ones with a road, a ticket
+              counter, a sign, and a page on the internet. Everything else is invisible in the way
+              that matters, which is that you cannot find it, and if you did find it nothing there
+              would tell you what it was.
+            </p>
+            <p className="text-base leading-relaxed text-ink-muted">
+              That is why the Walk is not a gimmick. A place with no signage and no guide can still
+              speak, if the visitor&apos;s own phone knows where they are standing. Attention is
+              what funds preservation. Spread the attention and you spread the reason to keep the
+              thing standing. A stepwell that fifty people a week walk to is a stepwell somebody
+              has a reason to repair.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <section className="border-y border-ink-faint/40 bg-paper-raised px-6 py-14 lg:px-12">
-        <div className="mx-auto w-full max-w-5xl">
-          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
-            The whole loop
-          </p>
-          <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
-            Paper goes in one end and a person walking goes out the other
-          </h2>
-          <ol className="stagger mt-8 grid gap-px bg-ink-faint/40 sm:grid-cols-2 lg:grid-cols-3">
-            {LOOP.map((item, i) => (
-              <li key={item.step} className="bg-paper-raised p-5">
-                <span className="font-archive text-[10px] tracking-[0.2em] text-madder">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-display mt-1 text-2xl text-ink">{item.step}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.note}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <Reveal>
+          <div className="mx-auto w-full max-w-5xl">
+            <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+              The whole loop
+            </p>
+            <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
+              Paper goes in one end and a person walking goes out the other
+            </h2>
+            <ol className="stagger mt-8 grid gap-px bg-ink-faint/40 sm:grid-cols-2 lg:grid-cols-3">
+              {LOOP.map((item, i) => (
+                <li key={item.step} className="bg-paper-raised p-5">
+                  <span className="font-archive text-[10px] tracking-[0.2em] text-madder">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-display mt-1 text-2xl text-ink">{item.step}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.note}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-6 py-14 lg:px-12">
-        <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
-          The part a photograph cannot hold
-        </p>
-        <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
-          A building is the visible end of a practice
-        </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
-          Somebody cut the marble screen at the Khas Mahal in the plane of the wall, because a
-          screen like that cannot be assembled from pieces. Somebody set coloured stone into
-          sockets chiselled out of the piers of the Diwan-i-Khas, and workshops in Agra still do
-          it by hand. The building is the surviving end of a chain that runs through people.
-        </p>
+        <Reveal>
+          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+            The part a photograph cannot hold
+          </p>
+          <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
+            A building is the visible end of a practice
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
+            Somebody cut the marble screen at the Khas Mahal in the plane of the wall, because a
+            screen like that cannot be assembled from pieces. Somebody set coloured stone into
+            sockets chiselled out of the piers of the Diwan-i-Khas, and workshops in Agra still do
+            it by hand. The building is the surviving end of a chain that runs through people.
+          </p>
 
-        <ol className="stagger mt-8 border-t border-ink-faint/40">
-          {LAYERS.map((layer, i) => (
-            <li
-              key={layer.name}
-              className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b border-ink-faint/25 py-3"
-              style={{ paddingLeft: `${i * 0.9}rem` }}
-            >
-              <span aria-hidden className="h-1.5 w-1.5 shrink-0 bg-verdigris" />
-              <span className="font-display text-xl text-ink">{layer.name}</span>
-              <span className="font-archive text-[11px] text-ink-faint">{layer.note}</span>
-            </li>
-          ))}
-        </ol>
+          <ol className="stagger mt-8 border-t border-ink-faint/40">
+            {LAYERS.map((layer, i) => (
+              <li
+                key={layer.name}
+                className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b border-ink-faint/25 py-3"
+                style={{ paddingLeft: `${i * 0.9}rem` }}
+              >
+                <span aria-hidden className="h-1.5 w-1.5 shrink-0 bg-verdigris" />
+                <span className="font-display text-xl text-ink">{layer.name}</span>
+                <span className="font-archive text-[11px] text-ink-faint">{layer.note}</span>
+              </li>
+            ))}
+          </ol>
 
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-muted">
-          Every one of the {points.length} Heritage Points in this build already carries a Living
-          Tradition, and {living} of them are still practised today. That is the layer that turns
-          a monument list into a record of a culture, and it is the layer that a visitor can
-          actually meet, because a craft has somebody doing it.
-        </p>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-muted">
+            Every one of the {points.length} Heritage Points in this build already carries a Living
+            Tradition, and {living} of them are still practised today. That is the layer that turns
+            a monument list into a record of a culture, and it is the layer that a visitor can
+            actually meet, because a craft has somebody doing it.
+          </p>
+        </Reveal>
       </section>
 
       <section className="border-y border-ink-faint/40 bg-paper-sunk px-6 py-14 lg:px-12">
-        <div className="mx-auto w-full max-w-5xl">
-          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
-            Honest about the line
-          </p>
-          <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
-            What runs today, and what comes after
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
-            The one rule applies to our own roadmap too. Everything marked built is running on
-            this site right now and you can go and use it. Everything marked next is honest
-            intention and nothing more.
-          </p>
+        <Reveal>
+          <div className="mx-auto w-full max-w-5xl">
+            <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+              Honest about the line
+            </p>
+            <h2 className="font-display mt-2 text-4xl leading-tight text-ink">
+              What runs today, and what comes after
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
+              The one rule applies to our own roadmap too. Everything marked built is running on
+              this site right now and you can go and use it. Everything marked next is honest
+              intention and nothing more.
+            </p>
 
-          <div className="mt-8 grid gap-x-10 gap-y-6 lg:grid-cols-2">
-            <ul className="border-b border-ink-faint/25">
-              <Built>
-                {results.length} Pages of an actual 1919 survey read into structured Mentions,
-                with the passage checked against the scan before anything is placed.
-              </Built>
-              <Built>
-                Spatial Clues resolved against {ANCHORS.length} Anchors into pins
-                with an Uncertainty Radius, then checked against a Modern Baseline pulled from
-                OpenStreetMap.
-              </Built>
-              <Built>
-                A Reviewer queue where a person, never the pipeline, decides. Every move written
-                to a table that cannot be edited.
-              </Built>
-              <Built>
-                A Walk that speaks on its own when you are close, facing, and have stood still,
-                from real GPS or a simulation, with the transcript following the voice.
-              </Built>
-              <Built>
-                Living Tradition on every Heritage Point, and Then-and-Now on four of them from
-                Wikimedia Commons with every licence named.
-              </Built>
-            </ul>
+            <div className="mt-8 grid gap-x-10 gap-y-6 lg:grid-cols-2">
+              <ul className="border-b border-ink-faint/25">
+                <Built>
+                  {results.length} Pages of an actual 1919 survey read into structured Mentions,
+                  with the passage checked against the scan before anything is placed.
+                </Built>
+                <Built>
+                  Spatial Clues resolved against {ANCHORS.length} Anchors into pins
+                  with an Uncertainty Radius, then checked against a Modern Baseline pulled from
+                  OpenStreetMap.
+                </Built>
+                <Built>
+                  A Reviewer queue where a person, never the pipeline, decides. Every move written
+                  to a table that cannot be edited.
+                </Built>
+                <Built>
+                  A Walk that speaks on its own when you are close, facing, and have stood still,
+                  from real GPS or a simulation, with the transcript following the voice.
+                </Built>
+                <Built>
+                  Living Tradition on every Heritage Point, and Then-and-Now on four of them from
+                  Wikimedia Commons with every licence named.
+                </Built>
+              </ul>
 
-            <ul className="border-b border-ink-faint/25">
-              <Next>
-                A heritage graph, so a monument links to the craft, the craft to the community,
-                and the community to the festival and the food. Today those links are written in
-                prose rather than modelled.
-              </Next>
-              <Next>
-                Trails chosen by cultural domain rather than by monument. Choose food heritage and
-                get a market, a kitchen and a trade route instead of five buildings.
-              </Next>
-              <Next>
-                Verified artisan profiles, so a visitor near a workshop can be told it is there.
-                Preservation that pays for itself is the only kind that lasts.
-              </Next>
-              <Next>
-                More volumes and more cities. The pipeline is not Delhi-shaped; the content is.
-              </Next>
-              <Next>
-                Hindi, then more languages. The data model is already keyed by language and the
-                voices exist. It needs a reader who can check the translation.
-              </Next>
-            </ul>
+              <ul className="border-b border-ink-faint/25">
+                <Next>
+                  A heritage graph, so a monument links to the craft, the craft to the community,
+                  and the community to the festival and the food. Today those links are written in
+                  prose rather than modelled.
+                </Next>
+                <Next>
+                  Trails chosen by cultural domain rather than by monument. Choose food heritage and
+                  get a market, a kitchen and a trade route instead of five buildings.
+                </Next>
+                <Next>
+                  Verified artisan profiles, so a visitor near a workshop can be told it is there.
+                  Preservation that pays for itself is the only kind that lasts.
+                </Next>
+                <Next>
+                  More volumes and more cities. The pipeline is not Delhi-shaped; the content is.
+                </Next>
+                <Next>
+                  Hindi, then more languages. The data model is already keyed by language and the
+                  voices exist. It needs a reader who can check the translation.
+                </Next>
+              </ul>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-6 py-16 lg:px-12">
-        <blockquote className="border-l-2 border-madder pl-6">
-          <p className="font-display text-3xl leading-snug text-ink lg:text-4xl">
-            We take India&apos;s forgotten heritage out of the archive, put it back on the map,
-            and let people stand where it happened.
-          </p>
-        </blockquote>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/discover"
-            className="border border-madder px-5 py-2.5 text-sm text-madder transition-colors hover:bg-madder hover:text-paper"
-          >
-            See it read a page
-          </Link>
-          <Link
-            href="/explore"
-            className="border border-ink-faint/50 px-5 py-2.5 text-sm text-ink-muted transition-colors hover:border-madder hover:text-madder"
-          >
-            See it on the map
-          </Link>
-        </div>
+        <Reveal>
+          <blockquote className="border-l-2 border-madder pl-6">
+            <p className="font-display text-3xl leading-snug text-ink lg:text-4xl">
+              We take India&apos;s forgotten heritage out of the archive, put it back on the map,
+              and let people stand where it happened.
+            </p>
+          </blockquote>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/discover"
+              className="border border-madder px-5 py-2.5 text-sm text-madder transition-colors hover:bg-madder hover:text-paper"
+            >
+              See it read a page
+            </Link>
+            <Link
+              href="/explore"
+              className="border border-ink-faint/50 px-5 py-2.5 text-sm text-ink-muted transition-colors hover:border-madder hover:text-madder"
+            >
+              See it on the map
+            </Link>
+          </div>
+        </Reveal>
       </section>
     </main>
   );

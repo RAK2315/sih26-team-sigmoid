@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Counted from "./counted";
+import Reveal from "./reveal";
 import { DISCOVERY_CACHE } from "@/content/discovery-cache";
 import { narrationTexts } from "@/content/narrations";
 import { points } from "@/content/points";
@@ -76,7 +78,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-12">
-        <div className="grid gap-10 md:grid-cols-2">
+        <Reveal className="grid gap-10 md:grid-cols-2">
           <div>
             <p className="font-archive border-t border-ink-faint/40 pt-3 text-xs tracking-[0.2em] text-ink-faint uppercase">
               What went missing
@@ -98,45 +100,53 @@ export default function Home() {
               it.
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <blockquote className="mt-14 border-l-2 border-madder pl-6">
-          <p className="font-display text-3xl leading-snug text-ink lg:text-4xl">
-            One rule governs everything here: show the evidence, or don&apos;t show it at all.
-          </p>
-        </blockquote>
+        <Reveal>
+            <blockquote className="mt-14 border-l-2 border-madder pl-6">
+              <p className="font-display text-3xl leading-snug text-ink lg:text-4xl">
+                One rule governs everything here: show the evidence, or don&apos;t show it at all.
+              </p>
+            </blockquote>
+        </Reveal>
       </section>
 
       <section className="border-y border-ink-faint/40 bg-paper-raised">
-        <dl className="stagger mx-auto grid w-full max-w-6xl grid-cols-2 lg:grid-cols-5">
-          {FIGURES.map((figure) => (
-            <div
-              key={figure.label}
-              className="border-b border-ink-faint/25 px-6 py-6 lg:border-r lg:border-b-0 lg:px-8"
-            >
-              <p className="font-archive text-[11px] tracking-[0.2em] text-ink-faint uppercase">
-                {figure.kicker}
+        <Reveal>
+          <dl className="stagger mx-auto grid w-full max-w-6xl grid-cols-2 lg:grid-cols-5">
+            {FIGURES.map((figure) => (
+              <div
+                key={figure.label}
+                className="border-b border-ink-faint/25 px-6 py-6 lg:border-r lg:border-b-0 lg:px-8"
+              >
+                <p className="font-archive text-[11px] tracking-[0.2em] text-ink-faint uppercase">
+                  {figure.kicker}
+                </p>
+                <dt className="font-display mt-1 text-5xl leading-none text-ink">
+                  <Counted value={figure.value} />
+                </dt>
+                <dd className="mt-2 text-xs leading-tight text-ink-muted">{figure.label}</dd>
+              </div>
+            ))}
+            <div className="col-span-2 bg-madder/[0.06] px-6 py-6 lg:col-span-1 lg:px-8">
+              <p className="font-archive text-[11px] tracking-[0.2em] text-madder uppercase">
+                The finding
               </p>
-              <dt className="font-display mt-1 text-5xl leading-none text-ink">{figure.value}</dt>
-              <dd className="mt-2 text-xs leading-tight text-ink-muted">{figure.label}</dd>
+              <dt className="font-display mt-1 text-5xl leading-none text-madder">
+                <Counted value={GAPS} />
+              </dt>
+              <dd className="mt-2 text-xs leading-tight text-ink-muted">
+                Representation Gaps
+                <br />
+                <span className="text-ink-faint">recorded once, unmapped now</span>
+              </dd>
             </div>
-          ))}
-          <div className="col-span-2 bg-madder/[0.06] px-6 py-6 lg:col-span-1 lg:px-8">
-            <p className="font-archive text-[11px] tracking-[0.2em] text-madder uppercase">
-              The finding
-            </p>
-            <dt className="font-display mt-1 text-5xl leading-none text-madder">{GAPS}</dt>
-            <dd className="mt-2 text-xs leading-tight text-ink-muted">
-              Representation Gaps
-              <br />
-              <span className="text-ink-faint">recorded once, unmapped now</span>
-            </dd>
-          </div>
-        </dl>
+          </dl>
+        </Reveal>
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-12">
-        <div className="stagger grid gap-4 md:grid-cols-3">
+        <Reveal className="stagger grid gap-4 md:grid-cols-3">
           {DOORS.map((door, i) => (
             <Link
               key={door.href}
@@ -155,11 +165,11 @@ export default function Home() {
               </span>
             </Link>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-ink-faint/40 bg-paper-raised">
-        <div className="mx-auto w-full max-w-6xl px-6 py-10 lg:px-12">
+        <Reveal className="mx-auto w-full max-w-6xl px-6 py-10 lg:px-12">
           <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
             How one place travels through the system
           </p>
@@ -192,7 +202,7 @@ export default function Home() {
             </Link>
             .
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <footer className="mx-auto w-full max-w-6xl px-6 py-10 lg:px-12">
