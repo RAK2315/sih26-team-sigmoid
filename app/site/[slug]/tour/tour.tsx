@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import LivingTraditionCard from "./living-tradition-card";
 import NarrationPlayer from "./narration-player";
 import ThenNowCard from "./then-now";
+import AskBox from "./ask-box";
 import TriggerPanel from "./trigger-panel";
 import { useGpsLocation } from "./use-gps-location";
 import { useSimLocation } from "./use-sim-location";
@@ -392,6 +393,12 @@ export default function Tour({
         {selected.thenNow && (
           <div className="mt-4">
             <ThenNowCard thenNow={selected.thenNow} name={selected.name} />
+          </div>
+        )}
+
+        {factSheet && (
+          <div className="mt-4">
+            <AskBox pointId={selected.id} pointName={selected.name} />
           </div>
         )}
 
