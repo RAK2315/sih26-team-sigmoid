@@ -1,10 +1,10 @@
 import { execFile } from "node:child_process";
-import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { promisify } from "node:util";
 import { narrationTexts } from "../content/narrations";
+import { narrationId, narrationTextHash } from "../lib/narration/id";
 import type { NarrationText } from "../lib/types";
 
 const run = promisify(execFile);
@@ -28,10 +28,6 @@ interface Rendered {
   cues: number[];
   voice: string;
   textHash: string;
-}
-
-function narrationId(n: NarrationText): string {
-  return `${n.pointId}/${n.persona}.${n.lang}.${n.kind}`;
 }
 
 function seconds(stamp: string): number {
@@ -98,7 +94,7 @@ async function main() {
       sentences: parsed.sentences,
       cues: parsed.cues,
       voice,
-      textHash: createHash("sha256").update(text).digest("hex").slice(0, 16),
+      textHash: narrationTextHash(narration.sentences),
     };
     console.log(`  ${id}  ${parsed.end.toFixed(1)}s  ${parsed.cues.length} cues  ${voice}`);
   }

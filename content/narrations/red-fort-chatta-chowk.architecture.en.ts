@@ -7,9 +7,9 @@ export const chattaChowkArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_red_fort_chatta_chowk",
   sentences: [
-    "This is a vaulted arcade, two hundred and thirty feet long and twenty seven wide.",
-    "The vault is doing the structural work, which is why the walls can be opened up into thirty two shop fronts without weakening anything.",
-    "Halfway along, the builders stopped the vault and opened an octagonal court about thirty feet across.",
+    "The Chatta Chowk, the covered bazaar you walk through to reach the palace.",
+    "The vault overhead is doing the structural work, which is why the walls could be opened into thirty two shop fronts without weakening anything.",
+    "Halfway along, the builders stopped the vault and opened an octagonal court.",
     "That opening is the entire lighting and ventilation system for the passage.",
     "Look at the plaster inside it for what is left of the original painted decoration.",
   ],

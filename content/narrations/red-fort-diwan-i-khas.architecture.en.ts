@@ -7,10 +7,10 @@ export const diwanIKhasArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_red_fort_diwan_i_khas",
   sentences: [
-    "Ninety feet by sixty seven, on a plinth four and a half feet high.",
+    "The Diwan-i-Khas, the hall of private audience, where the Emperor met the people he chose to meet.",
     "The ceiling is flat and it is carried on engrailed arches, so the arches are decorative and the load is going down the piers.",
     "The lower part of each pier is pietra dura, coloured stone cut to fit sockets chiselled out of the marble.",
-    "The upper parts were gilded and painted instead, because inlay at that height would not be read.",
-    "A marble water channel twelve feet wide runs through the centre of the hall and cools it as it goes.",
+    "The upper parts were gilded and painted instead, because inlay that high up would never be read.",
+    "A marble water channel runs through the centre of the hall and cools it as it goes.",
   ],
 };

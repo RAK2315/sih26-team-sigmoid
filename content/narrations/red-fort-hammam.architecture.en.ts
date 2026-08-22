@@ -7,7 +7,7 @@ export const hammamArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_red_fort_hammam",
   sentences: [
-    "Three main apartments divided by corridors, entered from the side facing the Diwan-i-Khas.",
+    "The Hammam, the royal baths, three apartments off a corridor.",
     "Everything you would have touched is marble inlaid with coloured stone: the pavements, the reservoirs, the vapour slabs and the walls to waist height.",
     "The vapour slabs are the point. Heat came up through the floor and the stone held it.",
     "The room facing the river is where clothes came off, and it has three fountain basins, one of them for a rose water spray.",

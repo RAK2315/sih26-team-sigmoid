@@ -1,10 +1,10 @@
-import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
 import { ANCHORS } from "../content/anchors";
 import { factSheets } from "../content/factsheets";
 import { narrationTexts } from "../content/narrations";
+import { narrationId, narrationTextHash } from "../lib/narration/id";
 import rendered from "../content/narrations/rendered.json";
 import { points } from "../content/points";
 import { sites } from "../content/sites";
@@ -176,7 +176,7 @@ for (const sheet of factSheets) {
 
 const clips = rendered as Record<string, z.infer<typeof clipSchema>>;
 for (const narration of narrationTexts) {
-  const id = `${narration.pointId}/${narration.persona}.${narration.lang}.${narration.kind}`;
+  const id = narrationId(narration);
   checkShape(`narration ${id}`, narrationSchema, narration);
   if (!pointIds.has(narration.pointId)) fail(`narration ${id}`, "speaks for no Heritage Point");
   if (!factSheetIds.has(narration.factSheetId)) fail(`narration ${id}`, `cites no Fact Sheet: ${narration.factSheetId}`);
@@ -190,7 +190,7 @@ for (const narration of narrationTexts) {
   if (!existsSync(join("public", clip.audioUrl))) fail(`clip ${id}`, `audio file missing: ${clip.audioUrl}`);
   if (clip.cues.length !== clip.sentences.length) fail(`clip ${id}`, "has a cue for every sentence but one count differs");
   // if the text moved and the audio did not, the transcript drifts out from under the voice
-  const hash = createHash("sha256").update(narration.sentences.join(" ")).digest("hex").slice(0, 16);
+  const hash = narrationTextHash(narration.sentences);
   if (hash !== clip.textHash) fail(`clip ${id}`, "text has changed since the audio was rendered");
 }
 

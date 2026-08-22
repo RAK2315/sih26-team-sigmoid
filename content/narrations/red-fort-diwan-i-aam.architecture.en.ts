@@ -7,10 +7,10 @@ export const diwanIAamArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_red_fort_diwan_i_aam",
   sentences: [
-    "Red sandstone throughout, eighty feet by forty, on a four foot plinth, with the roof parapet about thirty feet above that.",
-    "Inside it is three aisles of seven bays. Each bay is four columns carrying an engrailed arch, which is the scalloped profile you can see along the front.",
-    "A deep chhajja, the projecting stone eave, runs along the north, south and west faces and throws the wall into shadow.",
-    "Small chhatris mark the north-west and south-west corners of the roof.",
-    "None of the stone was meant to be seen. It was gilded and covered in painted stucco, and all of that is gone.",
+    "The Diwan-i-Aam, the hall of public audience, where the Emperor showed himself to whoever had come.",
+    "Inside it is three aisles of seven bays, and each bay is four columns carrying an engrailed arch, the scalloped profile you can see along the front.",
+    "A deep chhajja, the projecting stone eave, runs along three faces and throws the wall into shadow.",
+    "The hall was never meant to stand alone. A court ran in front of it, arcaded on all sides, where the nobles waited.",
+    "None of the stone was meant to be seen either. It was gilded and covered in painted stucco, and all of that is gone.",
   ],
 };

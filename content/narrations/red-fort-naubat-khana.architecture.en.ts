@@ -7,10 +7,10 @@ export const naubatKhanaArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_red_fort_naubat_khana",
   sentences: [
-    "A hundred and seven feet long, sixty eight wide, forty nine high, in three storeys.",
-    "The ground floor is a gateway twenty nine feet high and sixteen wide, with double storeyed rooms flanking it.",
-    "The top storey is an open hall of five arched bays, and it is open because it had to carry sound.",
-    "Stairs at the north and south ends reach the upper floors.",
+    "The Naubat Khana, the drum house, and the main entrance to the court of the Diwan-i-Aam.",
+    "It is three storeys, and the top one is an open hall of five arched bays.",
+    "It is open because it had to carry sound. Musicians played from up there at fixed hours.",
+    "The gateway below it is twenty nine feet high, which is the height of a man on an elephant, and that is what it was cut for.",
     "The building is a gate, a guardhouse and a musical instrument at the same time.",
   ],
 };
