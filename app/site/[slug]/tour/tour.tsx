@@ -398,7 +398,7 @@ export default function Tour({
 
         {factSheet && (
           <div className="mt-4">
-            <AskBox pointId={selected.id} pointName={selected.name} />
+            <AskBox key={selected.id} pointId={selected.id} pointName={selected.name} />
           </div>
         )}
 

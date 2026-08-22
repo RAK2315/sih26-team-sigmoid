@@ -14,10 +14,10 @@ Ordered. Each line ships, typechecks, builds and deploys before the next starts.
 
 - [x] 6. The cone fix, TDD, plus ADR and a CONTEXT edit
 - [x] 7. `/authority` out of the nav
-- [ ] 8. `/discover` reframed to lead with the finding, plus the grounded Ask box
-- [ ] 9. Nizamuddin, 3 Heritage Points, sourced and voiced
-- [ ] 10. Qutub Minar, 1 Heritage Point
-- [ ] 11. Humayun's Tomb, 1 Heritage Point
+- [x] 8. `/discover` reframed to lead with the finding, plus the grounded Ask box
+- [x] 9. Nizamuddin, 3 Heritage Points, sourced and voiced
+- [x] 10. Qutub Minar, 1 Heritage Point
+- [x] 11. Humayun's Tomb, 1 Heritage Point
 
 ## Not doing
 

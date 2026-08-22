@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface Cited {
   id: string;
@@ -16,19 +16,13 @@ interface Reply {
 }
 
 // F12. The Fact Sheet is the whole of what may be said, and an answer with no line behind it
-// is thrown away rather than shown.
+// is thrown away rather than shown. The caller keys this on the Heritage Point, because a
+// question about the Naubat Khana makes no sense once the Visitor is at the Moti Masjid.
 export default function AskBox({ pointId, pointName }: { pointId: string; pointName: string }) {
   const [question, setQuestion] = useState("");
   const [asking, setAsking] = useState(false);
   const [reply, setReply] = useState<Reply | null>(null);
   const [problem, setProblem] = useState<string | null>(null);
-
-  // a question about the Naubat Khana makes no sense once the Visitor is at the Moti Masjid
-  useEffect(() => {
-    setReply(null);
-    setProblem(null);
-    setQuestion("");
-  }, [pointId]);
 
   async function ask(event: React.FormEvent) {
     event.preventDefault();
