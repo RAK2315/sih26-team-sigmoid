@@ -55,7 +55,7 @@ something or it reads as decoration.
 - Switch Persona to Kids where you stand. Same place, different telling, same Route.
 
 **5. `/discover` - 2m.** Pick a Page from the shelf, using the placed-count on the right to avoid
-the twelve that place nothing. Press Analyse.
+the nineteen that place nothing. Press Analyse.
 
 - A passage of 1919 English highlights in the page text.
 - It becomes a pin with a circle, and the circle is wide because the clue is vague. Say that: a
