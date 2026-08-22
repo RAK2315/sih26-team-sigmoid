@@ -1,0 +1,113 @@
+{
+  "mentions": [
+    {
+      "name": "The gate facing north towards Purana Qila",
+      "type": "gateway",
+      "period": null,
+      "passage": "The gate facing north towards Purana Qila is some 40&apos; in height, 25&apos; in\nwidth and 20&apos; in depth. A rectangular framing encloses a recessed arch, the\nspandrels of which are ornamented with bosses, while the faces of the piers\nare relieved by small projecting balconies, supported on stone brackets. At\nthe head of the recessed arch is a small window, and under it an arched door-\nway, 16&apos; in height and 10&apos; in width. The latter, like the large recessed arch,\nis enclosed in rectangular framing, and the spandrels are relieved by bosses.\nGlazed tiles are sparingly used in the ornamentation.",
+      "spatialClue": null,
+      "id": "m_149_1",
+      "passageOffset": [
+        149,
+        762
+      ]
+    },
+    {
+      "name": "The gate of the sarai facing east",
+      "type": "gateway",
+      "period": "Jahangir",
+      "passage": "The gate of the sarai facing east, near the south-west corner of the tomb\nof Humayun, is treated more simply, there being no projecting balconies\nflanking the recessed arch. It is crowned by “ flame ” battlements. This\ngateway was really an entrance to a mandi or a market added to the Arab\nSarai by Mihr. Banu, who is said to have been an eunuch, in the time of\nJahangir.",
+      "spatialClue": {
+        "anchorName": "tomb of Humayun",
+        "bearing": "SW",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_149_2",
+      "passageOffset": [
+        763,
+        1135
+      ]
+    },
+    {
+      "name": "mandi",
+      "type": "other",
+      "period": "Jahangir",
+      "passage": "The mandi consisting of a series of arched rooms measur.^ 366&apos;\nby 146&apos;, but it is now in a ruined condition.",
+      "spatialClue": null,
+      "id": "m_149_3",
+      "passageOffset": [
+        1136,
+        1254
+      ]
+    },
+    {
+      "name": "The real eastern gateway of the Sarai",
+      "type": "gateway",
+      "period": null,
+      "passage": "The real eastern gateway of the\nSarai stands opposite this gate some 118 yards due west, and is simple and\ndevoid of any ornamentation.",
+      "spatialClue": {
+        "anchorName": "this gate",
+        "bearing": "W",
+        "distanceValue": 118,
+        "distanceUnit": "yards"
+      },
+      "id": "m_149_4",
+      "passageOffset": [
+        1255,
+        1390
+      ]
+    },
+    {
+      "name": "The third gate",
+      "type": "gateway",
+      "period": null,
+      "passage": "The third gate, which is plain like that on\nthe east, pierces the west wall and lies some 100 yards to the east of the Delhi-\nMuttra Road at the 4th furlong past the third mile stone.",
+      "spatialClue": {
+        "anchorName": "Delhi- Muttra Road",
+        "bearing": "E",
+        "distanceValue": 100,
+        "distanceUnit": "yards"
+      },
+      "id": "m_149_5",
+      "passageOffset": [
+        1391,
+        1574
+      ]
+    },
+    {
+      "name": "Tomb of Sayyid Yasin",
+      "type": "tomb",
+      "period": "Afghan",
+      "passage": "No. 173. (a) Tomb of Sayyid Yasin.\n(6) Arab Sarai, at its western gateway.\n(c) Abdu-s-samad.\n{d) III.\n(e) Afghan.\n(/) None.\n{g) Ruinous.\n{h) Unnecessary.\n(;’) The tomb measures 14&apos; square I. M. It contains 12 stone pillars, 8 of\nwhich, arranged as an octagon, support the dome with which the tomb\nis roofed. A mud grave is to be found voider the dome.",
+      "spatialClue": {
+        "anchorName": "Arab Sarai, at its western gateway",
+        "bearing": null,
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_149_6",
+      "passageOffset": [
+        1702,
+        2058
+      ]
+    },
+    {
+      "name": "Tomb of Ahmad Shah",
+      "type": "tomb",
+      "period": "Afghan",
+      "passage": "No. 174. {fl) Tomb of Ahmad Shah.\n(6) Arab Sarai, at its western gateway,\n(c) Abdussamad.\n(J) III.\n(e) Afghan.\n(/) None.",
+      "spatialClue": {
+        "anchorName": "Arab Sarai, at its western gateway,",
+        "bearing": null,
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_149_7",
+      "passageOffset": [
+        2059,
+        2179
+      ]
+    }
+  ]
+}

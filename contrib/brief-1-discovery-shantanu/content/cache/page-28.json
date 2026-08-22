@@ -1,0 +1,55 @@
+{
+  "mentions": [
+    {
+      "name": "Nasyan (temple)",
+      "type": "temple",
+      "period": "Late Mughal",
+      "passage": "No. 19. {a) Nasyan (temple).\n(b) Some 200 yards from No. 17 towards west.\n(c) Lala Ishri Parshad.\nid) III.\n{e) Late Mughal.\n(/) None.\n{g) Good.\n(h) Unnecessary.\n(;■) The nasyan is a masonry pavilion 26&apos; 6&quot; by 11&apos; 1&quot; I.M. situated at the west\nwall of an enclosure measuring 180&apos; square. It is plastered over with\nchunam and is covered by a vaulted roof, having three arched entrances\ntowards east and one at either end at the north and south. The enclosure\nwalls, which are constructed of rubble masonry and have a bastion at\neach of the four corners, are broken in places. The nasyan has a con-\nnection with the temple No. 19. Twice a year the Jaina figure of that\ntemple is brought here with much pomp and show, where it is allowed\nto remain for three days. On the occasion of this ceremony a fair is\nalso held at this place.",
+      "spatialClue": {
+        "anchorName": "No. 17",
+        "bearing": "W",
+        "distanceValue": 200,
+        "distanceUnit": "yards"
+      },
+      "id": "m_28_1",
+      "passageOffset": [
+        122,
+        973
+      ]
+    },
+    {
+      "name": "Mosque (nameless)",
+      "type": "mosque",
+      "period": "Late Mughal",
+      "passage": "No. 20. («) Mosque (nameless).\n{h) Some 100 yards from No. 17 towards north.\n(c) Waqf.\n{d) III.\n(i?) Late Mughal.\n(/) None.\n{g) Good.\n(A) Unnecessary.\n{]) The mosque is said to be of ancient origin, but it has been rebuilt. Its\nprayer chamber which measures 34&apos; by 18&apos; 6&quot; I.M. is covered by a flat\nroof and is entered by five arched entrances. The courtyard is enclosed\nby walls and measures 29&apos; 6&quot; by 17&apos; 6&quot;. In the northern waU of the\ncourtyard there is small room, and adjoining it a small domed chamber.\nOutside the enclosed courtyard towards east, and attached to the\nmosque, there is another small enclosure containing a few insigni-\nficant graves, bath rooms and a well.",
+      "spatialClue": {
+        "anchorName": "No. 17",
+        "bearing": "N",
+        "distanceValue": 100,
+        "distanceUnit": "yards"
+      },
+      "id": "m_28_2",
+      "passageOffset": [
+        974,
+        1686
+      ]
+    },
+    {
+      "name": "Gur Duwara, called Bangla Sahib",
+      "type": "other",
+      "period": "Late Mughal",
+      "passage": "No. 21. (a) Gur Duwara, called Bangla Sahib.\n\\h) About half a mile west of Jantar Mantar (No. 24).\n(c) Narain Singh.\n(i) III.\n{e) Late Mughal.",
+      "spatialClue": {
+        "anchorName": "Jantar Mantar (No. 24)",
+        "bearing": "W",
+        "distanceValue": 0.5,
+        "distanceUnit": "miles"
+      },
+      "id": "m_28_3",
+      "passageOffset": [
+        1687,
+        1829
+      ]
+    }
+  ]
+}

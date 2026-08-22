@@ -1,0 +1,21 @@
+{
+  "mentions": [
+    {
+      "name": "Tomb (unknown)",
+      "type": "tomb",
+      "period": "Mughal",
+      "passage": "No. 166. (a) Tomb (unknown).\n(b) 112 yards south of No. 165.\n(c) Government.\n{d) III.\n{e) Mughal.\n(/) None.\n((gr) Ruinous.\n{h) Unnecessary.\n(j) The tomb stands on a raised terrace. It measures 15&apos; 6&quot; square, and was\noriginally covered by a dome, most of which, together with the soutiiern\nand eastern walls, is now fallen. The two remaining walls each contain\na deeply recessed arch enclosing a central doorway, over which is a\nfurther arched opening. The tomb inside is filled with debris, and no\nindication of the grave is traceable. To the west of the tomb on the\nterrace there is a brick-built grave, but of no interest.",
+      "spatialClue": {
+        "anchorName": "No. 165",
+        "bearing": "S",
+        "distanceValue": 112,
+        "distanceUnit": "yards"
+      },
+      "id": "m_145_1",
+      "passageOffset": [
+        24,
+        658
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "mentions": [
+    {
+      "name": "Tomb (unknown)",
+      "type": "tomb",
+      "period": "Afghan",
+      "passage": "No, 142. («) Tomb (unknown).\n(b) Some 60 yards east of the Delhi-Muttra road, between the 2nd and 3rd\nfurlongs past the 3rd milestone.\n(c) Government,\n(d) III.\n(e) Afghan.\n(/) None.\n{g) Ruinous.\n(h) Unnecessary.\n(j) The tomb, ruWile-built, measures 8&apos; 6&quot; square and is domed. It is of no\nparticular interest.",
+      "spatialClue": {
+        "anchorName": "Delhi-Muttra road",
+        "bearing": "E",
+        "distanceValue": 60,
+        "distanceUnit": "yards"
+      },
+      "id": "m_129_1",
+      "passageOffset": [
+        34,
+        352
+      ]
+    },
+    {
+      "name": "Mosque (nameless)",
+      "type": "mosque",
+      "period": "Mughal",
+      "passage": "No. 143. (&lt;*) Mosque (nameless). *\n(b) Some 25 yards to the north of No. 142.\n(c) Waqf.\n* (cO HI-\n(e) Mughal.\n(/) None.\n(g) Ruinous.\n(A) Unnecessary.\n(j) A wall mosque, in the courtyard of which are two unknown graves. The\nbuilding is of no particular interest.",
+      "spatialClue": {
+        "anchorName": "No. 142",
+        "bearing": "N",
+        "distanceValue": 25,
+        "distanceUnit": "yards"
+      },
+      "id": "m_129_2",
+      "passageOffset": [
+        353,
+        617
+      ]
+    },
+    {
+      "name": "Mosque",
+      "type": "mosque",
+      "period": "Mughal",
+      "passage": "No. 144. («) Mosque.\n(6) Some 40 yards to the north of No. 142, and 15 yards to the west of No. 143.\n(c) Waqf.\n(d) III.\n(e) Mughal,\n(/) None.\n(g) Ruinous.\n(h) Unnecessary.\n{]) A wall mosque, in the courtyard, of which are three graves. In its west\nwall there are three mihrabs decorated with pious ejaculations in in-\ncised plaster. The courtyard consists of a raised platform measuring\n27&apos; 9&quot; by .23&apos; 6.&quot; The building is of no particular interest.",
+      "spatialClue": {
+        "anchorName": "No. 142",
+        "bearing": "N",
+        "distanceValue": 40,
+        "distanceUnit": "yards"
+      },
+      "id": "m_129_3",
+      "passageOffset": [
+        618,
+        1086
+      ]
+    },
+    {
+      "name": "Mosque (nameless)",
+      "type": "mosque",
+      "period": "Mughal",
+      "passage": "No. 145. (&lt;^) Mosque (nameless).\n(b) Some 20 yards to the north of No. 144.\n(c) Waqf.\n{d) III.\n(e) Mughal.\n(/) None.\n(gr) Ruinous. &apos;\n(h) Unnecessary.\n(;■) A wall mosque, with a courtyard measuring 30&apos; by 24&apos; 6&quot; and containing\nfour graves. The jDuilding is now in ruins.",
+      "spatialClue": {
+        "anchorName": "No. 144",
+        "bearing": "N",
+        "distanceValue": 20,
+        "distanceUnit": "yards"
+      },
+      "id": "m_129_4",
+      "passageOffset": [
+        1087,
+        1379
+      ]
+    }
+  ]
+}

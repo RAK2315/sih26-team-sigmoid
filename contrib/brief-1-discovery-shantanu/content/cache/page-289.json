@@ -1,0 +1,79 @@
+{
+  "mentions": [
+    {
+      "name": "gateway",
+      "type": "gateway",
+      "period": "reign of Muhammad Shah",
+      "passage": "(j) The gateway is built of red stone and brick masonry. It is double-\nstoreyed, but the upper storey has been lately rebuilt.",
+      "spatialClue": null,
+      "id": "m_289_1",
+      "passageOffset": [
+        40,
+        166
+      ]
+    },
+    {
+      "name": "pavilion",
+      "type": "pavilion",
+      "period": null,
+      "passage": "Inside the\ngarden just against the doorway, there is a pavilion which is said to be\nold and of the same date as the garden, but it has been much altered by\nrepairs.",
+      "spatialClue": {
+        "anchorName": "doorway",
+        "bearing": "adjacent",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_289_2",
+      "passageOffset": [
+        167,
+        331
+      ]
+    },
+    {
+      "name": "masonry tank",
+      "type": "other",
+      "period": null,
+      "passage": "Further to the west beyond the pavilion in about the centre\nof the garden there is a masonry tank.",
+      "spatialClue": {
+        "anchorName": "pavilion",
+        "bearing": "W",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_289_3",
+      "passageOffset": [
+        332,
+        430
+      ]
+    },
+    {
+      "name": "gateway",
+      "type": "gateway",
+      "period": null,
+      "passage": "There is another gateway\nsimilar to this at a distance of some 200 yards towards the south-east.",
+      "spatialClue": {
+        "anchorName": "gateway",
+        "bearing": "SE",
+        "distanceValue": 200,
+        "distanceUnit": "yards"
+      },
+      "id": "m_289_4",
+      "passageOffset": [
+        431,
+        527
+      ]
+    },
+    {
+      "name": "Tripolia (triple gateways)",
+      "type": "gateway",
+      "period": "1141 A.H. (1728-29 A.D.)",
+      "passage": ". 392 . (®) Tripolia (triple gateways).\n(&amp;) In the village on the Dellii-Karnal Road.\n(c) Government.\n{d) lla.\n(e) 1141 A.H. (1728-29 A.D.).\n(/) On two marble slabs over the central entrances of the south-east and north-\nwest gateways.\njGbr&apos;* yoU i3j&lt; Lu j (&apos;)\n(f*)\nI If*!\nT ranslation,\n(1) “ By the grace of God and the Prophet of the age (Muhammad) Mahaldar\nKhan Nazir built\n(2) Such a road, bazar (market) and tripolia (triple gateways) that the event\nmay be marked in the revolutions of the world.\n(3) There came a voice from the invisible crier ‘ May this house be ever-last-\ning! ’1141.”\n(^/) Fair.\n{h) Protected.\n(;■) Tripolia is the name given to the two large gateways which face one\nanother and probably originally formed the entrances to a large en-\nclosed bazar. They are built of plastered brick with red stone dress-\nings. Each of the gateways is entered through three great archways\nwhich are roofed internally with flat domes of brick. The Delhi-\nKarnal Road passes under the central archway of the north-western\ngate, while the south-eastern gate lies just off the road to the east.\nThe duplicate inscription on the central archway of each of the two",
+      "spatialClue": null,
+      "id": "m_289_5",
+      "passageOffset": [
+        905,
+        2089
+      ]
+    }
+  ]
+}

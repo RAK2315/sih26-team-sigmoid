@@ -1,0 +1,38 @@
+{
+  "mentions": [
+    {
+      "name": "Boli Bhatyari ka Mahall",
+      "type": "palace",
+      "period": null,
+      "passage": "The palace stands at the southern end of the bund and is entered through\ndouble doorways at its north-east corner. The structure is in the form of a\nrectangle on the east and south, and the walls on those sides are strengthened\nwith bastions. But on the north and west it is roughly semi-circular from\nthe gateway as far as its south-west corner. The measurements of the palace\nare some 150^ north to south and 141^ east to west I.M. The principal\nportions of it seem to have laid towards the west where the ruins covering an\narea some 70&apos; in width stand on a plinth 6&apos; 6&quot; high. Nothing of this edifice\nexcept the doorways and the south and east walls now exists. The construc-\ntion is generally of rubhle, but the local hard stone is used sparingly for\ndressings.\nSayyid Ahmad is of opinion that the bund and the palace were built by\nFiroz Shah Tughlaq about the year 755 A.H. (1354 A.D.). He says that the\npalace is known to have been occupied by one Bu Ali Bhatti, after whom it\nwas called Bu Ali Bhatti ka Mahall, i.e., Bu Ali Bhatti’s palace; whence it\nhas been corrupted locally to Boli Bhatyari ka Mahall. This is a very inter-\nesting structure and well deserves to be conserved,\n(A-) Asar, Chap. Ill, 35-6.\nCarr Stephen, 122.\n(Z) 2816.",
+      "spatialClue": {
+        "anchorName": "the bund",
+        "bearing": "S",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_252_1",
+      "passageOffset": [
+        23,
+        1281
+      ]
+    },
+    {
+      "name": "Grave of Khuda Numa",
+      "type": "tomb",
+      "period": "Ibrahim Shah",
+      "passage": "No. 338. («) Grave of Khuda Numa.\n{b) Some 200 yards from Boli Bhatyari ka Mahall (No. 337), towards the\nnorth.\n(c) Ibrahim Shah.\n{d) III.\n{e) 1106 A.H. (1694-5 A.D.).\n(/) On a piece of red stone built into the wall at the head of the grave.\nj ^ ^^1^ dJLil yt!&apos;*\n^ t.*&apos; . ^ C Xi\nA ( I • *1 *- ** y j 1\nTranslation.\n“ Mir Muhammad Afzal Khuda Numa, may God have compassion on\nhim, was a perfect God-knowing ajian, the chief of the saints of the time, a\nrecluse, trusting in God, innocent of hypocrisy and unequalled in love and\ndevotion. By his beneficent mien and direction hundreds of people attained\nto the state of holiness. To see him is to be shown God, and to hear him is to\nknow God. When the time arrived he departed in the year 1106 A. FI. (1694-5\nA.D.).”\n(y) Good.\n{h) Unnecessary.\n(;) The grave lies within a double masonry-walled enclosure. The outer\nenclosure is 54&apos; 3&quot; square I.M. ; the inner enclosure has three arched\nopenings on each of its four sides except the west, where there is a",
+      "spatialClue": {
+        "anchorName": "Boli Bhatyari ka Mahall (No. 337)",
+        "bearing": "N",
+        "distanceValue": 200,
+        "distanceUnit": "yards"
+      },
+      "id": "m_252_2",
+      "passageOffset": [
+        1282,
+        2304
+      ]
+    }
+  ]
+}

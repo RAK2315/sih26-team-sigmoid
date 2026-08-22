@@ -40,6 +40,7 @@ const NON_DIRECTIONAL = new Set(["adjacent", "within", "opposite"]);
 function normalizeName(s: string): string {
   return s
     .toLowerCase()
+    .replace(/\(no\.\s*\d+\)/g, "")
     .replace(/\s+/g, " ")
     .trim()
     .replace(/^the\s+/, "")

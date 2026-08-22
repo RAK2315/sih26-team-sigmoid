@@ -1,0 +1,38 @@
+{
+  "mentions": [
+    {
+      "name": "Tal Katora garden",
+      "type": "garden",
+      "period": "Late Mughal",
+      "passage": "329 . (a) Tal Katora garden.\n(b) Some 3 miles out of Shahjahanabad, due south-west of the Jami Masjid.\n(c) Government.\n(d) 11a.\n(e) Late Mughal.",
+      "spatialClue": {
+        "anchorName": "Jami Masjid",
+        "bearing": "SW",
+        "distanceValue": 3,
+        "distanceUnit": "miles"
+      },
+      "id": "m_246_1",
+      "passageOffset": [
+        35,
+        179
+      ]
+    },
+    {
+      "name": "solitary tower",
+      "type": "tower",
+      "period": null,
+      "passage": "At a distance of some 4.5 yards from the N.-E. corner of the Tal Katora\ngarden there stands a solitary tower, but apparently it had no connection with\nthis garden.",
+      "spatialClue": {
+        "anchorName": "N.-E. corner of the Tal Katora garden",
+        "bearing": null,
+        "distanceValue": 4.5,
+        "distanceUnit": "yards"
+      },
+      "id": "m_246_2",
+      "passageOffset": [
+        1634,
+        1797
+      ]
+    }
+  ]
+}

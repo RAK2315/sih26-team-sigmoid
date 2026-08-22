@@ -1,0 +1,50 @@
+{
+  "mentions": [
+    {
+      "name": "The citadel of Parana Qila",
+      "type": "fort_wall",
+      "period": null,
+      "passage": "The citadel of Parana Qila is an irregular oblong in plan.",
+      "spatialClue": null,
+      "id": "m_106_1",
+      "passageOffset": [
+        303,
+        361
+      ]
+    },
+    {
+      "name": "The northernmost wicket on the eastern side",
+      "type": "gateway",
+      "period": null,
+      "passage": "The northernmost wicket on\nthe eastern side lies some 496 feet from the N. E. corner of the citadel, its outer\nentrance being on the low-level ground outside the walls.",
+      "spatialClue": {
+        "anchorName": "N. E. corner of the citadel",
+        "bearing": null,
+        "distanceValue": 496,
+        "distanceUnit": "feet"
+      },
+      "id": "m_106_2",
+      "passageOffset": [
+        821,
+        989
+      ]
+    },
+    {
+      "name": "third wicket",
+      "type": "gateway",
+      "period": null,
+      "passage": "Some 710 feet south\nof this again and some 248 feet north of the S. E. corner of the citadel is a third\nwicket, the upper portion of which has unfortunately disappeared.",
+      "spatialClue": {
+        "anchorName": "S. E. corner of the citadel",
+        "bearing": "N",
+        "distanceValue": 248,
+        "distanceUnit": "feet"
+      },
+      "id": "m_106_4",
+      "passageOffset": [
+        1537,
+        1706
+      ]
+    }
+  ]
+}

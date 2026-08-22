@@ -1,0 +1,50 @@
+{
+  "mentions": [
+    {
+      "name": "Tomb",
+      "type": "tomb",
+      "period": "Afghan",
+      "passage": "(c) Debi Singh.\n{d) III.\n{e) Afghan.\n(/) None.\n{g) Ruined.\n(A) Unnecessary. v\n(;) The tomb 23&apos; square I.M. is built of rubble and mortar and covered with\na hemispherical fluted dome. It has doorways towards N., S. and E.,\nand is coated with plaster. On the west side there is a mihrab recess.\nThe building is used as a godown. In the centre there are two ruined\nmasonry graves each measuring some 6&apos; 8&quot; by 4&apos; 5&quot; by 3&apos; 8&quot;.",
+      "spatialClue": null,
+      "id": "m_236_1",
+      "passageOffset": [
+        23,
+        479
+      ]
+    },
+    {
+      "name": "Tomb (unknown)",
+      "type": "tomb",
+      "period": "Afghan",
+      "passage": "No. 308. («) Tomb (unknown).\n(6) Some 15 yards to S.-E. of No. 306.\n(c) Puran Chamar.\n(d) III.\n(e) Afghan.\n(/) None.\n(g) Poor. : I\n(A) Unnecessary.\n(J) The tomb measuring 19&apos; square I.M. is constructed of rubble and coated\nwith plaster. It is covered with a dome and has doorways towards\nnorth, south and east, of which those towards south and east are now\nclosed ; on the west side there is a mihrab. There are two plastered\ngraves in the building each measuring 6&apos; 10&quot; by 4&apos; 3&quot; by 3&apos; 8&quot;.",
+      "spatialClue": {
+        "anchorName": "No. 306",
+        "bearing": "SE",
+        "distanceValue": 15,
+        "distanceUnit": "yards"
+      },
+      "id": "m_236_3",
+      "passageOffset": [
+        1058,
+        1582
+      ]
+    },
+    {
+      "name": "Tomb of Musa Khan",
+      "type": "tomb",
+      "period": null,
+      "passage": "No. 309. («) Tomb of Musa Khan.\n(A) Some 200 yards to south of No. 307.",
+      "spatialClue": {
+        "anchorName": "No. 307",
+        "bearing": "S",
+        "distanceValue": 200,
+        "distanceUnit": "yards"
+      },
+      "id": "m_236_4",
+      "passageOffset": [
+        1583,
+        1654
+      ]
+    }
+  ]
+}

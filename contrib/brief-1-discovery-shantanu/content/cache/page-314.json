@@ -1,0 +1,55 @@
+{
+  "mentions": [
+    {
+      "name": "miniature battery No. Ill",
+      "type": "other",
+      "period": null,
+      "passage": "The miniature battery No. Ill lies some 75 yards to the south of the mosque\nand contains the following inscriptions : —\n“ Left A ttack — Lieutenant W. H. Greathed, R.E., Directing Engineer.\nKo. Ill Battery. Armament, six 18-pounders; to breach tli^curtain of\nthe Water Bastion.\nMajor William Scott, R.A., Commanding.**",
+      "spatialClue": {
+        "anchorName": "the mosque",
+        "bearing": "S",
+        "distanceValue": 75,
+        "distanceUnit": "yards"
+      },
+      "id": "m_314_1",
+      "passageOffset": [
+        462,
+        780
+      ]
+    },
+    {
+      "name": "miniature battery No. TV",
+      "type": "other",
+      "period": null,
+      "passage": "The inscription on the miniature battery No. TV which lies some 100\nyards to N. W. of the gateway (No. 412) runs as follows : —\n“ Left A ttack — Lieutenant W. H. Greathed, Bengal Engineers, Direct-\ning Engineer.\nNo. IV Battery. Armament 10 mortars.\nCaptain and Brevet Major H. Tombs, Bengal Artillery, Commanding.\nTo shell Kashmir Gate and Kashmir and Water Bastions.”",
+      "spatialClue": {
+        "anchorName": "the gateway (No. 412)",
+        "bearing": "NW",
+        "distanceValue": 100,
+        "distanceUnit": "yards"
+      },
+      "id": "m_314_2",
+      "passageOffset": [
+        781,
+        1149
+      ]
+    },
+    {
+      "name": "Gateway",
+      "type": "gateway",
+      "period": "1748 A.D.",
+      "passage": "No. 412. {a) Gateway.\n(&amp;) In the Gardens, about 300 yards to the west of No. 411.\n(c) Government.\n{d) 11a.\n{e) 1748 A.D. (Asar).\n(/) None.\n(g) Dilapidated.\n(k) Protected.\n(j) The gateway which measures 68&apos; from north to south and 43&apos; 6&quot; east to\nwest was originally the main entrance to the Qudsia Gardens. It is\na pretentious structure of stone and plastered brick, with large arched\nopenings in the east and west facades through which runs the roadway.\nThis central passage measures 16&apos; 6&quot; in width and is two bays deep,\nwhile on either side to north and south are flanking chambers ceiled\nwith low brick domes similar to those above the passage way. The\nwestern fagade which was originally the outer face is covered with\nornamental kanguras, and is flanked by a minar at the outer corners.\n(k) Carr Stephen, 274.",
+      "spatialClue": {
+        "anchorName": "No. 411",
+        "bearing": "W",
+        "distanceValue": 300,
+        "distanceUnit": "yards"
+      },
+      "id": "m_314_3",
+      "passageOffset": [
+        1326,
+        2169
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "mentions": [
+    {
+      "name": "Kos Minar",
+      "type": "tower",
+      "period": "1028 A.H. (1618-9 A.D.)",
+      "passage": "No. 133. (a) Kos Minar.\n{b) Between Parana Qila and Azimganj (No. 134), some 200 yards from the\nlatter, towards north.\n(c) Government.\n{d) lln.\n(e) 1028 A.H. (1618-9 A.D.).\n(/) None. I\n(y) Good.\n(A) Protected.\n(J) The Kos Minar is one of the pillars generally believed to have been built\nby Jahangir at every Kos (two miles) between Agra and Lahore. The\nroad ran from Bengal to the Indus, and trees were planted\non either side of it,(‘) while at every third kos a well was constructed.\nThe.^inar is rubble built and externally plastered. For further de-\ntailed information on kos minars attention is invited to the Annual\nProgress Report of the Superintendent, Muhammadan and British\n]Monuments, for the year 1913-14.",
+      "spatialClue": {
+        "anchorName": "Azimganj (No. 134)",
+        "bearing": "N",
+        "distanceValue": 200,
+        "distanceUnit": "yards"
+      },
+      "id": "m_124_1",
+      "passageOffset": [
+        231,
+        948
+      ]
+    }
+  ]
+}

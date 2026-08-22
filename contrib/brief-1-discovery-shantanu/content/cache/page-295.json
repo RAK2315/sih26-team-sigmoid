@@ -1,0 +1,38 @@
+{
+  "mentions": [
+    {
+      "name": "The Flagstaff Tower",
+      "type": "tower",
+      "period": "British",
+      "passage": "^ 0 . 399 . («) The Flagstaff Tower, locally known as ‘ Baota.’\n(b) Some 400 yards to the north of Chauburji Mosque.\n(c) Government.\n(d) 11a.\n(e) Erected by the British.\n(J) None.\n(a) Good.\n(h) Should be protected.\n(j) The tower constructed of plastered brick is circular in plan, circumfer-\nence 140&apos;. Above it rises a higher tower which contains a winding\nstair leading to battlemented roofs; the higher tower being topped by\nan open wooden canopy surmounted by a tall flag staff which has given\nthe tower its name. The building contains three arched openings on\nthe north, east, and west; those on the north and west are closed by\niron gratings, while the eastern one is used as an entrance and is fur-\nnished with an iron barred door. The Flagstaff Tower was the spot\nwhere the ladies of the cantonment gathered with their children and\nservants on the 11th May 1857, and from which they finally fled to\nKarnal after they had given up all hope of succour from Meerut. It\nwas also here that the mutineers made their last stand on 8th June,\nbefore falling back behind the shelter of the city walls.\n(k) Fanshawe, 77-8.\nHearn, 77-8.\nKeene, 29-30.",
+      "spatialClue": {
+        "anchorName": "Chauburji Mosque",
+        "bearing": "N",
+        "distanceValue": 400,
+        "distanceUnit": "yards"
+      },
+      "id": "m_295_1",
+      "passageOffset": [
+        32,
+        1183
+      ]
+    },
+    {
+      "name": "Chauburji",
+      "type": "mosque",
+      "period": "Firoz Shah’s reign",
+      "passage": "^0. 400 . Chauburji.\n{h) At a little distance to the north of Pirghaib (No. 401).\n(c) Government.\n{d) 11a.\n(e) Firoz Shah’s reign.\n(/) None.\n(g) Good.\n(h) Protected. •\n(j) The building which measures 65&apos; by 40&apos; E.M. is double-storeyed, with\nwalls of stone and domes and vaults of brick. The structure has suffer-\ned considerable dilapidation in the past, but as it now stands it consists\nof a central chamber surrounded by five smaller chambers on the north,\nwest and south sides. The west chamber containing a mihrab in tiie\nwest wall is entered on the south through a smaller doorway, on Cither\nside of which there is a staircase leading to the upper storey. Tiie\nstaircase on the east is now blocked up. Entrance openings also appear",
+      "spatialClue": {
+        "anchorName": "Pirghaib (No. 401)",
+        "bearing": "N",
+        "distanceValue": null,
+        "distanceUnit": null
+      },
+      "id": "m_295_2",
+      "passageOffset": [
+        1184,
+        1930
+      ]
+    }
+  ]
+}

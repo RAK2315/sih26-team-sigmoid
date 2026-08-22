@@ -1,0 +1,16 @@
+{
+  "mentions": [
+    {
+      "name": "Purana Qila",
+      "type": "fort_wall",
+      "period": null,
+      "passage": "The long stretches of intermediate curtain wall will be remarked at\nPurana Qila, in contrast with the frequency with which the bastions were\nprovided in the earlier fortified cities of Delhi.",
+      "spatialClue": null,
+      "id": "m_107_1",
+      "passageOffset": [
+        2927,
+        3118
+      ]
+    }
+  ]
+}
