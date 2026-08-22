@@ -126,15 +126,22 @@ Against the deployed URL, because geolocation needs HTTPS and localhost on a pho
 6. Refuse the permission on a second attempt and confirm the panel says the walk stays simulated
    rather than sitting silent.
 
-Standing still must not reset Dwell. If it does, raise `NEXT_PUBLIC_GPS_SETTLE_M` from the Vercel
-dashboard; 6 metres is the default and the fix only moves once a reading clears it.
+Standing still must not reset Dwell. If it does, the deadband is too small. It is derived from
+the engine's own drift tolerance in `lib/location/config.ts`, so widening it is a code change
+and a deploy, not a dashboard toggle. See the note below.
 
 ## If something goes wrong on stage
 
 - **A Threshold Crossing will not fire.** The panel names the failing condition; read it out and
   fix it. If it is still wrong, every Heritage Point in the list is tappable and plays on demand.
-  `NEXT_PUBLIC_FACING_TOLERANCE_DEG=120` and `NEXT_PUBLIC_DWELL_MS=1000` loosen it from the
-  dashboard with no rebuild.
+  That fallback is the one to reach for on stage.
+
+  **Do not plan on changing `NEXT_PUBLIC_FACING_TOLERANCE_DEG` or `NEXT_PUBLIC_DWELL_MS` during
+  the slot.** `plan/06-risks.md` R1 says these loosen the trigger from the Vercel dashboard with
+  no rebuild. That is wrong and it was wrong when it was written. Next inlines every
+  `NEXT_PUBLIC_` variable at build time, which `lib/location/config.ts` says in its own comment,
+  so changing one in the dashboard does nothing until a redeploy finishes. Budget a minute or
+  two for that, or set them before you go on.
 - **No audio in the room.** The transcript carries the whole Narration. Say that this is why it
   exists.
 - **Analyse is rate limited.** That is the demo beat above. Use it.

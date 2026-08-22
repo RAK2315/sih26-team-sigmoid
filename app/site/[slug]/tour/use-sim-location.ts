@@ -9,7 +9,7 @@ const TURN_DEG = 15;
 const STEP_M = 5;
 
 // the engine needs a fix on every tick even when nobody is moving, because Dwell counts time
-export function useSimLocation(start: Coord, startHeadingDeg: number) {
+export function useSimLocation(start: Coord, startHeadingDeg: number, enabled: boolean) {
   const at = useRef<Coord>(start);
   const heading = useRef(startHeadingDeg);
   const [fix, setFix] = useState<Fix>({
@@ -24,6 +24,7 @@ export function useSimLocation(start: Coord, startHeadingDeg: number) {
   const [speedMs, setSpeedMs] = useState(1.2);
 
   useEffect(() => {
+    if (!enabled) return;
     const timer = setInterval(() => {
       if (walking) at.current = moveBy(at.current, (speedMs * TICK_MS) / 1000, heading.current);
       setFix({
@@ -36,7 +37,7 @@ export function useSimLocation(start: Coord, startHeadingDeg: number) {
       });
     }, TICK_MS);
     return () => clearInterval(timer);
-  }, [walking, speedMs]);
+  }, [walking, speedMs, enabled]);
 
   const moveTo = useCallback((next: Coord) => {
     at.current = next;
@@ -51,6 +52,7 @@ export function useSimLocation(start: Coord, startHeadingDeg: number) {
   }, []);
 
   useEffect(() => {
+    if (!enabled) return;
     function onKey(event: KeyboardEvent) {
       if (event.key === "ArrowLeft") turn(-TURN_DEG);
       else if (event.key === "ArrowRight") turn(TURN_DEG);
@@ -61,7 +63,7 @@ export function useSimLocation(start: Coord, startHeadingDeg: number) {
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [turn, stepForward]);
+  }, [turn, stepForward, enabled]);
 
   return { fix, moveTo, turn, walking, setWalking, speedMs, setSpeedMs };
 }

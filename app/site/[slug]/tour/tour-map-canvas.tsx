@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { divIcon } from "leaflet";
-import { MapContainer, Marker, Polygon, Polyline, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, Marker, Polygon, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { ringToLeaflet, sector, toLeaflet } from "@/lib/location/geometry";
 import { TRIGGER_CONFIG } from "@/lib/location/config";
@@ -14,6 +15,15 @@ const VISITOR_ICON = divIcon({
   iconAnchor: [8, 8],
   html: '<div style="width:16px;height:16px;border-radius:50%;background:#F4EDE0;border:2px solid #1F1B16;cursor:grab"></div>',
 });
+
+// a real Visitor is wherever they actually are, which is usually not where the map opened
+function FollowLive({ at, live }: { at: Coord; live: boolean }) {
+  const map = useMap();
+  useEffect(() => {
+    if (live) map.setView(toLeaflet(at), map.getZoom());
+  }, [map, live, at]);
+  return null;
+}
 
 const LIVE_ICON = divIcon({
   className: "",
@@ -122,6 +132,8 @@ export default function TourMapCanvas({
           interactive={false}
         />
       )}
+
+      <FollowLive at={at} live={live} />
 
       {/* a real body cannot be dragged, so the marker only moves by hand in the simulation */}
       <Marker

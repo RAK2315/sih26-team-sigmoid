@@ -131,12 +131,22 @@ export default function Discover({
         </div>
 
         <div className="flex min-h-[22rem] w-full flex-col lg:w-[26rem] lg:border-l lg:border-ink-faint/30">
-          <div className="relative h-64 shrink-0 lg:h-72">
+          <div className="relative h-80 shrink-0 lg:h-96">
             <DiscoverMapCanvas
               candidates={result?.candidates ?? []}
               openId={openId}
               onOpen={(mentionId) => setOpenId(mentionId)}
             />
+            <div className="pointer-events-none absolute top-3 left-3 z-[500] border border-ink-faint/40 bg-paper-raised/95 px-3 py-2">
+              <p className="font-archive text-[10px] tracking-[0.2em] text-ink-faint uppercase">
+                Where the page puts them
+              </p>
+              <p className="font-archive mt-0.5 text-[11px] text-ink">
+                {result === null
+                  ? "nothing read yet"
+                  : `${result.candidates.length} placed, each inside its own circle`}
+              </p>
+            </div>
             {phase === "done" && result?.candidates.length === 0 && (
               <p className="pointer-events-none absolute inset-x-0 bottom-0 z-[500] bg-paper-raised/95 p-3 text-center text-xs leading-relaxed text-ink-muted">
                 Nothing on this page could be placed. The map is empty because the survey measures

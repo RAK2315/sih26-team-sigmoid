@@ -82,9 +82,9 @@ export default function Tour({
   );
   const prepared = useMemo(() => prepare(routePoints, TRIGGER_CONFIG), [routePoints]);
 
-  const sim = useSimLocation(start, 0);
   const [wantGps, setWantGps] = useState(false);
   const gps = useGpsLocation(wantGps);
+  const sim = useSimLocation(start, 0, gps.fix === null);
   // until the phone has given us something, the simulated marker is what is on screen and the
   // panel says so, rather than the map going blank
   const live = gps.fix !== null;
@@ -102,12 +102,17 @@ export default function Tour({
   const walkId = useRef<string>("");
   if (walkId.current === "") walkId.current = `w_${Math.random().toString(36).slice(2, 10)}`;
   const [unsent, setUnsent] = useState(0);
-  const narration = narrations.find(
-    (n) =>
-      n.pointId === (speaking?.pointId ?? selected.id) &&
-      n.persona === persona &&
-      n.kind === (speaking?.kind ?? "approach"),
-  );
+  const wantedPoint = speaking?.pointId ?? selected.id;
+  const wantedKind = speaking?.kind ?? "approach";
+  // only the history Persona has an inside telling, so the others fall back to the approach one
+  // rather than emptying the panel under a Heritage Point that is speaking
+  const narration =
+    narrations.find(
+      (n) => n.pointId === wantedPoint && n.persona === persona && n.kind === wantedKind,
+    ) ??
+    narrations.find(
+      (n) => n.pointId === wantedPoint && n.persona === persona && n.kind === "approach",
+    );
   const factSheet = factSheets.find((f) => f.pointId === selected.id);
 
   useEffect(() => {

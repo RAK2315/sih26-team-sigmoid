@@ -10,5 +10,6 @@ export const TRIGGER_CONFIG: EngineConfig = {
   rearmMs: Number(process.env.NEXT_PUBLIC_REARM_MS ?? 3000),
 };
 
-// how far a real fix has to jump before we believe the Visitor moved rather than the satellites
-export const GPS_SETTLE_M = Number(process.env.NEXT_PUBLIC_GPS_SETTLE_M ?? 6);
+// a real fix has to clear the Dwell drift tolerance by a wide margin or standing still would
+// look like walking, so this is derived from that number rather than set independently
+export const GPS_SETTLE_M = TRIGGER_CONFIG.dwellDriftM * 4;
