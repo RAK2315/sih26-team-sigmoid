@@ -231,7 +231,7 @@ function Evidence({
 
   if (!full || !mention || !page) {
     return (
-      <aside className="w-full border-l border-ink-faint/40 bg-paper-raised p-4 lg:w-96 lg:shrink-0">
+      <aside className="sheet fixed inset-x-0 top-14 bottom-0 z-[900] overflow-y-auto border-t border-ink-faint/40 bg-paper-raised p-4 lg:static lg:inset-auto lg:z-auto lg:w-96 lg:shrink-0 lg:border-t-0 lg:border-l">
         <p className="text-sm text-ink-muted">
           The Evidence for this Candidate is not in the committed cache, so it cannot be shown. It
           is not summarised or guessed at.

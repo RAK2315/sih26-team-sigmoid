@@ -57,8 +57,16 @@ export default function EvidenceThread({
     svg.style.opacity = "1";
   }, [markRef, boxRef, mapBoxRef, pin]);
 
+  // the ends move whenever the map or the page does, and that must not restart the drawing
+  const latest = useRef(measure);
+
   useLayoutEffect(() => {
+    latest.current = measure;
     measure();
+  }, [measure]);
+
+  useLayoutEffect(() => {
+    latest.current();
     const path = pathRef.current;
     if (!path || reduced) return;
     const length = path.getTotalLength();
@@ -71,7 +79,7 @@ export default function EvidenceThread({
     path.style.transition = "stroke-dashoffset .75s cubic-bezier(.2,.7,.3,1)";
     path.style.strokeDashoffset = "0";
 
-    // once it has drawn, drop the inline dashes so the line settles back to its dashed evidence look
+    // once it has drawn, drop the inline dashes so the line settles into its dashed evidence look
     const settle = () => {
       path.style.transition = "";
       path.style.strokeDasharray = "";
@@ -79,29 +87,29 @@ export default function EvidenceThread({
     };
     path.addEventListener("transitionend", settle, { once: true });
     return () => path.removeEventListener("transitionend", settle);
-  }, [drawKey, measure, reduced]);
+  }, [drawKey, reduced]);
 
   // the panels around it settle over the next few frames, so the ends are re-read until they stop
   useEffect(() => {
     let frame = 0;
     const until = performance.now() + 700;
     const tick = () => {
-      measure();
+      latest.current();
       if (performance.now() < until) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [drawKey, measure]);
+  }, [drawKey]);
 
   useEffect(() => {
-    const again = () => measure();
+    const again = () => latest.current();
     window.addEventListener("scroll", again, true);
     window.addEventListener("resize", again);
     return () => {
       window.removeEventListener("scroll", again, true);
       window.removeEventListener("resize", again);
     };
-  }, [measure]);
+  }, []);
 
   return (
     <svg
