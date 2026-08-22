@@ -7,6 +7,7 @@ import { useReducedMotion, useWideScreen } from "../use-reduced-motion";
 import DiscoverHeader from "./discover-header";
 import EvidencePanel from "./evidence-panel";
 import EvidenceThread, { type PinPoint } from "./evidence-thread";
+import Gaps, { type Gap } from "./gaps";
 import MentionCard from "./mention-card";
 import PageText from "./page-text";
 
@@ -55,12 +56,14 @@ export default function Discover({
   sourceUrl,
   licence,
   pages,
+  gaps,
 }: {
   volumeId: string;
   title: string;
   sourceUrl: string;
   licence: string;
   pages: ShelfPage[];
+  gaps: Gap[];
 }) {
   const [page, setPage] = useState<ShelfPage>(pages[0]);
   const [phase, setPhase] = useState<Phase>("idle");
@@ -75,6 +78,7 @@ export default function Discover({
   const markRef = useRef<HTMLElement>(null);
   const textBoxRef = useRef<HTMLPreElement>(null);
   const mapBoxRef = useRef<HTMLDivElement>(null);
+  const toolRef = useRef<HTMLDivElement>(null);
   const timers = useRef<number[]>([]);
 
   const stopSequence = useCallback(() => {
@@ -129,7 +133,8 @@ export default function Discover({
     step(2400, "cards");
   }
 
-  async function analyse() {
+  // the Page is passed in rather than read off state, because a Gap card sets both at once
+  async function analysePage(target: ShelfPage) {
     stopSequence();
     setPhase("reading");
     setResult(null);
@@ -140,7 +145,7 @@ export default function Discover({
       const res = await fetch("/api/discover/analyse", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ volumeId, pageNo: page.pageNo }),
+        body: JSON.stringify({ volumeId, pageNo: target.pageNo }),
       });
       if (!res.ok) {
         setPhase("unavailable");
@@ -156,6 +161,14 @@ export default function Discover({
     }
   }
 
+  function openPage(pageNo: number) {
+    const target = pages.find((p) => p.pageNo === pageNo);
+    if (!target) return;
+    setPage(target);
+    toolRef.current?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    void analysePage(target);
+  }
+
   const highlight = reached(stage, "passage") ? (focus?.passageOffset ?? null) : null;
   const revealed = reached(stage, "contract");
   const showThread =
@@ -163,7 +176,25 @@ export default function Discover({
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
-      <DiscoverHeader pageCount={pages.length} />
+      <DiscoverHeader pageCount={pages.length} gapCount={gaps.length} />
+
+      {gaps.length > 0 && <Gaps gaps={gaps} onOpen={openPage} />}
+
+      <div ref={toolRef} className="border-b border-ink-faint/40 px-6 pt-14 lg:px-12">
+        <div className="mx-auto w-full max-w-6xl">
+          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+            Check the working
+          </p>
+          <h2 className="font-display mt-3 max-w-3xl text-4xl leading-tight text-ink lg:text-5xl">
+            Open any page of the volume and watch it happen
+          </h2>
+          <p className="mt-5 mb-10 max-w-2xl text-base leading-relaxed text-ink-muted">
+            This is the machine that produced the cards above, running live. Pick a Page and press
+            Analyse. The number beside each Page is how many places it put on the map last time it
+            was read, so a Page worth opening is easy to find.
+          </p>
+        </div>
+      </div>
 
       <div className="flex min-h-[38rem] flex-1 flex-col lg:flex-row">
         <Shelf pages={pages} current={page} title={title} onChoose={choose} />
@@ -181,7 +212,7 @@ export default function Discover({
             </h1>
             <button
               type="button"
-              onClick={analyse}
+              onClick={() => void analysePage(page)}
               disabled={phase === "reading"}
               className="border border-madder px-4 py-2 text-sm text-madder transition-colors duration-200 hover:bg-madder hover:text-paper disabled:opacity-40"
             >

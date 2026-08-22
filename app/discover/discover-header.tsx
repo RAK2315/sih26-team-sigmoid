@@ -32,20 +32,30 @@ function StepGlyph({ index }: { index: number }) {
   );
 }
 
-export default function DiscoverHeader({ pageCount }: { pageCount: number }) {
+export default function DiscoverHeader({
+  pageCount,
+  gapCount,
+}: {
+  pageCount: number;
+  gapCount: number;
+}) {
   return (
     <header className="shrink-0 border-b border-ink-faint/40 bg-paper-sunk px-6 py-8 lg:px-12">
       <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
         The researcher&apos;s desk
       </p>
-      <h1 className="ink-in font-display mt-2 max-w-3xl text-4xl leading-tight text-ink lg:text-5xl">
-        Watch a 1919 page become a place on the map
+      <h1 className="ink-in font-display mt-2 max-w-4xl text-5xl leading-[0.95] text-ink lg:text-6xl">
+        The archive remembers more places than the map does
       </h1>
+      <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink">
+        Maulvi Zafar Hasan surveyed Delhi for the Archaeological Survey and published the list in
+        1919. We read {pageCount} of its Pages. {gapCount} of the structures it names have nothing
+        on today&apos;s map anywhere near where the survey said they stood.
+      </p>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">
-        This is Maulvi Zafar Hasan&apos;s survey of Delhi, published in 1919. Pick any of its{" "}
-        {pageCount} Pages and press Analyse. Every structure the page names becomes a card, every
-        location it describes becomes a pin with a circle showing how sure we are, and every step
-        is inspectable.
+        Those {gapCount} are below, each with the passage it came from and the circle it might be
+        wrong by. Under them the machine that produced them is running live, so you can open any
+        Page yourself and check.
       </p>
 
       <ol className="stagger mt-6 grid gap-px border border-ink-faint/40 bg-ink-faint/40 sm:grid-cols-2 lg:grid-cols-4">
