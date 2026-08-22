@@ -711,6 +711,334 @@
     "voice": "en-IN-NeerjaNeural",
     "textHash": "24c0fc5ad325f0fa"
   },
+  "nizamuddin/dargah/history.en.approach": {
+    "audioUrl": "/audio/nizamuddin/dargah/history.en.approach.mp3",
+    "durationSec": 37.266,
+    "sentences": [
+      "The tomb of Shaikh Nizamuddin Auliya.",
+      "The survey calls it one of the most sacred shrines in India, and it has been added to by almost everyone who ever held Delhi.",
+      "Firoz Shah Tughlaq repaired the first building and put up a hall for the congregation that had not existed before.",
+      "Nothing of his work survives.",
+      "What you are looking at was built in 1562 by Faridun Khan, given its verandah ninety years later by the governor of Shahjahanabad, and given the marble rail round the grave by a nobleman of Hyderabad in 1882.",
+      "Three hundred years of people adding to one room."
+    ],
+    "cues": [
+      0.1,
+      2.817,
+      10.762,
+      17.69,
+      20.095,
+      33.983
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "afdf43bff0588353"
+  },
+  "nizamuddin/dargah/architecture.en.approach": {
+    "audioUrl": "/audio/nizamuddin/dargah/architecture.en.approach.mp3",
+    "durationSec": 35.921,
+    "sentences": [
+      "The shrine is small: thirty one feet nine inches square on the outside.",
+      "Almost all of that is the verandah, which is marble paved, six feet nine inches deep, and open through five arches on every side.",
+      "The chamber inside is only fifteen feet eight.",
+      "Look up at the dome.",
+      "It is the bulbous kind, it stands on an eight sided drum, and it is striped vertically in black marble, which is unusual enough that you will not mistake this roof for another.",
+      "The arches are usually hung with heavy cotton curtains, so the building you see changes with the day."
+    ],
+    "cues": [
+      0.1,
+      5.18,
+      13.813,
+      17.33,
+      19.194,
+      30.021
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "0f29e487279bf640"
+  },
+  "nizamuddin/dargah/kids.en.approach": {
+    "audioUrl": "/audio/nizamuddin/dargah/kids.en.approach.mp3",
+    "durationSec": 27.041,
+    "sentences": [
+      "This little marble building has music in front of it almost every week.",
+      "A teacher called Nizamuddin was buried here seven hundred years ago, and people have been coming ever since.",
+      "Kings kept adding bits to it.",
+      "One added the porch you are standing in, another added the silver rail around the grave.",
+      "Count the black stripes going up the dome.",
+      "If singers are sitting outside, stay and listen for a minute, because that is the oldest thing here."
+    ],
+    "cues": [
+      0.1,
+      4.679,
+      10.992,
+      13.312,
+      18.545,
+      21.331
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "ca373a9b14ab55a7"
+  },
+  "nizamuddin/atgah-khan/history.en.approach": {
+    "audioUrl": "/audio/nizamuddin/atgah-khan/history.en.approach.mp3",
+    "durationSec": 38.22,
+    "sentences": [
+      "The tomb of Atgah Khan, finished in 1567.",
+      "His real name was Shamsuddin Muhammad, and Atgah Khan is not a name at all: it was the title given to the husband of a royal wet nurse.",
+      "He earned that place by pulling Humayun off the field after Sher Shah Sur beat him, and the emperor made his wife nurse to the young Akbar in return.",
+      "He rose to be chancellor of the empire, and it killed him.",
+      "In 1562 Adham Khan, the son of another of Akbar's nurses, stabbed him in the palace at Agra.",
+      "His body was carried to Delhi to lie near the saint, and his son built this over him."
+    ],
+    "cues": [
+      0.1,
+      4.004,
+      12.711,
+      21.684,
+      25.476,
+      32.563
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "3ae0c8f06ef667a8"
+  },
+  "nizamuddin/atgah-khan/architecture.en.approach": {
+    "audioUrl": "/audio/nizamuddin/atgah-khan/architecture.en.approach.mp3",
+    "durationSec": 36.016,
+    "sentences": [
+      "A single domed chamber, twenty feet square, standing inside its own walled enclosure.",
+      "The material is the point: red stone inlaid with marble and with coloured tiles, which is a lot of decoration for a building this small.",
+      "There is a deeply recessed arch on each of the four sides.",
+      "Three of them are closed with latticed stone screens and only the southern one is a door.",
+      "Quranic inscriptions run round all four arches and end with the name of the man who wrote them, Baqi Muhammad.",
+      "The doorway inscription names the foreman as well, Ustad Khuda Quli."
+    ],
+    "cues": [
+      0.1,
+      5.974,
+      14.088,
+      18.177,
+      24.374,
+      31.536
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "46ec6454efd0a0b2"
+  },
+  "nizamuddin/atgah-khan/kids.en.approach": {
+    "audioUrl": "/audio/nizamuddin/atgah-khan/kids.en.approach.mp3",
+    "durationSec": 30.06,
+    "sentences": [
+      "Small building, big story.",
+      "The man inside once saved an emperor's life by getting him off a battlefield he had just lost.",
+      "As a reward his wife became the baby prince's nurse, and that made his whole family important.",
+      "It also made people jealous, and one of them killed him.",
+      "Look at the walls: red stone with white marble and coloured tiles pushed into it, like a pattern set into a floor but standing up.",
+      "Three of the four archways are filled with stone screens, so there is only one way in."
+    ],
+    "cues": [
+      0.1,
+      2.539,
+      8.355,
+      14.001,
+      17.497,
+      24.88
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "ba5e240adc152aaf"
+  },
+  "nizamuddin/chaunsath-khamba/history.en.approach": {
+    "audioUrl": "/audio/nizamuddin/chaunsath-khamba/history.en.approach.mp3",
+    "durationSec": 36.26,
+    "sentences": [
+      "Chaunsath Khamba, which means sixty four pillars, and they are all in front of you.",
+      "This is the tomb of Mirza Aziz Kokaltash, and he built it himself while he was still alive.",
+      "Kokaltash means foster brother.",
+      "His mother nursed the emperor Akbar, so Mirza Aziz grew up beside him and was treated as family for the rest of his life.",
+      "He died in Ahmadabad in 1624 and was carried back here to be buried near his father and near the saint.",
+      "Eight more graves inside are said to be his family, and not one of them is inscribed."
+    ],
+    "cues": [
+      0.1,
+      5.434,
+      11.917,
+      14.417,
+      22.616,
+      30.264
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "91f6dc8004b68798"
+  },
+  "nizamuddin/chaunsath-khamba/architecture.en.approach": {
+    "audioUrl": "/audio/nizamuddin/chaunsath-khamba/architecture.en.approach.mp3",
+    "durationSec": 32.213,
+    "sentences": [
+      "A hall of marble, sixty seven feet square, divided into twenty five bays and every bay domed.",
+      "The pillars are set in pairs, depth-wise, so each side reads as five openings rather than a wall.",
+      "Between them the builders hung latticed marble screens about ten feet high, with a door cut in the middle bay of each side.",
+      "Above the screens the arches are left open, which is why the light inside moves all day.",
+      "This is a tomb built as a pavilion.",
+      "Nothing about it is trying to keep you out."
+    ],
+    "cues": [
+      0.1,
+      6.536,
+      13.421,
+      20.921,
+      26.663,
+      29.332
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "5adf9884ade8bb46"
+  },
+  "nizamuddin/chaunsath-khamba/kids.en.approach": {
+    "audioUrl": "/audio/nizamuddin/chaunsath-khamba/kids.en.approach.mp3",
+    "durationSec": 24.435,
+    "sentences": [
+      "The name of this place is a number.",
+      "Chaunsath khamba means sixty four pillars, and if you have time you can check.",
+      "The man buried here was the emperor's foster brother, which means the same woman fed them both as babies.",
+      "At the Mughal court that made you family for life.",
+      "He built this whole marble hall for himself before he died, and the walls are stone screens cut full of holes so the wind goes straight through."
+    ],
+    "cues": [
+      0.1,
+      2.518,
+      7.105,
+      13.386,
+      16.607
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "c2ca9264feeb8e6a"
+  },
+  "qutub-complex/qutub-minar/history.en.approach": {
+    "audioUrl": "/audio/qutub-complex/qutub-minar/history.en.approach.mp3",
+    "durationSec": 35.01,
+    "sentences": [
+      "The Qutub Minar, two hundred and thirty four feet of it.",
+      "It was not built by one person or in one lifetime.",
+      "Qutbuddin Aibak built the bottom storey, Iltutmish finished the tower, and in 1368 Firoz Shah rebuilt the top after lightning struck it.",
+      "The inscription up there says so in his own words.",
+      "A cupola stood on the summit until an earthquake threw it down in 1803.",
+      "Its replacement was so disliked that Lord Hardinge had it taken off in 1848, and it is still sitting on the ground nearby."
+    ],
+    "cues": [
+      0.1,
+      3.697,
+      7.69,
+      16.8,
+      20.699,
+      26.398
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "64132332c28ae81e"
+  },
+  "qutub-complex/qutub-minar/architecture.en.approach": {
+    "audioUrl": "/audio/qutub-complex/qutub-minar/architecture.en.approach.mp3",
+    "durationSec": 37.828,
+    "sentences": [
+      "The shaft is forty seven feet three inches across at the bottom and nine feet at the top, so it narrows by a factor of five as it climbs.",
+      "Five balconies break it into five storeys.",
+      "Look at the flutes.",
+      "The lowest storey is a twenty four sided polygon of alternating angular and rounded flutes; the second is rounded only; the third goes back to angular; the fourth is plain and uses marble; the fifth alternates marble and red sandstone.",
+      "Each storey is a different idea, stacked.",
+      "The bands you can see between the balconies are inscriptions wound together with foliage."
+    ],
+    "cues": [
+      0.1,
+      9.322,
+      12.521,
+      14.374,
+      29.226,
+      32.182
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "d158bf01b31d73c7"
+  },
+  "qutub-complex/qutub-minar/kids.en.approach": {
+    "audioUrl": "/audio/qutub-complex/qutub-minar/kids.en.approach.mp3",
+    "durationSec": 26.48,
+    "sentences": [
+      "This is the tallest brick tower of its kind anywhere, and it took more than a hundred years to finish.",
+      "Count the balconies going up.",
+      "There are five, and each section between them is carved a different way.",
+      "It was built so someone could stand at the top and call people to prayer.",
+      "Lightning hit it once and a king had to rebuild the top.",
+      "Later an earthquake knocked the little roof off the summit, and that roof is still lying on the ground somewhere near you."
+    ],
+    "cues": [
+      0.1,
+      5.833,
+      8.111,
+      12.56,
+      16.85,
+      20.261
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "561a40dd6487eee2"
+  },
+  "humayuns-tomb/mausoleum/history.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/mausoleum/history.en.approach.mp3",
+    "durationSec": 32.478,
+    "sentences": [
+      "The tomb of Humayun.",
+      "The survey calls it the dormitory of the house of Timur, because the emperor is not alone in here.",
+      "There are graves in the octagonal chambers on three sides of him, and the survey says five of them are of undeclared identity.",
+      "His own grave is the plainest thing in the building: a block of white marble, six feet by two feet nine, with no ornament at all.",
+      "The rooms upstairs were once a college of some importance.",
+      "Nobody recorded what was taught there or when it stopped."
+    ],
+    "cues": [
+      0.1,
+      1.853,
+      7.955,
+      16.069,
+      24.608,
+      28.697
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "bd036bcfb86e1356"
+  },
+  "humayuns-tomb/mausoleum/architecture.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/mausoleum/architecture.en.approach.mp3",
+    "durationSec": 38.262,
+    "sentences": [
+      "The dome is about seventy four feet across and it is marble over rubble, laid in alternating deep and shallow courses.",
+      "It stands on a red sandstone drum twenty five feet high, patterned with stars in yellow sandstone with black slate at their centres.",
+      "Inside, the ceiling of the central chamber is eighty feet above the floor.",
+      "Now look at the very top.",
+      "The finial is a stack of copper vessels threaded loosely on a wooden post, eighteen feet tall, taken down and put back in 1912.",
+      "It springs straight off the dome rather than from a lotus cresting, which is not how these are usually done."
+    ],
+    "cues": [
+      0.1,
+      7.849,
+      16.377,
+      21.059,
+      23.283,
+      31.737
+    ],
+    "voice": "en-IN-PrabhatNeural",
+    "textHash": "0bd73ebce0cc4cff"
+  },
+  "humayuns-tomb/mausoleum/kids.en.approach": {
+    "audioUrl": "/audio/humayuns-tomb/mausoleum/kids.en.approach.mp3",
+    "durationSec": 27.253,
+    "sentences": [
+      "An emperor is buried in here, and so are a lot of other people whose names nobody wrote down.",
+      "His grave is the simplest one: a plain white block of marble with nothing carved on it.",
+      "The ceiling above it is as high as an eight storey building.",
+      "See the spike on top of the dome?",
+      "That is a pile of copper pots stacked on a wooden pole, and it is eighteen feet tall even though from here it looks small.",
+      "The rooms up on the roof used to be a school."
+    ],
+    "cues": [
+      0.1,
+      5.77,
+      11.204,
+      14.838,
+      17.295,
+      24.255
+    ],
+    "voice": "en-IN-NeerjaNeural",
+    "textHash": "aba94be7b32d1424"
+  },
   "red-fort/diwan-i-aam/history.en.inside": {
     "audioUrl": "/audio/red-fort/diwan-i-aam/history.en.inside.mp3",
     "durationSec": 18.983,

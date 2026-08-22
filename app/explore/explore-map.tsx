@@ -121,9 +121,9 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-sm text-ink">{site.name}</span>
                           <span className="font-archive block text-[11px] text-ink-faint">
-                            {site.pointIds.length > 0
-                              ? `${site.pointIds.length} Heritage Points`
-                              : "single structure"}
+                            {site.pointIds.length === 0
+                              ? "single structure"
+                              : `${site.pointIds.length} Heritage ${site.pointIds.length === 1 ? "Point" : "Points"}`}
                           </span>
                         </span>
                       </button>
@@ -233,7 +233,8 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
                     href={`/site/${site.id}/plan`}
                     className="font-archive mt-4 inline-block border border-madder px-3 py-1.5 text-[11px] tracking-widest text-madder uppercase transition-colors duration-200 hover:bg-madder hover:text-paper"
                   >
-                    Begin tour &middot; {site.pointIds.length} points
+                    Begin tour &middot; {site.pointIds.length}{" "}
+                    {site.pointIds.length === 1 ? "point" : "points"}
                   </Link>
                 ) : (
                   <p className="font-archive mt-4 text-[11px] text-ink-faint">

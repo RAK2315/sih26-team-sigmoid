@@ -93,21 +93,6 @@ export const shallowSites: HeritageSite[] = [
     image: IMAGES["sites/satpula"],
   },
   {
-    id: "chausath-khamba",
-    name: "Chausath Khamba",
-    nameLocal: "चौंसठ खंभा",
-    depth: "shallow",
-    period: "Mughal, 1623 to 1624",
-    centroid: [77.243042, 28.591196],
-    bbox: [77.2405, 28.589, 77.2455, 28.5934],
-    pointIds: [],
-    blurb:
-      "Sixty-four marble pillars holding a flat roof over the grave of Mirza Aziz Koka, Akbar's foster brother. All of it is one material and one colour.",
-    representationScore: 0.36,
-    coordSource: "osm:w103505910",
-    image: IMAGES["sites/chausath-khamba"],
-  },
-  {
     id: "lal-gumbad",
     name: "Lal Gumbad",
     nameLocal: "लाल गुंबद",

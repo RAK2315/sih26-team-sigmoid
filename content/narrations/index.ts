@@ -1,4 +1,19 @@
 import type { NarrationText } from "@/lib/types";
+import { humayunsTombArchitectureEn } from "./humayuns-tomb-mausoleum.architecture.en";
+import { humayunsTombHistoryEn } from "./humayuns-tomb-mausoleum.history.en";
+import { humayunsTombKidsEn } from "./humayuns-tomb-mausoleum.kids.en";
+import { atgahKhanArchitectureEn } from "./nizamuddin-atgah-khan.architecture.en";
+import { atgahKhanHistoryEn } from "./nizamuddin-atgah-khan.history.en";
+import { atgahKhanKidsEn } from "./nizamuddin-atgah-khan.kids.en";
+import { chaunsathKhambaArchitectureEn } from "./nizamuddin-chaunsath-khamba.architecture.en";
+import { chaunsathKhambaHistoryEn } from "./nizamuddin-chaunsath-khamba.history.en";
+import { chaunsathKhambaKidsEn } from "./nizamuddin-chaunsath-khamba.kids.en";
+import { nizamuddinDargahArchitectureEn } from "./nizamuddin-dargah.architecture.en";
+import { nizamuddinDargahHistoryEn } from "./nizamuddin-dargah.history.en";
+import { nizamuddinDargahKidsEn } from "./nizamuddin-dargah.kids.en";
+import { qutubMinarArchitectureEn } from "./qutub-complex-qutub-minar.architecture.en";
+import { qutubMinarHistoryEn } from "./qutub-complex-qutub-minar.history.en";
+import { qutubMinarKidsEn } from "./qutub-complex-qutub-minar.kids.en";
 import { chattaChowkArchitectureEn } from "./red-fort-chatta-chowk.architecture.en";
 import { chattaChowkHistoryEn } from "./red-fort-chatta-chowk.history.en";
 import { chattaChowkKidsEn } from "./red-fort-chatta-chowk.kids.en";
@@ -70,6 +85,21 @@ export const narrationTexts: NarrationText[] = [
   mumtazMahalHistoryEn,
   mumtazMahalArchitectureEn,
   mumtazMahalKidsEn,
+  nizamuddinDargahHistoryEn,
+  nizamuddinDargahArchitectureEn,
+  nizamuddinDargahKidsEn,
+  atgahKhanHistoryEn,
+  atgahKhanArchitectureEn,
+  atgahKhanKidsEn,
+  chaunsathKhambaHistoryEn,
+  chaunsathKhambaArchitectureEn,
+  chaunsathKhambaKidsEn,
+  qutubMinarHistoryEn,
+  qutubMinarArchitectureEn,
+  qutubMinarKidsEn,
+  humayunsTombHistoryEn,
+  humayunsTombArchitectureEn,
+  humayunsTombKidsEn,
   diwanIAamHistoryInsideEn,
   rangMahalHistoryInsideEn,
   diwanIKhasHistoryInsideEn,

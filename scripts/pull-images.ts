@@ -1,5 +1,5 @@
 import { execFile } from "node:child_process";
-import { mkdir, writeFile } from "node:fs/promises";
+import { access, mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { promisify } from "node:util";
 
@@ -132,6 +132,22 @@ const wanted: Wanted[] = [
   },
 
   {
+    key: "sites/nizamuddin-basti",
+    title: "File:Nizamuddin Dargah -Delhi -Delhi -DSC 0001.jpg",
+    alt: "The dargah of Hazrat Nizamuddin Auliya, its marble verandah and striped dome rising over the crowded courtyard of the basti.",
+  },
+  {
+    key: "traditions/kokaltash",
+    title: "File:Marble Pillars in Chausath Khamba.jpg",
+    alt: "Rows of square marble pillars inside Chaunsath Khamba, the hall Mirza Aziz Kokaltash built over his own grave.",
+  },
+  {
+    key: "traditions/burial-beside-the-saint",
+    title:
+      "File:Jahanara Begum's Tomb- Hazrat Nizamuddin Dargah- Delhi-MVIMG 20200318 150326-01.jpg",
+    alt: "The open marble grave of Jahanara Begum in the enclosure at Nizamuddin, one of thousands of people buried as close to the saint as they could get.",
+  },
+  {
     key: "plates/palace-from-metcalfe-house",
     title:
       "File:Reminiscences of Imperial Delhi View of the Delhi palace from Metcalfe House.png",
@@ -208,15 +224,22 @@ async function main() {
 
     const file = join(OUT, `${item.key}.jpg`);
     await mkdir(dirname(file), { recursive: true });
-    const res = await fetch(info.thumburl, { headers: { "User-Agent": UA } });
-    const raw = `${file}.raw`;
-    await writeFile(raw, Buffer.from(await res.arrayBuffer()));
-    await run("python", [
-      join("scripts", "shrink-image.py"),
-      raw,
-      file,
-      item.crop ? item.crop.join(",") : "",
-    ]);
+    // credits are read every run so they cannot drift, but a file already here is not refetched
+    const have = await access(file).then(
+      () => true,
+      () => false,
+    );
+    if (!have) {
+      const res = await fetch(info.thumburl, { headers: { "User-Agent": UA } });
+      const raw = `${file}.raw`;
+      await writeFile(raw, Buffer.from(await res.arrayBuffer()));
+      await run("python", [
+        join("scripts", "shrink-image.py"),
+        raw,
+        file,
+        item.crop ? item.crop.join(",") : "",
+      ]);
+    }
 
     const meta = info.extmetadata;
     entries.push(
@@ -229,8 +252,8 @@ async function main() {
         `    sourceUrl: ${JSON.stringify(info.descriptionurl)},\n` +
         `  },`,
     );
-    console.log(`wrote ${item.key}`);
-    await new Promise((r) => setTimeout(r, 400));
+    console.log(`${have ? "kept" : "wrote"} ${item.key}`);
+    if (!have) await new Promise((r) => setTimeout(r, 400));
   }
 
   const generated =

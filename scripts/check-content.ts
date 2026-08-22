@@ -136,12 +136,13 @@ for (const site of sites) {
   for (const id of site.pointIds) {
     if (!pointIds.has(id)) fail(`site ${site.id}`, `names a Heritage Point that does not exist: ${id}`);
   }
-  // a filled pin promises points to walk between, so depth has to match what is there
+  // a filled pin promises points to walk between, so depth has to match what is there.
+  // a single structure may still have the one Heritage Point that is itself.
   if (site.depth === "deep" && site.pointIds.length < 3) {
     fail(`site ${site.id}`, `is marked deep with ${site.pointIds.length} Heritage Points`);
   }
-  if (site.depth === "shallow" && site.pointIds.length > 0) {
-    fail(`site ${site.id}`, "is marked shallow but has Heritage Points");
+  if (site.depth === "shallow" && site.pointIds.length > 1) {
+    fail(`site ${site.id}`, `is marked shallow with ${site.pointIds.length} Heritage Points`);
   }
 }
 
