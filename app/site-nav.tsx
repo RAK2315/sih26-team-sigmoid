@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/vision", label: "Why" },
   { href: "/explore", label: "Explore" },
+  { href: "/traditions", label: "Traditions" },
   { href: "/discover", label: "Discover" },
-  { href: "/authority", label: "Authority" },
+  { href: "/vision", label: "Why" },
 ];
 
 export default function SiteNav() {

@@ -1,10 +1,15 @@
 import Link from "next/link";
-import Counted from "./counted";
-import Reveal from "./reveal";
 import { DISCOVERY_CACHE } from "@/content/discovery-cache";
+import { IMAGES } from "@/content/images";
 import { narrationTexts } from "@/content/narrations";
 import { points } from "@/content/points";
 import { sites } from "@/content/sites";
+import ThenNowCard from "./site/[slug]/tour/then-now";
+import Counted from "./counted";
+import { ChhatriRow, JaliBand, MughalArch, RuleWithLozenge } from "./motifs";
+import Parallax from "./parallax";
+import ProtectedGrid from "./protected-grid";
+import Reveal from "./reveal";
 
 // counted here rather than typed in, so the opening slide cannot drift from the build
 const results = Object.values(DISCOVERY_CACHE);
@@ -21,24 +26,36 @@ const FIGURES = [
 
 const GAPS = verdict("representation_gap");
 
+const traditions = points.filter((p) => p.livingTradition !== null);
+const lahoriGate = points.find((p) => p.id === "red-fort/lahori-gate");
+
+const STATUS_COLOUR: Record<string, string> = {
+  living: "text-verdigris",
+  dormant: "text-state-candidate",
+  lost: "text-state-rejected",
+};
+
 const DOORS = [
   {
     href: "/explore",
     kicker: "For the visitor",
     title: "Explore",
+    image: IMAGES["sites/qutub-complex"],
     body: `${sites.length} Heritage Sites across Delhi and ${points.length} Heritage Points to walk between. ${narrationTexts.length} Narrations that begin on their own when you arrive and turn to face the building.`,
+  },
+  {
+    href: "/traditions",
+    kicker: "For the curious",
+    title: "Traditions",
+    image: IMAGES["traditions/naubat"],
+    body: `${traditions.length} Living Traditions the archive recorded and the buildings still hold. Some are still done every day, some are dormant, and some are gone. Each one says which.`,
   },
   {
     href: "/discover",
     kicker: "For the researcher",
     title: "Discover",
+    image: IMAGES["plates/chandni-chowk-1858"],
     body: `Open any of ${results.length} real scanned Pages, watch a passage of 1919 English become a pin with an honest circle around it, and check every step of the working.`,
-  },
-  {
-    href: "/authority",
-    kicker: "For the reviewer",
-    title: "Authority",
-    body: "A Candidate is as far as anything automated is allowed to go. Only a person moves one further, and every move is written down where it cannot be edited.",
   },
 ];
 
@@ -47,92 +64,235 @@ const PIPELINE = ["Archive Page", "Mention", "Candidate", "Reviewer", "Visitor"]
 export default function Home() {
   return (
     <main className="w-full">
-      <section className="relative overflow-hidden border-b border-ink-faint/40">
-        {/* Murray photographed this gate in 1858 and it is already credited on /attributions */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-cover bg-center opacity-[0.14] lg:block"
-          style={{
-            backgroundImage: "url(/images/then-now/red-fort-lahori-gate.then.jpg)",
-            maskImage: "linear-gradient(to right, transparent, black 55%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent, black 55%)",
-          }}
+      <section className="relative flex min-h-[88vh] items-center overflow-hidden border-b border-ink-faint/40">
+        <Parallax speed={0.18} className="pointer-events-none absolute inset-x-0 -top-24 bottom-0">
+          <div
+            aria-hidden
+            className="h-[130%] w-full bg-cover bg-center opacity-[0.22]"
+            style={{
+              backgroundImage: `url(${IMAGES["plates/palace-from-metcalfe-house"].url})`,
+              maskImage: "linear-gradient(to bottom, black 20%, transparent 92%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 20%, transparent 92%)",
+            }}
+          />
+        </Parallax>
+
+        <MughalArch
+          className="pointer-events-none absolute -right-10 bottom-0 h-[86%] w-auto text-ink-faint/45 lg:right-24"
         />
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-20 lg:px-12 lg:py-28">
+
+        <div className="relative mx-auto w-full max-w-6xl px-6 py-24 lg:px-12">
           <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
-            Team Sigmoid &middot; SIH 2026
+            Team Sigmoid &middot; SIH 2026 &middot; Heritage and Culture
           </p>
-          <h1 className="ink-in font-display mt-5 text-7xl leading-[0.9] text-ink lg:text-8xl">
+          <h1 className="ink-in font-display mt-6 text-7xl leading-[0.85] text-ink lg:text-[9rem]">
             VIRASAT
           </h1>
-          <p className="rise font-deva mt-1 text-3xl leading-tight text-ink-muted lg:text-4xl" style={{ animationDelay: ".18s" }}>
+          <p
+            className="rise font-deva mt-2 text-3xl leading-tight text-ink-muted lg:text-5xl"
+            style={{ animationDelay: ".18s" }}
+          >
             विरासत
           </p>
-          <p className="rise font-display mt-4 text-2xl text-madder italic lg:text-3xl" style={{ animationDelay: ".30s" }}>
+          <RuleWithLozenge
+            className="rule-draw mt-6 h-3 w-full max-w-md text-madder/60"
+          />
+          <p
+            className="rise font-display mt-5 text-2xl text-madder italic lg:text-4xl"
+            style={{ animationDelay: ".34s" }}
+          >
             Stand where it happened.
           </p>
-          <p className="rise font-archive mt-4 max-w-lg text-xs leading-relaxed text-ink-faint" style={{ animationDelay: ".42s" }}>
-            Virasat is what is handed down. Not only what was built, but what is still done.
+          <p
+            className="rise mt-6 max-w-xl text-base leading-relaxed text-ink-muted"
+            style={{ animationDelay: ".46s" }}
+          >
+            Virasat is what is handed down. Not only what was built, but what is still done. This
+            reads a century-old survey of Delhi, puts what it recorded back on today&apos;s map,
+            and lets each place speak to whoever is standing in front of it.
           </p>
+          <div
+            className="rise mt-8 flex flex-wrap gap-3"
+            style={{ animationDelay: ".58s" }}
+          >
+            <Link
+              href="/explore"
+              className="border border-madder bg-madder px-6 py-3 text-sm text-paper transition-colors duration-200 hover:bg-transparent hover:text-madder"
+            >
+              Walk a site
+            </Link>
+            <Link
+              href="/traditions"
+              className="border border-ink-faint/50 px-6 py-3 text-sm text-ink transition-colors duration-200 hover:border-madder hover:text-madder"
+            >
+              See what is still done
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-12">
-        <Reveal className="grid gap-10 md:grid-cols-2">
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-12 lg:py-24">
+        <Reveal className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
-            <p className="font-archive border-t border-ink-faint/40 pt-3 text-xs tracking-[0.2em] text-ink-faint uppercase">
+            <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
               What went missing
             </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-muted">
+            <h2 className="font-display mt-3 text-4xl leading-tight text-ink lg:text-5xl">
+              One thousand three hundred recorded.
+              <br />
+              <span className="text-madder">One hundred and seventy four protected.</span>
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-ink-muted">
               Between 1916 and 1922 the Archaeological Survey of India catalogued roughly 1,300
               monuments in Delhi. About 174 are centrally protected today. The rest did not all
-              disappear. They stopped being findable.
+              disappear. They stopped being findable, which for a monument is most of the way to
+              the same thing.
+            </p>
+            <p className="font-archive mt-4 text-[11px] leading-relaxed text-ink-faint">
+              Every filled square is protected. Every hollow one was written down once and left to
+              the street it stands on.
             </p>
           </div>
           <div>
-            <p className="font-archive border-t border-ink-faint/40 pt-3 text-xs tracking-[0.2em] text-ink-faint uppercase">
-              What we do about it
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              VIRASAT reads what the archive already recorded, projects it back onto
-              today&apos;s map with a radius that says how sure we are, has a person confirm each
-              one, and then lets the place tell its own story to whoever is standing in front of
-              it.
-            </p>
+            <ProtectedGrid />
           </div>
-        </Reveal>
-
-        <Reveal>
-            <blockquote className="mt-14 border-l-2 border-madder pl-6">
-              <p className="font-display text-3xl leading-snug text-ink lg:text-4xl">
-                One rule governs everything here: show the evidence, or don&apos;t show it at all.
-              </p>
-            </blockquote>
         </Reveal>
       </section>
 
       <section className="border-y border-ink-faint/40 bg-paper-raised">
+        <Reveal className="mx-auto w-full max-w-5xl px-6 py-16 lg:px-12">
+          <blockquote className="border-l-2 border-madder pl-6">
+            <p className="font-display text-3xl leading-snug text-ink lg:text-5xl">
+              One rule governs everything here: show the evidence, or don&apos;t show it at all.
+            </p>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
+              Nothing on this site makes a claim without a route to where the claim came from. A
+              projected position carries the circle it might be wrong by. A narrated fact carries
+              the page it was read off. A monument stays a Candidate until a person says otherwise.
+            </p>
+          </blockquote>
+        </Reveal>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-12 lg:py-24">
         <Reveal>
-          <dl className="stagger mx-auto grid w-full max-w-6xl grid-cols-2 lg:grid-cols-5">
+          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+            Heritage that is done, not only built
+          </p>
+          <h2 className="font-display mt-3 max-w-3xl text-4xl leading-tight text-ink lg:text-5xl">
+            A building is the part that stayed still. The rest is what people kept doing in it.
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted">
+            {traditions.length} Living Traditions sit against the Heritage Points that hold them.
+            The drums that kept the hours are dormant. The stone inlay is still cut by hand. The
+            zenana is gone. Each card says which of the three it is, and why we think so.
+          </p>
+        </Reveal>
+
+        <Reveal className="stagger mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {traditions.slice(0, 6).map((point) => {
+            const tradition = point.livingTradition!;
+            return (
+              <article
+                key={point.id}
+                className="group flex flex-col border border-ink-faint/40 bg-paper-raised"
+              >
+                {tradition.image && (
+                  <div className="aspect-[4/3] overflow-hidden bg-paper-sunk">
+                    <img
+                      src={tradition.image.url}
+                      alt={tradition.image.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-4">
+                  <span
+                    className={`font-archive text-[10px] tracking-[0.2em] uppercase ${STATUS_COLOUR[tradition.status]}`}
+                  >
+                    {tradition.status}
+                  </span>
+                  <h3 className="font-display mt-1 text-2xl leading-tight text-ink">
+                    {tradition.name}
+                  </h3>
+                  <p className="font-archive mt-1 text-[11px] text-ink-faint">{point.name}</p>
+                  <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-ink-muted">
+                    {tradition.text}
+                  </p>
+                </div>
+              </article>
+            );
+          })}
+        </Reveal>
+
+        <Reveal className="mt-8">
+          <Link
+            href="/traditions"
+            className="font-archive border border-ink-faint/50 px-5 py-2.5 text-[11px] tracking-widest text-ink uppercase transition-colors duration-200 hover:border-madder hover:text-madder"
+          >
+            All {traditions.length} Living Traditions
+          </Link>
+        </Reveal>
+      </section>
+
+      <JaliBand className="h-10 w-full text-ink-faint/35" />
+
+      {lahoriGate?.thenNow && (
+        <section className="border-y border-ink-faint/40 bg-paper-raised">
+          <Reveal className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:px-12">
+            <div>
+              <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+                The same ground, a century apart
+              </p>
+              <h2 className="font-display mt-3 text-4xl leading-tight text-ink lg:text-5xl">
+                Drag the line.
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-ink-muted">
+                {lahoriGate.thenNow.note}
+              </p>
+              <p className="font-archive mt-4 text-[11px] leading-relaxed text-ink-faint">
+                Both photographs are on Wikimedia Commons and both are credited on the
+                Attributions page. No image of a real monument in this project was generated.
+              </p>
+            </div>
+            <ThenNowCard thenNow={lahoriGate.thenNow} name={lahoriGate.name} />
+          </Reveal>
+        </section>
+      )}
+
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-12 lg:py-24">
+        <Reveal>
+          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+            What forty pages produced
+          </p>
+          <h2 className="font-display mt-3 text-4xl leading-tight text-ink lg:text-5xl">
+            The finding, in five numbers
+          </h2>
+        </Reveal>
+
+        <Reveal>
+          <dl className="stagger mt-10 grid grid-cols-2 border-t border-ink-faint/40 lg:grid-cols-5">
             {FIGURES.map((figure) => (
               <div
                 key={figure.label}
-                className="border-b border-ink-faint/25 px-6 py-6 lg:border-r lg:border-b-0 lg:px-8"
+                className="border-b border-ink-faint/25 px-2 py-6 lg:border-r lg:border-b-0 lg:px-6"
               >
                 <p className="font-archive text-[11px] tracking-[0.2em] text-ink-faint uppercase">
                   {figure.kicker}
                 </p>
-                <dt className="font-display mt-1 text-5xl leading-none text-ink">
+                <dt className="font-display mt-1 text-5xl leading-none text-ink lg:text-6xl">
                   <Counted value={figure.value} />
                 </dt>
                 <dd className="mt-2 text-xs leading-tight text-ink-muted">{figure.label}</dd>
               </div>
             ))}
-            <div className="col-span-2 bg-madder/[0.06] px-6 py-6 lg:col-span-1 lg:px-8">
+            <div className="col-span-2 border-b border-ink-faint/25 bg-madder/[0.07] px-2 py-6 lg:col-span-1 lg:border-b-0 lg:px-6">
               <p className="font-archive text-[11px] tracking-[0.2em] text-madder uppercase">
                 The finding
               </p>
-              <dt className="font-display mt-1 text-5xl leading-none text-madder">
+              <dt className="font-display mt-1 text-5xl leading-none text-madder lg:text-6xl">
                 <Counted value={GAPS} />
               </dt>
               <dd className="mt-2 text-xs leading-tight text-ink-muted">
@@ -145,42 +305,17 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-14 lg:px-12">
-        <Reveal className="stagger grid gap-4 md:grid-cols-3">
-          {DOORS.map((door, i) => (
-            <Link
-              key={door.href}
-              href={door.href}
-              className="group block border border-ink-faint/40 bg-paper-raised p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-madder hover:bg-paper-sunk/40"
-            >
-              <p className="font-archive text-[11px] tracking-[0.2em] text-ink-faint uppercase">
-                {String(i + 1).padStart(2, "0")} &middot; {door.kicker}
-              </p>
-              <h2 className="font-display mt-2 text-4xl text-ink group-hover:text-madder">
-                {door.title}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{door.body}</p>
-              <span className="font-archive mt-5 inline-block text-[11px] tracking-widest text-madder uppercase">
-                Open &rarr;
-              </span>
-            </Link>
-          ))}
-        </Reveal>
-      </section>
-
-      <section className="border-t border-ink-faint/40 bg-paper-raised">
-        <Reveal className="mx-auto w-full max-w-6xl px-6 py-10 lg:px-12">
+      <section className="relative overflow-hidden border-y border-ink-faint/40 bg-paper-sunk">
+        <ChhatriRow className="pointer-events-none absolute inset-x-0 bottom-0 h-24 w-full text-ink-faint/30" />
+        <Reveal className="relative mx-auto w-full max-w-6xl px-6 py-16 lg:px-12">
           <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
             How one place travels through the system
           </p>
-          <ol className="stagger mt-5 flex flex-wrap items-center gap-x-3 gap-y-4">
+          <ol className="stagger mt-6 flex flex-wrap items-center gap-x-3 gap-y-4">
             {PIPELINE.map((step, i) => (
               <li key={step} className="flex items-center gap-3">
                 <span className="flex items-center gap-2">
-                  <span
-                    aria-hidden
-                    className={`h-1.5 w-1.5 ${i === 2 ? "bg-madder" : "bg-ink"}`}
-                  />
+                  <span aria-hidden className={`h-1.5 w-1.5 ${i === 2 ? "bg-madder" : "bg-ink"}`} />
                   <span
                     className={`font-archive text-[11px] tracking-widest uppercase ${
                       i === 2 ? "text-madder" : "text-ink"
@@ -195,7 +330,7 @@ export default function Home() {
               </li>
             ))}
           </ol>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ink-muted">
+          <p className="mt-5 max-w-3xl pb-16 text-sm leading-relaxed text-ink-muted">
             Three screens, one line. A Candidate is the furthest any automated step may go.{" "}
             <Link href="/vision" className="text-indigo underline hover:text-madder">
               Why this matters
@@ -205,15 +340,55 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <footer className="mx-auto w-full max-w-6xl px-6 py-10 lg:px-12">
-        <p className="font-archive text-xs leading-relaxed text-ink-faint">
-          Nothing on screen was invented by a model. Archival scans from archive.org, map data
-          from OpenStreetMap, photographs from Wikimedia Commons.{" "}
-          <Link href="/attributions" className="text-indigo underline hover:text-madder">
-            Every source is listed
-          </Link>
-          .
-        </p>
+      <section className="mx-auto w-full max-w-6xl px-6 py-16 lg:px-12 lg:py-24">
+        <Reveal className="stagger grid gap-5 md:grid-cols-3">
+          {DOORS.map((door, i) => (
+            <Link
+              key={door.href}
+              href={door.href}
+              className="group flex flex-col border border-ink-faint/40 bg-paper-raised transition-colors duration-300 hover:border-madder"
+            >
+              <div className="aspect-[3/2] overflow-hidden bg-paper-sunk">
+                <img
+                  src={door.image.url}
+                  alt={door.image.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <p className="font-archive text-[11px] tracking-[0.2em] text-ink-faint uppercase">
+                  {String(i + 1).padStart(2, "0")} &middot; {door.kicker}
+                </p>
+                <h2 className="font-display mt-2 text-4xl text-ink group-hover:text-madder">
+                  {door.title}
+                </h2>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{door.body}</p>
+                <span className="font-archive mt-5 inline-block text-[11px] tracking-widest text-madder uppercase">
+                  Open &rarr;
+                </span>
+              </div>
+            </Link>
+          ))}
+        </Reveal>
+      </section>
+
+      <footer className="border-t border-ink-faint/40">
+        <div className="mx-auto w-full max-w-6xl px-6 py-10 lg:px-12">
+          <p className="font-archive text-xs leading-relaxed text-ink-faint">
+            Nothing on screen was invented by a model. Archival scans from archive.org, map data
+            from OpenStreetMap, photographs and plates from Wikimedia Commons.{" "}
+            <Link href="/attributions" className="text-indigo underline hover:text-madder">
+              Every source is listed
+            </Link>
+            . Reviewers work the Candidate queue on{" "}
+            <Link href="/authority" className="text-indigo underline hover:text-madder">
+              Authority
+            </Link>
+            .
+          </p>
+        </div>
       </footer>
     </main>
   );

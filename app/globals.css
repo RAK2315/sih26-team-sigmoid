@@ -162,6 +162,27 @@ body::after {
 [data-reveal="pending"] { opacity: 0; }
 [data-reveal="shown"]   { animation: rise .55s cubic-bezier(.2,.7,.3,1) backwards; }
 
+/* the ink ornaments draw themselves the way a pen would, one stroke after another */
+.draw-stroke path {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: draw-line 2.2s cubic-bezier(.2,.7,.3,1) backwards;
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+.draw-stroke path:nth-child(2) { animation-delay: .25s; }
+.draw-stroke path:nth-child(3) { animation-delay: .5s; }
+.draw-stroke path:nth-child(4) { animation-delay: .6s; }
+.draw-stroke path:nth-child(5) { animation-delay: .35s; }
+.draw-stroke path:nth-child(6) { animation-delay: .7s; }
+
+/* 1,300 squares arriving row by row, so the 174 that are protected can be counted by eye */
+[data-grid="pending"] .grid-row { opacity: 0; }
+[data-grid="shown"] .grid-row  { animation: fade .5s ease backwards; }
+
 /* leaflet paints its own panes, so a fade on the container is the only safe way in */
 .leaflet-container { animation: fade .8s ease backwards; }
 
@@ -174,6 +195,8 @@ body::after {
   .breathe { opacity: 1; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
   [data-reveal] { opacity: 1 !important; animation: none !important; }
+  [data-grid] .grid-row { opacity: 1 !important; animation: none !important; }
+  .draw-stroke path { animation: none !important; stroke-dashoffset: 0; }
   /* the highlight says which passage was read, so it stays, it just does not sweep */
   .passage-sweep { animation: none !important; background-size: 100% 100%; }
 }
