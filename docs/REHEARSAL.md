@@ -126,6 +126,22 @@ Against the deployed URL, because geolocation needs HTTPS and localhost on a pho
 6. Refuse the permission on a second attempt and confirm the panel says the walk stays simulated
    rather than sitting silent.
 
+### Proving live tracking without being at Red Fort
+
+Press **Phone**, wait for a real fix, then press **Bring it here**. The whole site slides under
+your real position, keeping every distance and bearing between Heritage Points exactly as they
+are in Delhi. Walk about seventy metres, turn to face the first one, stand still for three
+seconds, and it speaks.
+
+Say out loud what is real and what is not, because that is the point of the demo. Real: the
+satellites, the compass, the Approach Ring test, the Facing test, the Dwell timer, the audio, and
+the row it writes to the Walk log marked `gps` rather than `sim`. Not real: the coordinates,
+which are translated. Nothing about the tracking is simulated, only the location of the Fort.
+
+Afterwards, open `/authority` and scroll to the Walk log. The crossing you just made is recorded
+with its location source. That is the evidence that a real phone drove it, and it is the answer
+to a judge who asks whether the GPS half actually works.
+
 Standing still must not reset Dwell. If it does, the deadband is too small. It is derived from
 the engine's own drift tolerance in `lib/location/config.ts`, so widening it is a code change
 and a deploy, not a dashboard toggle. See the note below.

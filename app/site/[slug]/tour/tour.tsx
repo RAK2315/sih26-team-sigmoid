@@ -25,6 +25,23 @@ import type {
 
 const WALK_SPEED_MS = 1.2;
 
+// Red Fort is in Delhi and a demo usually is not, so this slides the whole site under the
+// Visitor's real position. The tracking stays completely real: real satellites, real compass,
+// real engine. Only the coordinates are translated, and the screen says so while it is on.
+function shiftTo(points: HeritagePoint[], from: Coord, to: Coord): HeritagePoint[] {
+  const dLng = to[0] - from[0];
+  const dLat = to[1] - from[1];
+  const move = (c: Coord): Coord => [c[0] + dLng, c[1] + dLat];
+  return points.map((point) => ({
+    ...point,
+    centroid: move(point.centroid),
+    zone: {
+      ...point.zone,
+      coordinates: point.zone.coordinates.map((ring) => ring.map((c) => move(c as Coord))),
+    },
+  }));
+}
+
 // leaflet reads window while it loads, so it must never render on the server
 const TourMapCanvas = dynamic(() => import("./tour-map-canvas"), {
   ssr: false,
@@ -33,7 +50,7 @@ const TourMapCanvas = dynamic(() => import("./tour-map-canvas"), {
 
 export default function Tour({
   site,
-  points,
+  points: sitePoints,
   narrations,
   factSheets,
 }: {
@@ -53,6 +70,13 @@ export default function Tour({
   useEffect(() => {
     if (plan) setPersona(plan.persona);
   }, [plan]);
+  // where the Visitor stood when they asked for the site to be brought to them
+  const [broughtHere, setBroughtHere] = useState<Coord | null>(null);
+  const points = useMemo(
+    () => (broughtHere === null ? sitePoints : shiftTo(sitePoints, sitePoints[0].centroid, broughtHere)),
+    [sitePoints, broughtHere],
+  );
+
   // start south of the first Heritage Point, outside its ring, looking at it
   const start = useMemo<Coord>(() => moveBy(points[0].centroid, 70, 180), [points]);
 
@@ -92,7 +116,7 @@ export default function Tour({
   const { moveTo, walking, setWalking, speedMs, setSpeedMs } = sim;
   const engine = useRef(initialState());
   const [statuses, setStatuses] = useState<TriggerStatus[]>([]);
-  const [selected, setSelected] = useState<HeritagePoint>(points[0]);
+  const [selected, setSelected] = useState<HeritagePoint>(sitePoints[0]);
   // what is being said, which is not the same as what the panel is showing
   const [speaking, setSpeaking] = useState<{ pointId: string; kind: NarrationKind } | null>(null);
   const [showEvidence, setShowEvidence] = useState(false);
@@ -209,6 +233,21 @@ export default function Tour({
           </p>
           {started && (
             <div className="flex items-center gap-2">
+              {live && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    setBroughtHere(broughtHere === null ? [fix.lng, fix.lat] : null)
+                  }
+                  className={`border px-2 py-1 font-archive text-xs ${
+                    broughtHere !== null
+                      ? "border-indigo bg-indigo text-paper"
+                      : "border-ink-faint/50 text-ink-muted hover:border-indigo hover:text-indigo"
+                  }`}
+                >
+                  {broughtHere !== null ? "Put it back" : "Bring it here"}
+                </button>
+              )}
               <button
                 type="button"
                 onClick={() => setWantGps(!wantGps)}
@@ -298,6 +337,22 @@ export default function Tour({
         <h1 className="font-display mt-5 text-4xl leading-none text-ink">{selected.name}</h1>
         {selected.nameLocal && (
           <p className="font-deva text-lg text-ink-muted">{selected.nameLocal}</p>
+        )}
+
+        {broughtHere !== null && (
+          <div className="mt-4 border-l-2 border-indigo bg-indigo/[0.06] p-3">
+            <p className="font-archive text-[11px] tracking-[0.2em] text-indigo uppercase">
+              Site moved to you
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+              Red Fort is in Delhi and you are not, so its Heritage Points have been slid under
+              your real position, keeping every distance and bearing between them exactly as
+              they are on site. Nothing about the tracking is faked: the position is coming from
+              this device, the heading from its compass, and a Threshold Crossing still needs the
+              Approach Ring, the Facing and the full Dwell. Walk about seventy metres and the
+              first one will speak.
+            </p>
+          </div>
         )}
 
         {wantGps && (gps.message !== null || (live && !gps.hasCompass)) && (
