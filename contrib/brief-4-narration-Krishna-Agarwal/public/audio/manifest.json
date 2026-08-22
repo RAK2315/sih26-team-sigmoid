@@ -1,0 +1,114 @@
+{
+  "red-fort/diwan-i-aam:history:approach:en": {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "history",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "d679a7818965e413f73bfbad85fcf16b88596036b83718ff387417a4d8dc93ef"
+  },
+  "red-fort/diwan-i-aam:architecture:approach:en": {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "architecture",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "2852b6225db3f2bac07e1ebeaa891863fe9573b8fc82aff9ef8525dfeb7fc34e"
+  },
+  "red-fort/diwan-i-aam:kids:approach:en": {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "kids",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "282350b6141b296889a7c8beac1c58bc58cdd36fc6971d2f8e8be0e12b794eeb"
+  },
+  "red-fort/diwan-i-aam:history:inside:en": {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "history",
+    "lang": "en",
+    "kind": "inside",
+    "sha256": "c8d20bbace48cdc8efca6535d4be644f9dff50cf670ddb4242dadf7e5d0b1687"
+  },
+  "red-fort/diwan-i-khas:history:approach:en": {
+    "pointId": "red-fort/diwan-i-khas",
+    "persona": "history",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "65de11edda57eaac1bcf23fc51973a4e3c2ff996f251add087afe0cd39b1cc8f"
+  },
+  "red-fort/diwan-i-khas:architecture:approach:en": {
+    "pointId": "red-fort/diwan-i-khas",
+    "persona": "architecture",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "5133d9424c2cbd952f86b165552f8e649cb2d51f8292fe9d1d368b71314edd89"
+  },
+  "red-fort/diwan-i-khas:kids:approach:en": {
+    "pointId": "red-fort/diwan-i-khas",
+    "persona": "kids",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "8c3c37aadf2a2e84aaeeda84a12de042b25f534ac9763bdfab9a231b66fc871e"
+  },
+  "red-fort/diwan-i-khas:history:inside:en": {
+    "pointId": "red-fort/diwan-i-khas",
+    "persona": "history",
+    "lang": "en",
+    "kind": "inside",
+    "sha256": "cc727ac0e0ad8eae87c5c1ccab870886fedecffa782ea30923fc4ffdfb8cdb93"
+  },
+  "red-fort/lahori-gate:history:approach:en": {
+    "pointId": "red-fort/lahori-gate",
+    "persona": "history",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "e060b31f866ca1913869382d684a015f45e73be3f87e9e8ee15df3113db002c6"
+  },
+  "red-fort/lahori-gate:architecture:approach:en": {
+    "pointId": "red-fort/lahori-gate",
+    "persona": "architecture",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "099d9c746b809f2b99b82ce2a300a5c5e7bbbb2ba7569f51cc5cef3b74ec4bb8"
+  },
+  "red-fort/lahori-gate:kids:approach:en": {
+    "pointId": "red-fort/lahori-gate",
+    "persona": "kids",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "38032d914f21bb266b3644461905030fcb47ef8250d663d8a17080adb7a1c377"
+  },
+  "red-fort/lahori-gate:history:inside:en": {
+    "pointId": "red-fort/lahori-gate",
+    "persona": "history",
+    "lang": "en",
+    "kind": "inside",
+    "sha256": "7e29391b0ead4d3da9a0316a40483e76fb239b19166e9d3c7550d4bf654dae51"
+  },
+  "red-fort/rang-mahal:history:approach:en": {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "history",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "ab6e0e20ff8cf3c638753a02a354fd2137f387bc806b4dbddc54444311ab6eb3"
+  },
+  "red-fort/rang-mahal:architecture:approach:en": {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "architecture",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "02cc4962996cf5d2bfca66a39a240dd223e9f585ee5947ac356980f2a89512bc"
+  },
+  "red-fort/rang-mahal:kids:approach:en": {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "kids",
+    "lang": "en",
+    "kind": "approach",
+    "sha256": "86af101d63234118636dfadcd45a4aa8bf286a8bd2252d9f90be43ca8ede8a5f"
+  },
+  "red-fort/rang-mahal:history:inside:en": {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "history",
+    "lang": "en",
+    "kind": "inside",
+    "sha256": "a0bf8c3d897baa52ef7af3cda71af7e77ec7712f4669423fa6c58ad50b387d0f"
+  }
+}

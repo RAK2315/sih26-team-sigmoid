@@ -1,0 +1,152 @@
+import type { Narration } from '../../lib/types';
+
+export const diwanIAamNarrations: Narration[] = [
+  {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "history",
+    "lang": "en",
+    "kind": "approach",
+    "audioUrl": "/audio/red-fort/diwan-i-aam/history.en.mp3",
+    "durationSec": 97.187,
+    "sentences": [
+      "Diwan-i-Aam is identified in historic records as the Hall of Public Audience of the Red Fort.",
+      "The construction period recorded for this historic hall spans from AD 1639 to 1648.",
+      "The past use of Diwan-i-Aam is formally recorded as a court.",
+      "In this court, Mughal emperors received members of the general public.",
+      "The emperors listened directly to complaints while seated on the throne.",
+      "This public role connected the emperor, the court, and the general public in one recorded setting.",
+      "Hearing complaints from the general public was the central function of the Hall of Public Audience.",
+      "Diwan-i-Aam is listed as part of the protected Red Fort monument.",
+      "Its history is defined by its recorded construction period between 1639 and 1648.",
+      "Its history is also defined by its recorded use as a court.",
+      "The name Hall of Public Audience explains who gathered in this space.",
+      "The record of complaints explains why this court mattered in public life.",
+      "Seated on the throne, the emperor presided over the general public.",
+      "These recorded facts document the courtly life inside the Red Fort.",
+      "The hall is listed as part of the protected Red Fort monument.",
+      "Together, these facts establish Diwan-i-Aam as the historic Hall of Public Audience."
+    ],
+    "cues": [
+      0.1,
+      7.287,
+      15.6,
+      20.55,
+      26.05,
+      31.512,
+      38.55,
+      45.125,
+      50.337,
+      58.662,
+      63.9,
+      69.362,
+      75.187,
+      80.45,
+      85.825,
+      90.712
+    ],
+    "factSheetId": "fs_diwan_i_aam"
+  },
+  {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "architecture",
+    "lang": "en",
+    "kind": "approach",
+    "audioUrl": "/audio/red-fort/diwan-i-aam/architecture.en.mp3",
+    "durationSec": 101.762,
+    "sentences": [
+      "Diwan-i-Aam is an architectural hall built of red sandstone inside the Red Fort.",
+      "It stands elevated on a plinth recorded as one point two metres in height.",
+      "The dimensions of the structure are recorded as twenty-four point four metres long.",
+      "The width of Diwan-i-Aam is recorded as twelve point three metres wide.",
+      "Stepping into the interior, the hall is designed three bays deep.",
+      "The exterior ornamentation of Diwan-i-Aam prominently features structural columns.",
+      "The facade is further ornamented with series of cusped arches.",
+      "Decorative pietra dura work is also recorded among its exterior ornamentation.",
+      "A white marble pavilion forms an essential element of the architectural composition.",
+      "This marble pavilion stands within a central recess located on the east wall of the hall.",
+      "The white marble pavilion is built with fluted columns.",
+      "It is crowned by a distinctive Bengal roof.",
+      "The combination of red sandstone and white marble creates a striking architectural contrast.",
+      "Cusped arches and fluted columns support the open structure of the three-bay deep hall.",
+      "Pietra dura craftsmanship enriches the ornamentation recorded across the structure.",
+      "These precise dimensions, materials, and features form the architectural identity of Diwan-i-Aam.",
+      "All of these details are preserved in the architectural inventory of the Red Fort monument."
+    ],
+    "cues": [
+      0.1,
+      6.412,
+      12.462,
+      18.65,
+      24.45,
+      29.612,
+      35.687,
+      40.687,
+      47.237,
+      53.462,
+      60.137,
+      64.55,
+      68.037,
+      75.075,
+      81.575,
+      87.637,
+      95.162
+    ],
+    "factSheetId": "fs_diwan_i_aam"
+  },
+  {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "kids",
+    "lang": "en",
+    "kind": "approach",
+    "audioUrl": "/audio/red-fort/diwan-i-aam/kids.en.mp3",
+    "durationSec": 45.275,
+    "sentences": [
+      "Diwan-i-Aam is the Hall of Public Audience in the Red Fort.",
+      "It was built in the period recorded as AD 1639 to 1648.",
+      "This place was used as a court.",
+      "Mughal emperors received the general public here.",
+      "They heard complaints here while seated on the throne.",
+      "The hall is made of red sandstone.",
+      "It has columns and cusped arches.",
+      "It also has a marble pavilion with pietra dura work.",
+      "Inside, the hall is three bays deep.",
+      "On the east wall, a white marble pavilion stands in a central recess.",
+      "That pavilion has fluted columns and a Bengal roof."
+    ],
+    "cues": [
+      0.1,
+      5.812,
+      11.45,
+      14.862,
+      19.925,
+      25.462,
+      29.237,
+      33.637,
+      39.25,
+      43.862,
+      48.925
+    ],
+    "factSheetId": "fs_diwan_i_aam"
+  },
+  {
+    "pointId": "red-fort/diwan-i-aam",
+    "persona": "history",
+    "lang": "en",
+    "kind": "inside",
+    "audioUrl": "/audio/red-fort/diwan-i-aam/history-inside.en.mp3",
+    "durationSec": 21.737,
+    "sentences": [
+      "Inside Diwan-i-Aam, notice the white marble pavilion in the central recess of the east wall.",
+      "This pavilion has fluted columns and a Bengal roof.",
+      "Decorative pietra dura work is also recorded among its ornamentation.",
+      "It marks where the emperor sat on the throne to hear complaints."
+    ],
+    "cues": [
+      0.1,
+      6.762,
+      10.975,
+      16.75
+    ],
+    "factSheetId": "fs_diwan_i_aam"
+  }
+];

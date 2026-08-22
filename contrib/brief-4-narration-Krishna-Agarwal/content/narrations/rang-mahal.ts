@@ -1,0 +1,152 @@
+import type { Narration } from '../../lib/types';
+
+export const rangMahalNarrations: Narration[] = [
+  {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "history",
+    "lang": "en",
+    "kind": "approach",
+    "audioUrl": "/audio/red-fort/rang-mahal/history.en.mp3",
+    "durationSec": 117.75,
+    "sentences": [
+      "Rang Mahal is located inside the Red Fort in Old Delhi.",
+      "It is recorded as one of the major attractions within the fort complex.",
+      "Historically, Rang Mahal formed part of the royal harem inside the Red Fort.",
+      "The building is also known by the name Imtiyaz Mahal.",
+      "During the reign of Shah Jahan, Rang Mahal was known as the Palace of Distinction.",
+      "The interior of the palace was once richly painted and decorated throughout.",
+      "Some of its inner apartments are called Shish Mahal because tiny pieces of mirror cover their ceilings.",
+      "The water channel of the Nahr-i-Bihisht flowed directly through the centre of the marble palace.",
+      "This central channel emptied into a marble basin carved into the floor of the building.",
+      "Following the British occupation of the Red Fort in 1857, Rang Mahal was used briefly as a mess hall.",
+      "The name Palace of Distinction reflects its status during Shah Jahan's rule.",
+      "Its recorded identity as Imtiyaz Mahal and as part of the harem defines its historical function.",
+      "The painted decorations and mirror-covered ceilings of Shish Mahal record its original interior grandeur.",
+      "The flow of the Nahr-i-Bihisht into the carved floor basin enriched its imperial domestic environment.",
+      "The brief conversion into a British mess hall after 1857 marks a recorded shift in its post-Mughal use.",
+      "Today, Rang Mahal stands preserved as a major historic palace in Old Delhi.",
+      "These recorded historical phases link its 17th-century royal origin to its 19th-century history.",
+      "Together, these documented facts compose the history of Rang Mahal."
+    ],
+    "cues": [
+      0.1,
+      5,
+      10.462,
+      16.3,
+      20.625,
+      26.662,
+      32.737,
+      40.425,
+      46.862,
+      53.187,
+      61.6,
+      67.375,
+      74.95,
+      82.387,
+      89.475,
+      97.95,
+      104.412,
+      112.5
+    ],
+    "factSheetId": "fs_rang_mahal"
+  },
+  {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "architecture",
+    "lang": "en",
+    "kind": "approach",
+    "audioUrl": "/audio/red-fort/rang-mahal/architecture.en.mp3",
+    "durationSec": 101.375,
+    "sentences": [
+      "Rang Mahal is described in historic records as a marble palace inside the Red Fort.",
+      "It is situated in the Red Fort monument in Old Delhi.",
+      "The interior of Rang Mahal was once richly painted and decorated across its surfaces.",
+      "Certain apartments within the palace are specifically designated as Shish Mahal.",
+      "These Shish Mahal apartments feature ceilings covered with tiny pieces of mirror.",
+      "The Nahr-i-Bihisht water channel flowed directly through the centre of the marble palace structure.",
+      "This stream flowed into a decorative marble basin carved directly into the floor.",
+      "Rang Mahal is also known by the architectural title Imtiyaz Mahal, or Palace of Distinction.",
+      "The central placement of the Nahr-i-Bihisht integrates running water into the marble interior.",
+      "The carved marble floor basin forms the central aquatic feature of the main hall.",
+      "Mirrors set into the ceilings of Shish Mahal reflect light across the decorated apartments.",
+      "Traces of rich paint on the walls document the original interior ornamentation.",
+      "Rang Mahal formed part of the harem inside the Red Fort.",
+      "The combination of carved marble, running water, mirror work, and painted surfaces defines its style.",
+      "Today, Rang Mahal remains one of the major architectural attractions in Old Delhi.",
+      "Together, these facts describe the complete architectural character of Rang Mahal."
+    ],
+    "cues": [
+      0.1,
+      6.962,
+      11.537,
+      18.775,
+      24.812,
+      31.137,
+      37.812,
+      43.975,
+      51.212,
+      57.675,
+      63.737,
+      70.112,
+      76.287,
+      80.812,
+      88.637,
+      95.262
+    ],
+    "factSheetId": "fs_rang_mahal"
+  },
+  {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "kids",
+    "lang": "en",
+    "kind": "approach",
+    "audioUrl": "/audio/red-fort/rang-mahal/kids.en.mp3",
+    "durationSec": 48.5,
+    "sentences": [
+      "Rang Mahal is inside the Red Fort in Old Delhi.",
+      "It was part of the harem inside the fort.",
+      "It is also called Imtiyaz Mahal.",
+      "During the rule of Shah Jahan, it was known as the Palace of Distinction.",
+      "It is one of the major attractions inside the Red Fort.",
+      "The inside was once richly painted and decorated.",
+      "Some rooms are called Shish Mahal.",
+      "They are called that because tiny pieces of mirror cover their ceilings.",
+      "The Nahr-i-Bihisht flowed through the centre of the marble palace.",
+      "The Nahr-i-Bihisht flowed into a marble basin carved into the floor.",
+      "After the British occupied the fort in 1857, Rang Mahal was used briefly as a mess hall."
+    ],
+    "cues": [
+      0.1,
+      4.087,
+      7.525,
+      10.525,
+      15.8,
+      20,
+      24,
+      26.962,
+      31.9,
+      36.15,
+      40.925
+    ],
+    "factSheetId": "fs_rang_mahal"
+  },
+  {
+    "pointId": "red-fort/rang-mahal",
+    "persona": "history",
+    "lang": "en",
+    "kind": "inside",
+    "audioUrl": "/audio/red-fort/rang-mahal/history-inside.en.mp3",
+    "durationSec": 20.712,
+    "sentences": [
+      "In the centre of the hall, a marble basin is carved into the floor, where the Nahr-i-Bihisht once flowed.",
+      "Some of the apartments here are called Shish Mahal because tiny pieces of mirror cover their ceilings.",
+      "The interior of this palace was once richly painted and decorated."
+    ],
+    "cues": [
+      0.1,
+      7.65,
+      15.125
+    ],
+    "factSheetId": "fs_rang_mahal"
+  }
+];
