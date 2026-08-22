@@ -23,3 +23,23 @@ Ordered. Each line ships, typechecks, builds and deploys before the next starts.
 
 Heritage knowledge graph, food routes, artisan profiles, community economics.
 They are on `/vision` as roadmap and that is where they stay.
+
+## Round two, after the first look
+
+- [x] Every Narration names the building in its first sentence, ten clips re-voiced
+- [x] `render-audio` skips a clip whose text has not changed
+- [x] Hero rebuilt: the arch is a window, four plates cycle inside it
+- [x] A band of the real recorded names drifts past under the hero
+- [x] Scroll rule across the top of every page
+- [x] Animations inside an unread section are paused until you reach it
+- [x] Green pins pulse and open the full Evidence panel
+- [x] Qutub Complex: Quwwatul Islam Mosque and Alai Minar
+- [x] Humayun's Tomb: Isa Khan's Tomb and the Barber's Tomb
+- [x] Both are deep sites now, three Heritage Points each
+
+## Still open
+
+- Two stopwatched rehearsals, one with wifi off
+- Android GPS verification against the deployed URL
+- The Alai Darwaza has no Fact Sheet: its description sits several pages past the
+  inscriptions in Vol. III and was not transcribed in time
