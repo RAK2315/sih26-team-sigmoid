@@ -162,6 +162,10 @@ body::after {
 [data-reveal="pending"] { opacity: 0; }
 [data-reveal="shown"]   { animation: rise .55s cubic-bezier(.2,.7,.3,1) backwards; }
 
+/* everything inside waits with it, so a stagger below the fold plays when you get there
+   rather than finishing where nobody can see it */
+[data-reveal="pending"] * { animation-play-state: paused !important; }
+
 /* the ink ornaments draw themselves the way a pen would, one stroke after another */
 .draw-stroke path {
   stroke-dasharray: 900;
@@ -183,6 +187,73 @@ body::after {
 [data-grid="pending"] .grid-row { opacity: 0; }
 [data-grid="shown"] .grid-row  { animation: fade .5s ease backwards; }
 
+/* the plate inside the arch drifts and changes, so the hero is never still */
+@keyframes plate-cycle {
+  0%, 26%  { opacity: 1; }
+  34%, 92% { opacity: 0; }
+  100%     { opacity: 1; }
+}
+
+@keyframes plate-drift {
+  from { transform: scale(1.06) translate3d(0, 1.5%, 0); }
+  to   { transform: scale(1.14) translate3d(0, -1.5%, 0); }
+}
+
+.plate-cycle {
+  animation: plate-cycle 21s ease-in-out infinite, plate-drift 21s ease-in-out infinite alternate;
+}
+
+/* one long stroke, so the arch frame is drawn rather than switched on */
+@keyframes arch-draw {
+  from { stroke-dashoffset: 1400; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.arch-draw path {
+  stroke-dasharray: 1400;
+  animation: arch-draw 2.6s cubic-bezier(.2,.7,.3,1) backwards;
+}
+
+.arch-draw path:nth-child(2) { animation-delay: .3s; }
+.arch-draw path:nth-child(3) { animation-delay: .55s; }
+
+/* a name every few seconds, out of the 123 the survey recorded */
+@keyframes drift-left {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.marquee { animation: drift-left 90s linear infinite; }
+.marquee-slow { animation: drift-left 140s linear infinite; }
+
+/* the eye goes to what moves, so a confirmed Candidate is the only thing that does */
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1);   opacity: .55; }
+  50%      { transform: scale(1.9); opacity: 0; }
+}
+
+.pin-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: soft-pulse 2.6s ease-out infinite;
+}
+
+/* headings arrive a word at a time, the way a line of type is set */
+.set-type > span { animation: ink-in .7s cubic-bezier(.2,.7,.3,1) backwards; display: inline-block; }
+
+/* how far down the page you are, drawn as a rule across the top */
+.scroll-rule {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 9998;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(var(--read, 0));
+  background: var(--color-madder);
+  pointer-events: none;
+}
+
 /* leaflet paints its own panes, so a fade on the container is the only safe way in */
 .leaflet-container { animation: fade .8s ease backwards; }
 
@@ -197,6 +268,14 @@ body::after {
   [data-reveal] { opacity: 1 !important; animation: none !important; }
   [data-grid] .grid-row { opacity: 1 !important; animation: none !important; }
   .draw-stroke path { animation: none !important; stroke-dashoffset: 0; }
+  .arch-draw path { animation: none !important; stroke-dashoffset: 0; }
+  .plate-cycle, .marquee, .marquee-slow, .pin-pulse, .set-type > * {
+    animation: none !important;
+  }
+  /* only the first plate is shown when motion is off, so the arch is never empty */
+  .plate-cycle { opacity: 0; }
+  .plate-cycle:first-of-type { opacity: 1; }
+  .scroll-rule { display: none; }
   /* the highlight says which passage was read, so it stays, it just does not sweep */
   .passage-sweep { animation: none !important; background-size: 100% 100%; }
 }

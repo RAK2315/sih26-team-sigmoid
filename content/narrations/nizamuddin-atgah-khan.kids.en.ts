@@ -7,7 +7,7 @@ export const atgahKhanKidsEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_nizamuddin_atgah_khan",
   sentences: [
-    "Small building, big story.",
+    "This is the tomb of Atgah Khan. Small building, big story.",
     "The man inside once saved an emperor's life by getting him off a battlefield he had just lost.",
     "As a reward his wife became the baby prince's nurse, and that made his whole family important.",
     "It also made people jealous, and one of them killed him.",

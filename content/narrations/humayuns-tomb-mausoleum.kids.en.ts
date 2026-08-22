@@ -7,7 +7,7 @@ export const humayunsTombKidsEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_humayuns_tomb_mausoleum",
   sentences: [
-    "An emperor is buried in here, and so are a lot of other people whose names nobody wrote down.",
+    "This is the tomb of Humayun. An emperor is buried in here, and so are a lot of other people whose names nobody wrote down.",
     "His grave is the simplest one: a plain white block of marble with nothing carved on it.",
     "The ceiling above it is as high as an eight storey building.",
     "See the spike on top of the dome?",

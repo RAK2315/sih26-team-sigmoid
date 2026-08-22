@@ -5,8 +5,11 @@ import { narrationTexts } from "@/content/narrations";
 import { points } from "@/content/points";
 import { sites } from "@/content/sites";
 import ThenNowCard from "./site/[slug]/tour/then-now";
+import ArchWindow from "./arch-window";
 import Counted from "./counted";
-import { ChhatriRow, JaliBand, MughalArch, RuleWithLozenge } from "./motifs";
+import { ChhatriRow, JaliBand, RuleWithLozenge } from "./motifs";
+import NameMarquee from "./name-marquee";
+import SetType from "./set-type";
 import Parallax from "./parallax";
 import ProtectedGrid from "./protected-grid";
 import Reveal from "./reveal";
@@ -61,73 +64,100 @@ const DOORS = [
 
 const PIPELINE = ["Archive Page", "Mention", "Candidate", "Reviewer", "Visitor"];
 
+const HERO_PLATES = [
+  IMAGES["plates/musamman-burj"],
+  IMAGES["plates/chandni-chowk-1858"],
+  IMAGES["plates/east-face"],
+  IMAGES["plates/jahangir-darbar"],
+];
+
+// real names off the 1919 pages, deduplicated, for the band that drifts past
+const RECORDED_NAMES = [
+  ...new Set(
+    results
+      .flatMap((r) => r.mentions.map((m) => m.name.replace(/\.$/, "").trim()))
+      .filter((name) => name.length > 2 && name.toLowerCase() !== "unknown"),
+  ),
+];
+
 export default function Home() {
   return (
     <main className="w-full">
-      <section className="relative flex min-h-[88vh] items-center overflow-hidden border-b border-ink-faint/40">
-        <Parallax speed={0.18} className="pointer-events-none absolute inset-x-0 -top-24 bottom-0">
+      <section className="relative overflow-hidden border-b border-ink-faint/40">
+        <Parallax speed={0.14} className="pointer-events-none absolute inset-x-0 -top-24 bottom-0">
           <div
             aria-hidden
-            className="h-[130%] w-full bg-cover bg-center opacity-[0.22]"
+            className="h-[130%] w-full bg-cover bg-center opacity-[0.10]"
             style={{
               backgroundImage: `url(${IMAGES["plates/palace-from-metcalfe-house"].url})`,
-              maskImage: "linear-gradient(to bottom, black 20%, transparent 92%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 20%, transparent 92%)",
+              maskImage: "linear-gradient(to bottom, black 10%, transparent 88%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 10%, transparent 88%)",
             }}
           />
         </Parallax>
 
-        <MughalArch
-          className="pointer-events-none absolute -right-10 bottom-0 h-[86%] w-auto text-ink-faint/45 lg:right-24"
-        />
-
-        <div className="relative mx-auto w-full max-w-6xl px-6 py-24 lg:px-12">
-          <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
-            Team Sigmoid &middot; SIH 2026 &middot; Heritage and Culture
-          </p>
-          <h1 className="ink-in font-display mt-6 text-7xl leading-[0.85] text-ink lg:text-[9rem]">
-            VIRASAT
-          </h1>
-          <p
-            className="rise font-deva mt-2 text-3xl leading-tight text-ink-muted lg:text-5xl"
-            style={{ animationDelay: ".18s" }}
-          >
-            विरासत
-          </p>
-          <RuleWithLozenge
-            className="rule-draw mt-6 h-3 w-full max-w-md text-madder/60"
-          />
-          <p
-            className="rise font-display mt-5 text-2xl text-madder italic lg:text-4xl"
-            style={{ animationDelay: ".34s" }}
-          >
-            Stand where it happened.
-          </p>
-          <p
-            className="rise mt-6 max-w-xl text-base leading-relaxed text-ink-muted"
-            style={{ animationDelay: ".46s" }}
-          >
-            Virasat is what is handed down. Not only what was built, but what is still done. This
-            reads a century-old survey of Delhi, puts what it recorded back on today&apos;s map,
-            and lets each place speak to whoever is standing in front of it.
-          </p>
-          <div
-            className="rise mt-8 flex flex-wrap gap-3"
-            style={{ animationDelay: ".58s" }}
-          >
-            <Link
-              href="/explore"
-              className="border border-madder bg-madder px-6 py-3 text-sm text-paper transition-colors duration-200 hover:bg-transparent hover:text-madder"
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-6 pt-16 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-12 lg:pt-20 lg:pb-16">
+          <div>
+            <p className="font-archive text-xs tracking-[0.2em] text-ink-faint uppercase">
+              Team Sigmoid &middot; SIH 2026 &middot; Heritage and Culture
+            </p>
+            <h1 className="font-display mt-5 text-7xl leading-[0.85] text-ink lg:text-[7.5rem]">
+              <SetType text="VIRASAT" />
+            </h1>
+            <p
+              className="rise font-deva mt-2 text-3xl leading-tight text-ink-muted lg:text-4xl"
+              style={{ animationDelay: ".3s" }}
             >
-              Walk a site
-            </Link>
-            <Link
-              href="/traditions"
-              className="border border-ink-faint/50 px-6 py-3 text-sm text-ink transition-colors duration-200 hover:border-madder hover:text-madder"
+              विरासत
+            </p>
+            <RuleWithLozenge className="rule-draw mt-6 h-3 w-full max-w-sm text-madder/60" />
+            <p
+              className="rise font-display mt-5 text-2xl text-madder italic lg:text-3xl"
+              style={{ animationDelay: ".46s" }}
             >
-              See what is still done
-            </Link>
+              Stand where it happened.
+            </p>
+            <p
+              className="rise mt-5 max-w-lg text-base leading-relaxed text-ink-muted"
+              style={{ animationDelay: ".58s" }}
+            >
+              Virasat is what is handed down. Not only what was built, but what is still done.
+              This reads a century-old survey of Delhi, puts what it recorded back on
+              today&apos;s map, and lets each place speak to whoever is standing in front of it.
+            </p>
+            <div className="rise mt-8 flex flex-wrap gap-3" style={{ animationDelay: ".7s" }}>
+              <Link
+                href="/explore"
+                className="border border-madder bg-madder px-6 py-3 text-sm text-paper transition-all duration-200 hover:-translate-y-0.5 hover:bg-transparent hover:text-madder"
+              >
+                Walk a site
+              </Link>
+              <Link
+                href="/traditions"
+                className="border border-ink-faint/50 px-6 py-3 text-sm text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-madder hover:text-madder"
+              >
+                See what is still done
+              </Link>
+            </div>
           </div>
+
+          <div className="relative order-first lg:order-none">
+            <ArchWindow
+              plates={HERO_PLATES}
+              className="mx-auto h-[46vh] w-auto max-w-full lg:h-[68vh]"
+            />
+            <p className="font-archive mt-2 text-center text-[10px] leading-relaxed text-ink-faint">
+              Four plates of Delhi, 1620 to 1858, all public domain and all credited on
+              Attributions
+            </p>
+          </div>
+        </div>
+
+        <div className="relative border-t border-ink-faint/25 bg-paper-raised/60">
+          <p className="font-archive px-6 pt-5 text-center text-[10px] tracking-[0.2em] text-ink-faint uppercase lg:px-12">
+            Named on the forty pages we read
+          </p>
+          <NameMarquee names={RECORDED_NAMES} />
         </div>
       </section>
 

@@ -5,6 +5,7 @@ import { Cormorant_Garamond, IBM_Plex_Mono, IBM_Plex_Sans, Noto_Serif_Devanagari
 import "./globals.css";
 import OfflineBanner from "./offline-banner";
 import PageEnter from "./page-enter";
+import ScrollRule from "./scroll-rule";
 import SiteNav from "./site-nav";
 
 const cormorant = Cormorant_Garamond({
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${cormorant.variable} ${plexSans.variable} ${plexMono.variable} ${notoDeva.variable}`}
     >
       <body className="flex min-h-screen flex-col">
+        <ScrollRule />
         <header className="flex h-14 shrink-0 items-center justify-between gap-4 border-b border-ink-faint/40 px-4 lg:px-6">
           <Link href="/" className="font-display shrink-0 text-xl tracking-wide text-ink">
             VIRASAT

@@ -7,7 +7,7 @@ export const atgahKhanArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_nizamuddin_atgah_khan",
   sentences: [
-    "A single domed chamber, twenty feet square, standing inside its own walled enclosure.",
+    "The tomb of Atgah Khan: a single domed chamber, twenty feet square, standing inside its own walled enclosure.",
     "The material is the point: red stone inlaid with marble and with coloured tiles, which is a lot of decoration for a building this small.",
     "There is a deeply recessed arch on each of the four sides.",
     "Three of them are closed with latticed stone screens and only the southern one is a door.",

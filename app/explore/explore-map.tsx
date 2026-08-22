@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Coord, HeritageSite, StoredCandidate } from "@/lib/types";
 import Reveal from "../reveal";
 import { JaliBand } from "../motifs";
+import CachedEvidence from "../discover/cached-evidence";
 import HiddenHeritage from "./hidden-heritage";
 
 // leaflet reads window while it loads, so it must never render on the server
@@ -21,6 +22,7 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
   const [selected, setSelected] = useState<HeritageSite | null>(null);
   const [candidates, setCandidates] = useState<StoredCandidate[] | null>(null);
   const [source, setSource] = useState<"live" | "stale" | "unreachable">("live");
+  const [openCandidate, setOpenCandidate] = useState<StoredCandidate | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -73,6 +75,7 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
             verified={verified}
             selectedId={selected?.id ?? null}
             onSelect={setSelected}
+            onOpenCandidate={setOpenCandidate}
           />
         </div>
 
@@ -250,8 +253,18 @@ export default function ExploreMap({ sites }: { sites: HeritageSite[] }) {
       <JaliBand className="h-10 w-full text-ink-faint/35" />
 
       <div className="border-t border-ink-faint/40 bg-paper-raised">
-        <HiddenHeritage sites={sites} candidates={candidates} source={source} from={FROM} />
+        <HiddenHeritage
+          sites={sites}
+          candidates={candidates}
+          source={source}
+          from={FROM}
+          onOpenCandidate={setOpenCandidate}
+        />
       </div>
+
+      {openCandidate && (
+        <CachedEvidence candidate={openCandidate} onClose={() => setOpenCandidate(null)} />
+      )}
     </div>
   );
 }

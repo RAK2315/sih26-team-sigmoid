@@ -7,7 +7,7 @@ export const nizamuddinDargahArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_nizamuddin_dargah",
   sentences: [
-    "The shrine is small: thirty one feet nine inches square on the outside.",
+    "The tomb of Shaikh Nizamuddin Auliya, and it is small: thirty one feet nine inches square on the outside.",
     "Almost all of that is the verandah, which is marble paved, six feet nine inches deep, and open through five arches on every side.",
     "The chamber inside is only fifteen feet eight.",
     "Look up at the dome.",

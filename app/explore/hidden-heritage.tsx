@@ -6,6 +6,7 @@ import type { ArchiveImage, Coord, HeritageSite, StoredCandidate } from "@/lib/t
 
 export interface HiddenEntry {
   id: string;
+  candidate?: StoredCandidate;
   name: string;
   distanceM: number;
   why: string;
@@ -44,6 +45,7 @@ export function buildHidden(
         verified: false,
         editorial: true,
         centroid: s.centroid,
+        candidate: undefined,
         image: s.image,
         href: s.pointIds.length > 0 ? `/site/${s.id}/plan` : undefined,
         score: siteScore(s, distanceM),
@@ -67,6 +69,7 @@ export function buildHidden(
         verified: true,
         editorial: false,
         centroid: c.centroid,
+        candidate: c,
         image: undefined,
         href: undefined,
         score: 1 / (1 + distanceM / 3000),
@@ -82,7 +85,7 @@ export function buildHidden(
     });
 }
 
-function Card({ entry }: { entry: HiddenEntry }) {
+function Card({ entry, onOpen }: { entry: HiddenEntry; onOpen: () => void }) {
   return (
     <article
       className={`flex flex-col border bg-paper-raised ${
@@ -147,6 +150,16 @@ function Card({ entry }: { entry: HiddenEntry }) {
             Begin tour &rarr;
           </Link>
         )}
+
+        {entry.candidate && (
+          <button
+            type="button"
+            onClick={onOpen}
+            className="font-archive mt-4 border border-state-verified/60 px-3 py-1.5 text-[11px] tracking-widest text-state-verified uppercase transition-colors duration-200 hover:bg-state-verified hover:text-paper"
+          >
+            The whole working &rarr;
+          </button>
+        )}
       </div>
     </article>
   );
@@ -157,11 +170,13 @@ export default function HiddenHeritage({
   candidates,
   source,
   from,
+  onOpenCandidate,
 }: {
   sites: HeritageSite[];
   candidates: StoredCandidate[] | null;
   source: "live" | "stale" | "unreachable";
   from: Coord;
+  onOpenCandidate: (candidate: StoredCandidate) => void;
 }) {
   const entries = candidates === null ? null : buildHidden(sites, candidates, from);
   const confirmed = (entries ?? []).filter((e) => e.verified);
@@ -209,7 +224,11 @@ export default function HiddenHeritage({
           </p>
           <div className="stagger mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {confirmed.map((entry) => (
-              <Card key={entry.id} entry={entry} />
+              <Card
+                key={entry.id}
+                entry={entry}
+                onOpen={() => entry.candidate && onOpenCandidate(entry.candidate)}
+              />
             ))}
           </div>
         </>
@@ -222,7 +241,7 @@ export default function HiddenHeritage({
           </p>
           <div className="stagger mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {editorial.map((entry) => (
-              <Card key={entry.id} entry={entry} />
+              <Card key={entry.id} entry={entry} onOpen={() => undefined} />
             ))}
           </div>
         </>

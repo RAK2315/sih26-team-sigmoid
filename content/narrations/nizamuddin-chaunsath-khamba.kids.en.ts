@@ -7,7 +7,7 @@ export const chaunsathKhambaKidsEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_nizamuddin_chaunsath_khamba",
   sentences: [
-    "The name of this place is a number.",
+    "This is Chaunsath Khamba, and the name is a number.",
     "Chaunsath khamba means sixty four pillars, and if you have time you can check.",
     "The man buried here was the emperor's foster brother, which means the same woman fed them both as babies.",
     "At the Mughal court that made you family for life.",

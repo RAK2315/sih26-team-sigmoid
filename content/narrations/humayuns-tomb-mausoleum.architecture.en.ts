@@ -7,7 +7,7 @@ export const humayunsTombArchitectureEn: NarrationText = {
   kind: "approach",
   factSheetId: "fs_humayuns_tomb_mausoleum",
   sentences: [
-    "The dome is about seventy four feet across and it is marble over rubble, laid in alternating deep and shallow courses.",
+    "The tomb of Humayun. The dome is about seventy four feet across and it is marble over rubble, laid in alternating deep and shallow courses.",
     "It stands on a red sandstone drum twenty five feet high, patterned with stars in yellow sandstone with black slate at their centres.",
     "Inside, the ceiling of the central chamber is eighty feet above the floor.",
     "Now look at the very top.",

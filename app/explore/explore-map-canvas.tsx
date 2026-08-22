@@ -12,11 +12,13 @@ export default function ExploreMapCanvas({
   verified,
   selectedId,
   onSelect,
+  onOpenCandidate,
 }: {
   sites: HeritageSite[];
   verified: StoredCandidate[];
   selectedId: string | null;
   onSelect: (site: HeritageSite) => void;
+  onOpenCandidate: (candidate: StoredCandidate) => void;
 }) {
   return (
     <MapContainer center={DELHI} zoom={12} scrollWheelZoom className="h-full w-full bg-paper-sunk">
@@ -42,17 +44,29 @@ export default function ExploreMapCanvas({
           interactive={false}
         />
       ))}
+      {/* the only thing on this map that moves, because it is the only thing the archive found */}
+      {verified.map((c) => (
+        <CircleMarker
+          key={`${c.id}-pulse`}
+          center={toLeaflet(c.centroid)}
+          radius={9}
+          className="pin-pulse"
+          pathOptions={{ color: "#3F6B5E", weight: 2, fill: false }}
+          interactive={false}
+        />
+      ))}
       {verified.map((c) => (
         <CircleMarker
           key={c.id}
           center={toLeaflet(c.centroid)}
           radius={6}
           pathOptions={{ color: "#F4EDE0", weight: 2, fillColor: "#3F6B5E", fillOpacity: 1 }}
+          eventHandlers={{ click: () => onOpenCandidate(c) }}
         >
           <Tooltip direction="top" offset={[0, -6]}>
             {c.name}
             <br />
-            confirmed from Vol. 2, scan {c.pageNo}
+            confirmed from Vol. 2, scan {c.pageNo}. Press for the Evidence.
           </Tooltip>
         </CircleMarker>
       ))}

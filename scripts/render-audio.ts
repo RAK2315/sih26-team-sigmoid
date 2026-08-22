@@ -1,5 +1,5 @@
 import { execFile } from "node:child_process";
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { promisify } from "node:util";
@@ -60,10 +60,22 @@ async function main() {
   await mkdir(scratch, { recursive: true });
   const rendered: Record<string, Rendered> = {};
 
+  // a clip whose text has not changed is left alone, so editing one line does not rewrite fifty mp3s
+  const previous: Record<string, Rendered> = await readFile("content/narrations/rendered.json", "utf-8")
+    .then((raw) => JSON.parse(raw) as Record<string, Rendered>)
+    .catch(() => ({}));
+
   for (const narration of narrationTexts) {
     const id = narrationId(narration);
     const voice = VOICES[`${narration.persona}.${narration.lang}`];
     if (!voice) throw new Error(`no voice for ${narration.persona}.${narration.lang}`);
+
+    const before = previous[id];
+    const hash = narrationTextHash(narration.sentences);
+    if (before?.textHash === hash && (await access(join("public", before.audioUrl)).then(() => true, () => false))) {
+      rendered[id] = before;
+      continue;
+    }
 
     const text = narration.sentences.join(" ");
     const mp3 = join(scratch, "clip.mp3");
@@ -94,7 +106,7 @@ async function main() {
       sentences: parsed.sentences,
       cues: parsed.cues,
       voice,
-      textHash: narrationTextHash(narration.sentences),
+      textHash: hash,
     };
     console.log(`  ${id}  ${parsed.end.toFixed(1)}s  ${parsed.cues.length} cues  ${voice}`);
   }

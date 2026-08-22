@@ -1,9 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import EvidencePanel from "@/app/discover/evidence-panel";
+import CachedEvidence from "@/app/discover/cached-evidence";
 import type { ShelfPage } from "@/app/discover/discover";
-import { DISCOVERY_CACHE } from "@/content/discovery-cache";
 import { nextStatuses } from "@/lib/store/transitions";
 import type { CandidateStatus, StoredCandidate } from "@/lib/types";
 import AuthorityHeader from "./authority-header";
@@ -205,57 +204,8 @@ export default function Authority({
         <WalkLog />
       </section>
 
-      {open && <Evidence candidate={open} pages={pages} volumeTitle={volumeTitle} onClose={() => setOpenId(null)} />}
+      {open && <CachedEvidence candidate={open} onClose={() => setOpenId(null)} />}
       </div>
     </div>
-  );
-}
-
-// the same panel /discover uses. the full Evidence lives in the committed cache, so it is looked
-// up by id rather than stored a second time in the database.
-function Evidence({
-  candidate,
-  pages,
-  volumeTitle,
-  onClose,
-}: {
-  candidate: StoredCandidate;
-  pages: ShelfPage[];
-  volumeTitle: string;
-  onClose: () => void;
-}) {
-  const cached = DISCOVERY_CACHE[`${candidate.volumeId}-${candidate.pageNo}`];
-  const full = cached?.candidates.find((c) => c.id === candidate.id) ?? null;
-  const mention = cached?.mentions.find((m) => m.id === full?.mentionId) ?? null;
-  const page = pages.find((p) => p.pageNo === candidate.pageNo);
-
-  if (!full || !mention || !page) {
-    return (
-      <aside className="sheet fixed inset-x-0 top-14 bottom-0 z-[900] overflow-y-auto border-t border-ink-faint/40 bg-paper-raised p-4 lg:static lg:inset-auto lg:z-auto lg:w-96 lg:shrink-0 lg:border-t-0 lg:border-l">
-        <p className="text-sm text-ink-muted">
-          The Evidence for this Candidate is not in the committed cache, so it cannot be shown. It
-          is not summarised or guessed at.
-        </p>
-        <button
-          type="button"
-          onClick={onClose}
-          className="font-archive mt-3 border border-ink-faint/40 px-2 py-1 text-xs text-ink-muted"
-        >
-          Close
-        </button>
-      </aside>
-    );
-  }
-
-  return (
-    <EvidencePanel
-      mention={mention}
-      candidate={{ ...full, status: candidate.status }}
-      page={page}
-      volumeTitle={volumeTitle}
-      source="cached"
-      modelId={cached.modelId}
-      onClose={onClose}
-    />
   );
 }
